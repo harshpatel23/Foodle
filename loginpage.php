@@ -1,4 +1,6 @@
 <?php include 'templates/header.php' ?>
+<?php include 'templates/navbar.php' ?>
+
 	<form>
 		Username: <input type="text" name="username" text="Enter Username"><br>
 		Password: <input type="password" name="password" text="Enter Password">

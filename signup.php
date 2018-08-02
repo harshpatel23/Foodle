@@ -1,4 +1,5 @@
 <?php include 'templates/header.php' ?>
+<?php include 'templates/navbar.php' ?>
 
 	<form>
 		First Name:<input type="text" name="firstname"><br>
