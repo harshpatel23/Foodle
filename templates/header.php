@@ -7,6 +7,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<title>Restaurant Search & Reserve</title>
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
+		<link rel="stylesheet" type="text/css" href="styles/login.css">
 	</head>
 <body>
 	<div class = header><h1 style="font-size:270%;">
