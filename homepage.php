@@ -17,7 +17,7 @@
   		<a href="/html/">Home</a> |
   		<a href="/css/">Search</a> |
   		<a href="/js/">Book Table</a> |  
-  		<a href="loginpage.html">Login</a>
+  		<a href="loginpage.php">Login</a>
 	</nav>
 
 	<footer>
