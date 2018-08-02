@@ -5,3 +5,4 @@
 	</form>
 	<a href="signup.html">New User!</a>
 <?php include 'templates/footer.php' ?>
+
