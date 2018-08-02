@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<?php include 'templates/header.php' ?>
+
 	<form>
 		First Name:<input type="text" name="firstname"><br>
 		Last Name:<input type="text" name="lastname"><br>
@@ -14,7 +10,6 @@
 		Locality:<input type="text" name="locality">
 		City:<input type="text" name="streetno"><br>
 		<input type="submit" value="Sign up">
-
 	</form>
-</body>
-</html>
+	
+<?php include 'templates/footer.php' ?>
