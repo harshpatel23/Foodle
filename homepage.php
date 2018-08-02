@@ -13,12 +13,6 @@
 		Restaurant Search and Reserve</h1>
 	</header>
 
-	<nav>		
-  		<a href="/html/">Home</a> |
-  		<a href="/css/">Search</a> |
-  		<a href="/js/">Book Table</a> |  
-  		<a href="loginpage.php">Login</a>
-	</nav>
 
 	<footer>
 		<p>	ENTER TAG LINE HERE</p>
