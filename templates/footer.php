@@ -1,12 +1,9 @@
 <div id="footer" class="footer">
-	<p>Find us!</p>
-	<ul style="list-style-type: none">
-		<li class="list-group-item" style="display:inline"><a href="">About us</a></li>		
-		<li class="list-group-item" style="display:inline"><a href="">Facebook</a></li>
-		<li class="list-group-item" style="display:inline"><a href="">Instagram</a></li>
-		<li class="list-group-item" style="display:inline"><a href="">Feedback</a></li>
-		<li class="list-group-item" style="display:inline"><a href="">Contact us</a></li>
-	</ul>
+	
+	<a href="#" class="fa fa-facebook"></a>
+	<a href="#" class="fa fa-twitter"></a>
+	<a href="#" class="fa fa-instagram"></a>
+	<a href="#" class="fa fa-linkedin"></a>
 	
 </div>
 </body>

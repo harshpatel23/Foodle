@@ -8,7 +8,7 @@
 		<label for="password"><b>Email</b></label>
 		<input type="password" name="password" placeholder = "Enter Password"><br>
 		<button name = "Login">Login</button>
-		<button name = "Signup">Signup</button>
+		<button name = "Signup" formaction="signup.php">Signup</button>
 	</form></div>
 <?php include 'templates/footer.php' ?>
 
