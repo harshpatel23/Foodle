@@ -1,35 +1,59 @@
 .header{
 	background-color: #f1f1f1;
-    text-align: center;
-    padding: 5px;
+	text-align: center;
+	padding: 5px;
 }
 
 #footer{
 	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    color: black;
-    text-align: center;
-    
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #f1f1f1;
+	color: black;
+	text-align: center;
 }
 
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
+	padding: 20px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #f1f1f1;
+	color: #303030;
+}
+
+a:link, a:visited { 
+    /*color: (internal value);*/
     text-decoration: none;
-    background-color: #f1f1f1;
-    color: #303030;
+    cursor: auto;
 }
 
-.fa:hover{
-    color: #ff0000;
-    opacity:0.7;
-    font-size: 40px;
-    padding:10px;
+.fa-facebook-square{
+	color: #3B5998;
+}
+.fa-facebook-square: hover{
+	color: #3B5998;
 }
 
+.fa-google-plus-square{
+	color: #DB4437;
+}
+.fa-google-plus-square: hover{
+	color: #DB4437;
+}
 
+.fa-linkedin-square{
+	color: #0077B5;
+}
+.fa-linkedin-square: hover{
+	color: #0077B5;
+}
+
+.fa-twitter-square{
+	color: #1DA1F2;
+}
+.fa-twitter-square: hover{
+	color: #1DA1F2;
+}
