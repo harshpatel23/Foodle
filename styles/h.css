@@ -12,6 +12,7 @@
     background-color: #f1f1f1;
     color: black;
     text-align: center;	
+    margin-top: auto;
 }
 
 .fa {
@@ -27,6 +28,8 @@
 .fa:hover{
     color: #303030;
     opacity:0.7;
+    font-size: 40px;
+    padding:10px;
 }
 
 
