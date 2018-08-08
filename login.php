@@ -1,7 +1,7 @@
 <?php include 'templates/header.php' ?>
 <?php include 'templates/navbar.php' ?>
 	<div class=login>
-	<form>
+	<form> 
 		LOGIN!<br>
 		<label for="username"><b>Username</b></label>
 		<input type="text" name="username" placeholder = "Enter Username"><br>
