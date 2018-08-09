@@ -1,17 +1,27 @@
 <?php include 'templates/header.php' ?>
 <?php include 'templates/navbar.php' ?>
-	<div class=signup>
-	<form>
-		First Name:<input type="text" name="firstname"><br>
-		Last Name:<input type="text" name="lastname"><br>
-		Contact No:<input type="text" name="contactno"><br>
-		Address:<br>
-		Flat no., building:<input type="text" name="bldg">
-		Street:<input type="text" name="streetno"><br>
-		Locality:<input type="text" name="locality">
-		City:<input type="text" name="streetno"><br>
-		<input type="submit" value="Sign up">
-	</form>
-	</div>
-	
+
+    <form id="signup-form">
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" class="form-control" id="fname" autofocus=true>
+            <label for="lname">Last Name:</label>
+            <input type="text" class="form-control" id="lname">
+            <label for="contact">Mobile no.:</label>
+            <input type="text" class="form-control" id="contact">
+            <label>Address:</label>
+            <input type="text" class="form-control" id="bldg" placeholder="Room no./Building">
+            <input type="text" class="form-control" id="street" placeholder="Street">
+            <input type="text" class="form-control" id="locality" placeholder="Locality">
+            <input type="text" class="form-control" id="city" placeholder="City">
+            <label for="email">Email-Id:</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
+            <label for="pwd">Password</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Min 8 characters">
+            <label for="pwd1">Confirm Password</label>
+            <input type="password" class="form-control" id="pwd1" placeholder="Retype password">
+            <button type="submit" class="btn btn-primary" style="font-size: 13px">Submit</button>
+        </div>
+        
+    </form>
 <?php include 'templates/footer.php' ?>
