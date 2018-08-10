@@ -1,5 +1,11 @@
 <?php include 'templates/header.php' ?>
 <?php include 'templates/navbar.php' ?>
+
+<?php 
+function addcss(){
+	echo '<link rel="stylesheet" type="text/css" href="styles/forms.css">';
+}
+ ?>
 	
 	<form id="login-form">
 		<div class="form-group">

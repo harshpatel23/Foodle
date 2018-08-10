@@ -17,7 +17,7 @@
 
 		<title>Foodle - Search,Reserve-Enjoy</title>
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
-		<link rel="stylesheet" type="text/css" href="styles/signup.css">
+		<?php addcss(); ?>
 	</head>
 <body>
 	<!--<div class = header><h1 style="font-size:270%;">
