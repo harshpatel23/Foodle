@@ -14,7 +14,7 @@ function addcss(){
 			<label for="pwd">Password</label>
 			<input type="password" class="form-control" id="pwd" required="true" placeholder="Min 8 characters">
 			<button type="submit" class="btn btn-primary" style="font-size: 13px">Login</button>
-			<button type="submit" class="btn btn-primary" style="font-size: 13px" formaction="signup.php">Sign up</button>
+			<button type="button" class="btn btn-primary" style="font-size: 13px" formaction="signup.php">Sign up</button>
 		</div>		
 	</form>
 <?php include 'templates/footer.php' ?>
