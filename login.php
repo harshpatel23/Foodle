@@ -1,14 +1,15 @@
 <?php include 'templates/header.php' ?>
 <?php include 'templates/navbar.php' ?>
-	<div class=login>
-	<form> 
-		LOGIN!<br>
-		<label for="username"><b>Username</b></label>
-		<input type="text" name="username" placeholder = "Enter Username"><br>
-		<label for="password"><b>Email</b></label>
-		<input type="password" name="password" placeholder = "Enter Password"><br>
-		<button name = "Login">Login</button>
-		<button name = "Signup" formaction="signup.php">Signup</button>
-	</form></div>
+	
+	<form id="login-form">
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
+			<label for="pwd">Password</label>
+			<input type="password" class="form-control" id="pwd" placeholder="Min 8 characters">
+			<button type="submit" class="btn btn-primary" style="font-size: 13px">Login</button>
+			<button type="submit" class="btn btn-primary" style="font-size: 13px" formaction="signup.php">Sign up</button>
+		</div>		
+	</form>
 <?php include 'templates/footer.php' ?>
 

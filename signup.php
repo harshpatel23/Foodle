@@ -14,6 +14,7 @@
             <input type="text" class="form-control" id="street" placeholder="Street">
             <input type="text" class="form-control" id="locality" placeholder="Locality">
             <input type="text" class="form-control" id="city" placeholder="City">
+            <input type="text" class="form-control" id="pin" placeholder="Pincode">
             <label for="email">Email-Id:</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
             <label for="pwd">Password</label>
