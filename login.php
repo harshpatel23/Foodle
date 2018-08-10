@@ -7,12 +7,12 @@ function addcss(){
 }
  ?>
 	
-	<form id="login-form">
+	<form id="login-form" onsubmit="return validateform.()">
 		<div class="form-group">
 			<label for="email">Email:</label>
-			<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
+			<input type="email" class="form-control" id="email" aria-describedby="emailHelp" required="true" placeholder="example@example.com">
 			<label for="pwd">Password</label>
-			<input type="password" class="form-control" id="pwd" placeholder="Min 8 characters">
+			<input type="password" class="form-control" id="pwd" required="true" placeholder="Min 8 characters">
 			<button type="submit" class="btn btn-primary" style="font-size: 13px">Login</button>
 			<button type="submit" class="btn btn-primary" style="font-size: 13px" formaction="signup.php">Sign up</button>
 		</div>		
