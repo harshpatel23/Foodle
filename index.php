@@ -6,4 +6,5 @@ function addcss(){
  ?>
 <?php include 'templates/navbar.php' ?>
 <?php include 'templates/banner.php' ?>
+<?php include 'templates/grid.php' ?>
 <?php include 'templates/footer.php' ?>

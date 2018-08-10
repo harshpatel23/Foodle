@@ -21,10 +21,5 @@
 		<?php addcss(); ?>
 	</head>
 <body>
-	<!--<div class = header><h1 style="font-size:270%;">
-		<img src="images/logo.jpg" height="50" width="50">
-    Restaurant Search and Reserve</h1></div>-->
-  
-
     
 
