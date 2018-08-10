@@ -59,7 +59,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
       <li class="nav-item" id="nav-item">
-        <a class="nav-link" href="#">Reserve<i class="fa fa-calendar" id="icon"></i>
+        <a class="nav-link" href="#">Reserve<i class="fa fa-clock-o" id="icon"></i>
 <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" id="nav-item">

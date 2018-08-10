@@ -14,6 +14,8 @@
 
 		<!-- js -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--Google-icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<title>Foodle - Search,Reserve-Enjoy</title>
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
