@@ -11,9 +11,8 @@
         height: 200px;
         border-radius: 8px;
         text-align: center;
-        background-color: beige
-            
-        }
+        background-color: beige;
+    }
     
     #more_button{
         margin-left: 2%;
@@ -58,13 +57,13 @@
             <h1>Top Rated!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/mcd.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/dominos.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/99pancakes.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
@@ -74,13 +73,13 @@
              <h1>Nearby!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/aaram.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/utsav.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/burger.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
@@ -90,13 +89,13 @@
             <h1>Favourites!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/kingbae.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/hotdog.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/Foodle.png" align="center" height="200" width="224.83">
+                    <img src="./images/dosa.jpg" align="center" height="200" width="224.83">
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
