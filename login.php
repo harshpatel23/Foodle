@@ -10,11 +10,11 @@
 		<form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email" style="font-size:13px">
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" style="font-size:13px" required>
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password" style="font-size:13px">
+			  <input type="password" class="form-control" id="pwd" placeholder="Enter password" style="font-size:13px" required>
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
