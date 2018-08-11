@@ -63,7 +63,7 @@
 <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" id="nav-item">
-        <a class="nav-link" href="login.php">Login<i class="fa fa-lock" id="icon"></i></a>
+        <a class="nav-link" data-toggle="modal" href="#loginmodal">Login<i class="fa fa-lock" id="icon"></i></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-xl-0" id="search_bar">
@@ -72,3 +72,5 @@
     </form>
   </div>
 </nav>
+
+<?php include 'login.php' ?>
