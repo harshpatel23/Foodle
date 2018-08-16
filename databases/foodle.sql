@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2018 at 02:36 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Aug 16, 2018 at 08:23 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,6 +47,7 @@ CREATE TABLE `person` (
   `fname` varchar(15) NOT NULL,
   `lname` varchar(15) DEFAULT NULL,
   `email` varchar(25) NOT NULL,
+  `contact` bigint(10) NOT NULL,
   `role` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -54,23 +55,23 @@ CREATE TABLE `person` (
 -- Dumping data for table `person`
 --
 
-INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `role`) VALUES
-('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', 'Customer'),
-('ankita03', 'Ankita03', 'Ankita', 'Tiwari', 'ankitatiwari@gmail.com', 'Receptionist'),
-('dharmik20', 'Dharmik20', 'Dharmik', 'Joshi', 'dharmikjoshi@gmail.com', 'Customer'),
-('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', 'Customer'),
-('harshpatel23', 'Harsh123', 'Harsh', 'Patel', 'harsh.patel4@somaiya.edu', 'Customer'),
-('jash24', 'Jash24', 'Jash', 'Mehta', 'jashmehta@gmail.com', 'Customer'),
-('kiran08', 'Kiran08', 'Kiran', 'Kanchan', 'kirankanchan@gmail.com', 'Manager'),
-('milan23', 'Milan23', 'Milan', 'Barot', 'milanbarot@gmail.com', 'Receptionist'),
-('murtaza20', 'Murtaza123', 'Murtaza', 'Patrawala', 'murtaza.p@somaiya.edu', 'Customer'),
-('ojaskapre12', 'Ojas123', 'Ojas', 'Kapre', 'ojas.kapre@somaiya.edu', 'Receptionist'),
-('prithvi23', 'Prithvi23', 'Prithvi', 'Kunder', 'prithvikunder@gmail.com', 'Receptionist'),
-('priyeshpatel20', 'Priyesh123', 'Priyesh', 'Patel', 'priyesh.patel@somaiya.edu', 'Customer'),
-('rishik21', 'Rishik21', 'Rishik', 'Kabra', 'rishikkabra@gmail.com', 'Manager'),
-('shakti18', 'Shakti18', 'Shakti', 'Singh', 'shaktisingh@gmail.com', 'Customer'),
-('shifa10', 'Shifa10', 'Shifa', 'Khan', 'shifakhan@gmail.com', 'Customer'),
-('tanayraul01', 'Tanay123', 'Tanay', 'Raul', 'tanay.raul@somaiya.edu', 'Manager');
+INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `role`) VALUES
+('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', 8745632189, 'Customer'),
+('ankita03', 'Ankita03', 'Ankita', 'Tiwari', 'ankitatiwari@gmail.com', 7887459632, 'Receptionist'),
+('dharmik20', 'Dharmik20', 'Dharmik', 'Joshi', 'dharmikjoshi@gmail.com', 8552631457, 'Customer'),
+('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', 8745236984, 'Customer'),
+('harshpatel23', 'Harsh123', 'Harsh', 'Patel', 'harsh.patel4@somaiya.edu', 4521478569, 'Customer'),
+('jash24', 'Jash24', 'Jash', 'Mehta', 'jashmehta@gmail.com', 8569996587, 'Customer'),
+('kiran08', 'Kiran08', 'Kiran', 'Kanchan', 'kirankanchan@gmail.com', 7415523654, 'Manager'),
+('milan23', 'Milan23', 'Milan', 'Barot', 'milanbarot@gmail.com', 7854412541, 'Receptionist'),
+('murtaza20', 'Murtaza123', 'Murtaza', 'Patrawala', 'murtaza.p@somaiya.edu', 9855589642, 'Customer'),
+('ojaskapre12', 'Ojas123', 'Ojas', 'Kapre', 'ojas.kapre@somaiya.edu', 7441252365, 'Receptionist'),
+('prithvi23', 'Prithvi23', 'Prithvi', 'Kunder', 'prithvikunder@gmail.com', 7741235698, 'Receptionist'),
+('priyeshpatel20', 'Priyesh123', 'Priyesh', 'Patel', 'priyesh.patel@somaiya.edu', 8546321478, 'Customer'),
+('rishik21', 'Rishik21', 'Rishik', 'Kabra', 'rishikkabra@gmail.com', 9632565255, 'Manager'),
+('shakti18', 'Shakti18', 'Shakti', 'Singh', 'shaktisingh@gmail.com', 7856932145, 'Customer'),
+('shifa10', 'Shifa10', 'Shifa', 'Khan', 'shifakhan@gmail.com', 5225698745, 'Customer'),
+('tanayraul01', 'Tanay123', 'Tanay', 'Raul', 'tanay.raul@somaiya.edu', 1236547896, 'Manager');
 
 -- --------------------------------------------------------
 
@@ -112,23 +113,6 @@ CREATE TABLE `restaurant` (
 
 INSERT INTO `restaurant` (`rest_id`, `rest_name`, `mgr_id`, `rec_id`, `appr_cost`, `start_time`, `end_time`, `street`, `city`, `state`, `pincode`) VALUES
 (1, 'Dominos', 'kiran08', 'milan23', 300, '09:00:00', '10:00:00', 'Achole Road', 'Kurla', 'Maharashtra', 400015);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `restaurants`
---
-
-CREATE TABLE `restaurants` (
-  `rest_id` int(11) NOT NULL,
-  `rest_name` varchar(20) NOT NULL,
-  `mgr_id` varchar(15) NOT NULL,
-  `rec_id` varchar(15) NOT NULL,
-  `appr_cost` int(11) NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
-  `address` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 -- --------------------------------------------------------
 
@@ -231,13 +215,11 @@ ALTER TABLE `tables`
 --
 ALTER TABLE `reservations`
   MODIFY `resv_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
   MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Constraints for dumped tables
 --
