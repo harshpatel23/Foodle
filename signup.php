@@ -5,29 +5,23 @@ function addcss(){
     echo '<link rel="stylesheet" type="text/css" href="styles/forms.css">';
 }?>
 
-    <form id="signup-form">
+    <form id="signup-form" name="signup" method="post">
         <div class="form-group">
-            <label for="fname">First Name:</label>
-            <input type="text" class="form-control" id="fname" autofocus=true required>
+            <label for="fname">First Name:<span style="color : red"> * </span></label>
+            <input type="text" class="form-control" name="fname" autofocus=true required>
             <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" id="lname">
-            <label for="contact">Mobile no.:</label>
-            <input type="text" class="form-control" id="contact" required>
-            <label>Address:</label>
-            <input type="text" class="form-control" id="bldg" placeholder="Room no./Building">
-            <input type="text" class="form-control" id="street" placeholder="Street">
-            <input type="text" class="form-control" id="locality" placeholder="Locality">
-            <input type="text" class="form-control" id="city" placeholder="City">
-            <input type="text" class="form-control" id="pin" placeholder="Pincode">
+            <input type="text" class="form-control" name="lname">
+            <label for="contact">Mobile no.: <span style="color : red"> * </span></label>
+            <input type="text" class="form-control" name="contact" required>
             <label for="email">Email-Id:</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
-            <label for="fname">Username:</label>
-            <input type="text" class="form-control" id="uname" placeholder = "6-10 Characters">
-            <label for="pwd">Password</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Min 8 characters">
-            <label for="pwd1">Confirm Password</label>
-            <input type="password" class="form-control" id="pwd1" placeholder="Retype password">
-            <button type="submit" class="btn btn-primary" style="font-size: 13px">Submit</button>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
+            <label for="fname">Username:<span style="color : red"> * </span></label>
+            <input type="text" class="form-control" name="uname" placeholder = "6-10 Characters" required>
+            <label for="pwd">Password<span style="color : red"> * </span></label>
+            <input type="password" class="form-control" name="pwd" placeholder="Min 8 characters" required>
+            <label for="pwd1">Confirm Password<span style="color : red"> * </span></label>
+            <input type="password" class="form-control" name="pwd1" placeholder="Retype password" required>
+            <button type="submit" class="btn btn-primary" style="font-size: 13px" formaction="sghdsasdhffsdfjsdftysdfysfjsdfsdftsdjfyjs.php">Submit</button>
         </div>
         
     </form>
