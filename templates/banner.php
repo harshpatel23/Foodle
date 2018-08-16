@@ -9,7 +9,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="images/la.png" alt="Chania">
+      <img src="images/offer.png" alt="Chania">
       <div class="carousel-caption">
         <h3>Los Angeles</h3>
         <p>LA is always so much fun!</p>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="item">
-      <img src="images/ch.png" alt="Chicago">
+      <img src="images/firangi_bake.png" alt="Chicago">
       <div class="carousel-caption">
         <h3>Chicago</h3>
         <p>Thank you, Chicago!</p>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="item">
-      <img src="images/ny.png" alt="New York">
+      <img src="images/keventers.png" alt="New York">
       <div class="carousel-caption">
         <h3>New York</h3>
         <p>We love the Big Apple!</p>
