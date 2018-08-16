@@ -9,11 +9,11 @@
 		<form role="form" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" required>
+              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name = "usrname" required>
             </div>
             <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-			  <input type="password" class="form-control" id="pwd" placeholder="Enter password" style="font-size:13px" required>
+              <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+			  <input type="password" class="form-control" name="pwd" placeholder="Enter password" style="font-size:13px" required>
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
