@@ -1,5 +1,4 @@
 
-
 <div id="loginmodal" class="modal fade" role="dialog" style="font-size:15px;">
 	<div class="modal-content" style="width:60%; margin:auto; padding:20px;">
 	<div class="modal-header">
@@ -7,10 +6,10 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
 	<div class="modal-body" style="padding:40px 50px;">
-		<form role="form">
+		<form role="form" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" style="font-size:13px" required>
+              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" required>
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
@@ -20,7 +19,7 @@
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div>
 			<p><a href="#">Forgot Password?</a></p>
-              <button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;"><span class="glyphicon glyphicon-off"></span> Login</button>
+              <button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
 			
 
           </form>
