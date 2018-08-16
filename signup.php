@@ -8,11 +8,11 @@ function addcss(){
     <form id="signup-form">
         <div class="form-group">
             <label for="fname">First Name:</label>
-            <input type="text" class="form-control" id="fname" autofocus=true>
+            <input type="text" class="form-control" id="fname" autofocus=true required>
             <label for="lname">Last Name:</label>
             <input type="text" class="form-control" id="lname">
             <label for="contact">Mobile no.:</label>
-            <input type="text" class="form-control" id="contact">
+            <input type="text" class="form-control" id="contact" required>
             <label>Address:</label>
             <input type="text" class="form-control" id="bldg" placeholder="Room no./Building">
             <input type="text" class="form-control" id="street" placeholder="Street">
@@ -21,6 +21,8 @@ function addcss(){
             <input type="text" class="form-control" id="pin" placeholder="Pincode">
             <label for="email">Email-Id:</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com">
+            <label for="fname">Username:</label>
+            <input type="text" class="form-control" id="uname" placeholder = "6-10 Characters">
             <label for="pwd">Password</label>
             <input type="password" class="form-control" id="pwd" placeholder="Min 8 characters">
             <label for="pwd1">Confirm Password</label>

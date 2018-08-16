@@ -11,7 +11,7 @@
         height: 200px;
         border-radius: 8px;
         text-align: center;
-        background-color: beige;
+        background-color: white;
     }
     
     #more_button{
