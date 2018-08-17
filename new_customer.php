@@ -18,8 +18,8 @@ $Email = $_POST['email'];
 $Uname = $_POST['uname'];
 $Pwd = $_POST['pwd'];
 
-$sql = "INSERT INTO person (user_id,pwd,fname, lname,email,contact)
-VALUES ('$Uname', '$Pwd', '$Fname', '$Lname', '$Email', '$Contact')";
+$sql = "INSERT INTO person (user_id,pwd,fname, lname,email,contact, role)
+VALUES ('$Uname', '$Pwd', '$Fname', '$Lname', '$Email', '$Contact', 'Customer')";
 
 if (mysqli_query($conn, $sql)) {
     echo "Account Created Successfully. Please Login to continue";

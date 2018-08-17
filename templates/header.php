@@ -19,9 +19,9 @@
 
 		<title>Foodle - Search,Reserve-Enjoy</title>
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
-		<script src="scripts/validateform.js"></script>
 		<?php addcss(); ?>
+		<script src="scripts/signup-val.js"></script>
 	</head>
 <body>
-    
+
 
