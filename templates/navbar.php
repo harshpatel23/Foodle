@@ -1,4 +1,19 @@
 <style>
+	
+	#logbtn{
+	background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+	}
+	#dropdown-menu{
+		text-align: center;
+		font-size: 15px;
+		width: 100px;
+	}
+	
     #search-bar{
         width: 300px;
         border-color: orange;
@@ -35,7 +50,7 @@
         font-size: 20px;
         text-align: center;
     }
-
+	
     #icon{
         font-size:20px;
         text-align:center;
@@ -66,7 +81,20 @@
       <?php 
 		  if(isset($_SESSION['uname'])){
 		  echo '<li class="nav-item" id="nav-item">
-        <a class="nav-link" href="logout.php">Logout<span class="fa fa-lock" id="icon"></span></a>
+        <div class="dropdown">
+	<button class="btn" data-toggle="dropdown" type="button" id="logbtn"><i class="fa fa-bars" id="logicon"></i></button>
+			<ul class="dropdown-menu" id=="dropdown-menu">
+				<li style="font-size:15px">Signed in as <span style="color:blue;">';
+		echo $_SESSION['uname'];
+		echo '</span></li>
+				<li class="divider"></li>
+				<li><a href="">Link 1</a></li>
+				<li><a href="">Link 2</a></li>
+				<li><a href="">Link 3</a></li>
+				<li class="divider"></li>
+				<li><a href="logout.php">Logout</a></li>
+			</ul>
+	</div>
       </li>';
 		  }
 		  else{
@@ -83,3 +111,9 @@
 </nav>
 
 <?php include 'login.php' ?>
+
+
+
+
+
+
