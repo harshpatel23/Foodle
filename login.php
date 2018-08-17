@@ -9,7 +9,7 @@
 		<form role="form" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name = "usrname" required>
+              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name = "usrname" required autofocus>
             </div>
             <div class="form-group">
               <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
