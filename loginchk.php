@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,13 +17,21 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 0) {
  
     $data = mysqli_fetch_assoc($result);
-    if ($data["pwd"] == $passwd) {
-    	$_SESSION["uname"] = $uname;
-        header("Location: index.php");
-        die();
+    if ($data['pwd'] == $passwd) {
+		$_SESSION['uname'] = $uname;
+        header('Location: index.php');
+        exit;
     }
+	else{
+		echo 'incorrect password';
+		header('refresh:3; index.php');
+		die();
+	}
+		
     
 } else {
-    echo "0 results";
+    echo 'incorrect username';
+	header('refresh:3; index.php');
+	die();
 }
 ?>
