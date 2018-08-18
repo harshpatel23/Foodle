@@ -19,7 +19,7 @@ if (mysqli_num_rows($result) != 0) {
     $data = mysqli_fetch_assoc($result);
     if ($data['pwd'] == $passwd) {
 		$_SESSION['uname'] = $uname;
-		$_SESSION['role'] = $data['role'];
+		$_SESSION['role'] = $data['role'];	
         header('Location: index.php');
         exit;
     }

@@ -1,17 +1,27 @@
 <style>
 	
 	#logbtn{
-	background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
+		background-color: #343a40;
+		border: none;
+		color: #cccccc;
+		padding: 5px;
+		font-size: 12px;
+		cursor: pointer;
 	}
-	#dropdown-menu{
-		text-align: center;
-		font-size: 15px;
-		width: 100px;
+	#logbtn:hover{
+		color: orange;
+	}
+	#logicon{
+		padding: 5px;
+		background-color: #343a40;
+	}
+	.dropdown-menu{
+		text-align: left;
+		font-size: 13px;
+		width: auto;
+	}
+	.dropdown-header{
+		font-size: 14px;
 	}
 	
     #search-bar{
@@ -20,6 +30,7 @@
         font-size: 15px;
         border-radius: 10px;
         color: black;
+		background-color: floralwhite;
     }
     #search-bar:focus{
         border-width: 2px;
@@ -30,11 +41,12 @@
         border-radius: 10px;
         font-size: 15px;
         width:70px;
-        background-color: white;
+        background-color: floralwhite;
         color: black;
     }
     #search-button:hover{
         border-width:2px;
+		background-color: navajowhite;
     }
    #navbar{
         top: 0;
@@ -42,7 +54,6 @@
         width: 100%;
         font-size: 20;
         /*padding: 20px;*/
-        border-color: blue;
         background: red;
         border-radius: 0px;
     }
@@ -51,18 +62,24 @@
         text-align: center;
     }
 	
+	#nav-link{
+		color: #cccccc;
+	}
+	#nav-link:hover{
+		color: orange;
+	}
+	
     #icon{
         font-size:20px;
         text-align:center;
         height: 20px;
         background: none;
-        padding:0px;;
-        
+        padding:0px;
     }
 </style>
 
 
-<nav class="navbar navbar-expand-xl navbar-light bg-light" id="navbar">
+<nav class="navbar navbar-expand-md navbar-light bg-dark" id="navbar">
   <a class="navbar-brand" href="index.php"><img src="images/Foodle.png" height="50"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -75,7 +92,7 @@
     </form>
 	  <ul class="navbar-nav ml-auto mt-2 mt-xl-0">
       <li class="nav-item" id="nav-item">
-        <a class="nav-link" href="#">Reserve<i class="fa fa-clock-o" id="icon"></i>
+        <a class="nav-link" id="nav-link" href="#">Reserve<i class="fa fa-clock-o" id="icon"></i>
 <span class="sr-only">(current)</span></a>
       </li>
       <?php 
@@ -83,26 +100,28 @@
 		  echo '<li class="nav-item" id="nav-item">
         <div class="dropdown">
 	<button class="btn" data-toggle="dropdown" type="button" id="logbtn"><i class="fa fa-bars" id="logicon"></i></button>
-			<ul class="dropdown-menu" id=="dropdown-menu">
-				<li style="font-size:15px">Signed in as <span style="color:blue;">';
+			<div class="dropdown-menu dropdown-menu-right">
+				<h3 class="dropdown-header">Signed in as <span style="color:blue">';
 		echo $_SESSION['uname'];
-		echo '</span></li>
-				<li class="divider"></li>
-				<li><a href="">Link 1</a></li>
-				<li><a href="">Link 2</a></li>
-				<li><a href="">Link 3</a></li>
-				<li class="divider"></li>
-				<li><a href="logout.php">Logout</a></li>
-			</ul>
+		echo '</span></h3>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Profile</a>
+				<a class="dropdown-item" href="#">Reservations</a>
+				<a class="dropdown-item" href="#">Favourites</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Help</a>
+				<a class="dropdown-item" href="logout.php">Logout</a>
+				
+			</div>
 	</div>
       </li>';
 		  }
 		  else{
 			  echo '<li class="nav-item" id="nav-item">
-        <a class="nav-link" data-toggle="modal" href="#loginmodal">Login<i class="fa fa-lock" id="icon"></i></a>
+        <a class="nav-link" id="nav-link" data-toggle="modal" href="#loginmodal">Login<i class="fa fa-lock" id="icon"></i></a>
 		</li>
 	<li class="nav-item" id="nav-item">
-        <a class="nav-link" href="signup.php">Signup<span class="fa fa-user" id="icon"></span></a>
+        <a class="nav-link" id="nav-link" href="signup.php">Signup<span class="fa fa-user" id="icon"></span></a>
       </li>';
 		  }
 		  ?>
@@ -114,6 +133,5 @@
 
 
 
-
-
+ 
 
