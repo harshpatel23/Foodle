@@ -105,7 +105,7 @@
 		echo $_SESSION['uname'];
 		echo '</span></h3>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Profile</a>
+				<a class="dropdown-item" href="profile_view.php">Profile</a>
 				<a class="dropdown-item" href="#">Reservations</a>
 				<a class="dropdown-item" href="#">Favourites</a>
 				<div class="dropdown-divider"></div>

@@ -1,4 +1,4 @@
-function Validate_form(){
+function Validate_form() {
             var f_name = document.forms["signup"]["fname"].value;
             var l_name = document.forms["signup"]["lname"].value;
             var contact_no = document.forms["signup"]["contact"].value;
@@ -60,7 +60,7 @@ function Validate_form(){
 				}
                 else{
                      alert("Contact must contain only numeric characters");
-                        contact.focus();
+                        contact_no.focus();
                         return false;
                     }
                 
