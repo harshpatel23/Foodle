@@ -22,11 +22,16 @@ if (!$conn) {
 
 $user = $_SESSION['uname'];
 
-$sql = "Select * from dbname.person where uname = $user";
-$result = mysql_query($sql) or die (mysql_error ());;
-while ($row = mysql_fetch_assoc ($result)){}
+$sql = "SELECT * from person where user_id = '$user'";
+
+
+$result = mysqli_query($conn, $sql);
+
+$row = mysqli_fetch_assoc($result);
 
 mysqli_close($conn);
+
+
 ?>
 
 <form id="profile" action="profile_view.php"name="profile" method="post">
