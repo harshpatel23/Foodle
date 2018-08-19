@@ -34,21 +34,21 @@ mysqli_close($conn);
 
 ?>
 
-<form id="profile" action="profile_view.php"name="profile" method="post">
-        <div class="form-group">
+<form id="profile" action="profile_view.php"name="profile" method="post" style = "font-size: 15px; width: 500px; margin: 0 auto">
+        <div class="form-group" style = "margin:10px 0px 10px; font-size: inherit;">
             <label for="fname">First Name:<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" name="fname" value="<?php echo $row ['fname']; ?> ">
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="fname" value="<?php echo $row ['fname']; ?> " readonly>
             <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" name="lname" value="<?php echo $row ['lname']; ?> ">
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="lname" value="<?php echo $row ['lname']; ?> " readonly>
             <label for="contact">Mobile no.: <span style="color : red"> * </span></label>
-            <input type="text" class="form-control" name="contact" value="<?php echo $row ['contact']; ?> ">
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="contact" value="<?php echo $row ['contact']; ?> " readonly>
             <label for="email">Email-Id:</label>
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="<?php echo $row ['email']; ?> ">
+            <input type="email" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="email" aria-describedby="emailHelp" value="<?php echo $row ['email']; ?> " readonly>
             <label for="fname">Username:<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" name="uname" value="<?php echo $row ['user_id']; ?> ">
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="uname" value="<?php echo $row ['user_id']; ?> " readonly>
             <label for="pwd">Password<span style="color : red"> * </span></label>
-            <input type="password" class="form-control" name="pwd" value="<?php echo $row ['pwd']; ?> ">
-            <button type="submit" class="btn btn-primary" style="font-size: 13px">Edit</button>
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="pwd" value="<?php echo $row ['pwd']; ?> " readonly>
+            <button type="submit" class="btn btn-primary" style="font-size: 13px">Edit Info</button>
         </div>
         
 </form>
