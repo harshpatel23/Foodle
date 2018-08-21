@@ -9,8 +9,8 @@ function addcss(){
 
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "phpmyadmin";
+$password = "password";
 $dbname = "foodle";
 
 // Create connection
