@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "phpmyadmin";
-$password = "password";
+$username = "root";
+$password = "";
 $database_name = "foodle";
 
 $uname = $_POST["usrname"];

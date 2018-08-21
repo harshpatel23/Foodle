@@ -20,7 +20,7 @@
 		<title>Foodle - Search,Reserve-Enjoy</title>
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
 		<?php addcss(); ?>
-		<script src="scripts/signup-val.js"></script>
+		<script src="scripts/set.js"></script>
 	</head>
 <body>
 

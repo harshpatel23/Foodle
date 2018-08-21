@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "phpmyadmin";
-$password = "password";
+$username = "root";
+$password = "";
 $dbname = "foodle";
 
 // Create connection
