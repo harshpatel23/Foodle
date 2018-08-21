@@ -39,16 +39,16 @@ mysqli_close($conn);
             <label for="fname">First Name:<span style="color : red"> * </span></label>
             <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="fname" id="fname" value="<?php echo $row ['fname']; ?> " readonly>
             <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="lname" value="<?php echo $row ['lname']; ?> " readonly>
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="lname" id="lname" value="<?php echo $row ['lname']; ?> " readonly>
             <label for="contact">Mobile no.: <span style="color : red"> * </span></label>
-            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="contact" value="<?php echo $row ['contact']; ?> " readonly>
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="contact" id="contact" value="<?php echo $row ['contact']; ?> " readonly>
             <label for="email">Email-Id:</label>
-            <input type="email" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="email" aria-describedby="emailHelp" value="<?php echo $row ['email']; ?> " readonly>
+            <input type="email" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="email" id="email" aria-describedby="emailHelp" value="<?php echo $row ['email']; ?> " readonly>
             <label for="fname">Username:<span style="color : red"> * </span></label>
             <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="uname" value="<?php echo $row ['user_id']; ?> " readonly>
             <label for="pwd">Password<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="pwd" value="<?php echo $row ['pwd']; ?> " readonly>
-            <button type="button" class="btn btn-primary" style="font-size: 13px" onclick="setEdit()">Edit Info</button>
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="pwd" id="pwd" value="<?php echo $row ['pwd']; ?> " readonly>
+            <button type="button" id = "edit" class="btn btn-primary" style="font-size: 13px" onclick="setEdit()" >Edit Info</button>
         </div>
         
 </form>
