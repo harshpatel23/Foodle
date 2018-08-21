@@ -28,7 +28,7 @@
         height: 750px;
         border-radius: 30px;
         padding: 20px;
-        background-color: orange;
+        background-color: #ffad33;
 ;
     }
     #column-right{
@@ -46,6 +46,18 @@
         font-size: 50px;
     }
     
+    p{
+        font-family:cursive;
+        font-size: 18px;
+    }
+    
+    .thumbnail{
+        border-color: darkorange;
+        border-width: 2px;
+        background-color: #ffe0b3;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 
 <div class="container" id="container">
@@ -57,13 +69,34 @@
             <h1>Top Rated!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/mcd.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href= "#">
+                            <img src="./images/mcd.jpg" alt="McDonalds" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>McDonalds</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/dominos.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/dominos.jpg" alt="Dominos" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Dominos</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/99pancakes.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/pizzahut.jpg" alt="PizzaHut" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>PizzaHut</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
@@ -73,13 +106,34 @@
              <h1>Nearby!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/aaram.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/utsav.jpg" alt="Utsav" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Utsav Hotel</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/utsav.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/kingbae.jpg" alt="KingBae" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Hotel King Bae</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/burger.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="">
+                            <img src="./images/aaram.jpg" alt="Aaram" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Hotel Aaram</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
@@ -89,13 +143,34 @@
             <h1>Favourites!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/kingbae.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/pasta.jpg" alt="Pasta" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Hard Rock Cafe</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel">
-                    <img src="./images/hotdog.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/hotdog.jpg" alt="Hotdog" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Hot Dog Center</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-3" id = "hotel" >
-                    <img src="./images/dosa.jpg" align="center" height="200" width="224.83">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/chinese.jpg" alt="Chinese" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>Chi Chi Restaurant</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-1" id = "more_button" >
                     <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
