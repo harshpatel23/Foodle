@@ -21,6 +21,8 @@
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
 		<?php addcss(); ?>
 		<script src="scripts/set.js"></script>
+		<script src="scripts/sup.js"></script>
+
 	</head>
 <body>
 

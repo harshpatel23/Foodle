@@ -1,4 +1,4 @@
 function setEdit()
 {
-	document.getElementById('fname').value='button click kiya';
+	document.getElementById("fname").contentEditable=true;
 }
