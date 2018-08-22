@@ -25,7 +25,6 @@
 						echo $_SESSION['temp'];
 						echo "'";
 					}
-					unset($_SESSION['error']);
 				}
 				else{
 					echo 'autofocus';
@@ -50,6 +49,7 @@
 				if($_SESSION['error']=='password')
 					echo '<p style="color: red">Invalid password!</p>';
 				unset($_SESSION['error']);
+				unset($_SESSION['temp']);
 			} ?>
 
 			<div class="checkbox">
