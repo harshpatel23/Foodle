@@ -1,11 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "foodle";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include 'templates/db-con.php';
+
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

@@ -1,15 +1,7 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database_name = "foodle";
 
-$uname = $_POST["usrname"];
-$passwd = $_POST["pwd"];
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database_name);
+include "templates/db-con.php";
 
 $sql = "SELECT pwd, role FROM person where user_id = '$uname'";
 
