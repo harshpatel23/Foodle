@@ -11,13 +11,13 @@ function addcss(){
         <div class="form-group">
 
             <label for="fname">First Name:<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" name="fname" autofocus=true required pattern="[a-zA-z]+$">
+            <input title="only letters allowed" type="text" class="form-control" name="fname" autofocus=true required pattern="[a-zA-z]+$">
 
             <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" name="lname" pattern="[A-Za-z]+$">
+            <input title="only letters allowed" type="text" class="form-control" name="lname" pattern="[A-Za-z]+$">
 
             <label for="contact">Mobile no.: <span style="color : red"> * </span></label>
-            <input type="text" class="form-control" name="contact" required pattern="[0-9]{10}$">
+            <input title="10 digit mobile number" type="text" class="form-control" name="contact" required pattern="[0-9]{10}$">
 
             <label for="email">Email-Id:</label>
             <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
