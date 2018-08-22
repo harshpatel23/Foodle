@@ -17,7 +17,7 @@
 		<img class="mx-auto d-block" src="images/Foodle.png" alt="logo" width="200" height=auto>
 		<h1 class="h3 mb-3 font-weight-normal">Please sign in to continue</h1>
 			<div class="form-group">
-			  <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name="usrname" id="usrname" required autofocus
+			  <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name="usrname" id="usrname" required 
 			  <?php 
  				if(isset($_SESSION['error'])){
 					if($_SESSION['error']=='password'){
@@ -25,6 +25,10 @@
 						echo $_SESSION['temp'];
 						echo "'";
 					}
+					unset($_SESSION['error']);
+				}
+				else{
+					echo 'autofocus';
 				}
 			   ?>
 			  >
@@ -44,15 +48,18 @@
 			<?php 
 			if(isset($_SESSION['error'])){
 				if($_SESSION['error']=='password')
-					echo '<p style="color: red">Invalid password!</p>';	
+					echo '<p style="color: red">Invalid password!</p>';
+				unset($_SESSION['error']);
 			} ?>
 
 			<div class="checkbox">
 			  <label><input type="checkbox" value="" checked>Remember me</label>
 			</div>
 		  	<button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
-
-		  	<p>New user? <a href="signup.php">Signup</a></p>
+		  	<div id="foot" style="padding: 15px">
+		  	<a href="" style="float: left">Forgot password</a>
+		  	<span style="float: right">New user? <a href="signup.php">Sign up</a></span>
+		  	</div>
 		  </form>
 		  </div>
 
