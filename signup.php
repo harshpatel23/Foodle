@@ -7,7 +7,7 @@ function addcss(){
     echo '<link rel="stylesheet" type="text/css" href="styles/forms.css">';
 }?>
 
-    <form id="signup-form" action="new_customer.php"name="signup" onsubmit="return validateForm()" method="post">
+    <form id="signup-form" action="new_customer.php" name="signup" onsubmit="return validateForm()" method="post">
         <div class="form-group">
 
             <label for="fname">First Name:<span style="color : red"> * </span></label>

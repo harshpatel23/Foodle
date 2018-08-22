@@ -3,6 +3,9 @@ session_start();
 
 include "templates/db-con.php";
 
+$uname = $_POST["usrname"];
+$passwd = $_POST["pwd"];
+
 $sql = "SELECT pwd, role FROM person where user_id = '$uname'";
 
 $result = mysqli_query($conn, $sql);
@@ -16,15 +19,16 @@ if (mysqli_num_rows($result) != 0) {
         exit;
     }
 	else{
-		echo 'incorrect password';
-		header('refresh:3; index.php');
+		$_SESSION['temp'] = $uname;
+		$_SESSION['error'] = 'password';
+		header('Location: login.php');
 		exit;
 	}
 		
     
 } else {
-    echo 'incorrect username';
-	header('refresh:3; index.php');
+	$_SESSION['error'] = 'username';
+	header('Location: login.php');
 	exit;
 }
 ?>

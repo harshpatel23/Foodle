@@ -118,7 +118,7 @@
 		  }
 		  else{
 			  echo '<li class="nav-item" id="nav-item">
-        <a class="nav-link" id="nav-link" data-toggle="modal" href="#loginmodal">Login<i class="fa fa-lock" id="icon"></i></a>
+        <a class="nav-link" id="nav-link" href="login.php">Login<i class="fa fa-lock" id="icon"></i></a>
 		</li>
 	<li class="nav-item" id="nav-item">
         <a class="nav-link" id="nav-link" href="signup.php">Signup<span class="fa fa-user" id="icon"></span></a>
@@ -129,7 +129,6 @@
   </div>
 </nav>
 
-<?php include 'login.php' ?>
 
 
 
