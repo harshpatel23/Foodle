@@ -19,15 +19,16 @@ if (mysqli_num_rows($result) != 0) {
         exit;
     }
 	else{
-		echo 'incorrect password';
-		header('refresh:3; index.php');
+		$_SESSION['temp'] = $uname;
+		$_SESSION['error'] = 'password';
+		header('Location: login.php');
 		exit;
 	}
 		
     
 } else {
-    echo 'incorrect username';
-	header('refresh:3; index.php');
+	$_SESSION['error'] = 'username';
+	header('Location: login.php');
 	exit;
 }
 ?>

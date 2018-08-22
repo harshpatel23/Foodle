@@ -1,31 +1,44 @@
-<div id="loginmodal" class="modal fade" role="dialog" style="font-size:15px;">
-	<div class="modal-content" style="width:60%; margin:auto; padding:20px;">
-	<div class="modal-header">
-		<h2 class="modal-title" style="margin:auto; font-size:200%">Login<span class="fa fa-lock" style="background-color:white;"></span></h2>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-	<div class="modal-body" style="padding:40px 50px;">
-		<form role="form" method="post">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name = "usrname" required autofocus>
-            </div>
-            <div class="form-group">
-              <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-			  <input type="password" class="form-control" name="pwd" placeholder="Enter password" style="font-size:13px" required>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-            <p id="alertpara" style="color: red"></p>
-			      <p><a href="#">Forgot Password?</a></p>
-              <button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">      
-          <p>Not a member? <a href="signup.php">Sign Up</a></p>
-  
-        </div>
-      </div>
- </div>
+<?php 
+	session_start();
+	include 'templates/header.php';
+	include 'templates/navbar.php';
 
+	function addcss()
+	{
+		echo '<link rel="stylesheet" type="text/css" href="styles/login.css">';
+	}
+ ?>
+
+	<div class="form-group mx-auto text-center" style="width: 600px">
+	<form class="form-signin" id="login-form" method="post">
+		<img class="mx-auto d-block" src="images/Foodle.png" alt="logo" width="200" height=auto>
+		<h1 class="h3 mb-3 font-weight-normal">Please sign in to continue</h1>
+			<div class="form-group">
+			  <input type="text" class="form-control"  placeholder="Enter username" style="font-size:13px" name = "usrname" required autofocus>
+			</div>
+
+			<?php 
+			if(isset($_SESSION['error'])){
+				if($_SESSION['error']=='username')
+					echo '<p style="color: red">Invalid username!</p>';	
+			} ?>
+			
+			<div class="form-group">
+			  <input type="password" class="form-control" name="pwd" placeholder="Enter password" style="font-size:13px" required>
+			</div>
+
+			<?php 
+			if(isset($_SESSION['error'])){
+				if($_SESSION['error']=='password')
+					echo '<p style="color: red">Invalid password!</p>';	
+			} ?>
+
+			<div class="checkbox">
+			  <label><input type="checkbox" value="" checked>Remember me</label>
+			</div>
+
+		  	<button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
+		  </form>
+		  </div>
+
+<?php include 'templates/footer.php'; ?>
