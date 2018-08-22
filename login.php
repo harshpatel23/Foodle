@@ -1,4 +1,3 @@
-
 <div id="loginmodal" class="modal fade" role="dialog" style="font-size:15px;">
 	<div class="modal-content" style="width:60%; margin:auto; padding:20px;">
 	<div class="modal-header">
@@ -18,10 +17,9 @@
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div>
-			<p><a href="#">Forgot Password?</a></p>
+            <p id="alertpara" style="color: red"></p>
+			      <p><a href="#">Forgot Password?</a></p>
               <button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
-			
-
           </form>
         </div>
         <div class="modal-footer">      
