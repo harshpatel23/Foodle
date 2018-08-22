@@ -3,6 +3,9 @@ session_start();
 
 include "templates/db-con.php";
 
+$uname = $_POST["usrname"];
+$passwd = $_POST["pwd"];
+
 $sql = "SELECT pwd, role FROM person where user_id = '$uname'";
 
 $result = mysqli_query($conn, $sql);
