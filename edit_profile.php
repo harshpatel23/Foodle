@@ -23,5 +23,5 @@ if (mysqli_query($conn, $sql)) {
 }
 
 mysqli_close($conn);
-header("refresh:3; url=index.php")
+header("refresh:1; url=profile_view.php")
 ?>
