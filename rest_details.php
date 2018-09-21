@@ -32,7 +32,8 @@ function addcss(){
             <a class="nav-link" href="#">Menu</a>
             <div class="collapse" id="menu-categories">
           <div class="list-group">
-            <a href="" class="list-group-item list-group-item-action">Starters</a>
+              <!--  ** dynamic list **        -->
+            <a href="" class="list-group-item list-group-item-action">Starters</a>  
             <a href="" class="list-group-item list-group-item-action">Main course</a>
             <a href="" class="list-group-item list-group-item-action">Deserts</a>
             <a href="" class="list-group-item list-group-item-action">Drinks</a>
@@ -48,16 +49,6 @@ function addcss(){
     </ul>
     
     </nav>
-        
-</div>
-        <div class="collapse" id="collapseExample">
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">Starters</a>
-            <a href="#" class="list-group-item list-group-item-action">Main course</a>
-            <a href="#" class="list-group-item list-group-item-action">Deserts</a>
-            <a href="#" class="list-group-item list-group-item-action">Drinks</a>
-          </div>
-        </div>
 <div class="col-sm-10">
    
     
