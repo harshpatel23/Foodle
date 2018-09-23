@@ -1,0 +1,51 @@
+#side-nav{
+	border-right-style: solid;
+	border-width: thin;
+	border-color: lightgray;
+	padding-right: 0px;
+}
+
+#side-nav-item{
+	text-align: right;
+	font-size: 13px;
+	padding: 5px;
+	border-right-style: solid;
+	border-color: white;
+}
+
+#side-nav-item:hover{
+	border-right-style: solid;
+	border-color: orange;
+}
+
+#side-nav-item:focus{
+	border-right-style: solid;
+	border-color: orange;
+}
+
+#side-nav-link{
+	color: inherit;
+}
+#side-nav-link:hover{
+	text-decoration: none;
+}
+
+/*#side-nav-link:active{
+	color: orange;
+	border-color: orange;
+}*/
+
+#side-nav-link:visited{
+	text-decoration: none;
+}
+
+#side-nav-link:focus{
+	color: darkorange;
+	text-decoration: none;
+	outline: 0px;
+}
+
+#rating-star{
+	font-size: 18px;
+	padding: 1px;
+}
