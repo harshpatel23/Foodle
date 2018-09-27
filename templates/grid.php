@@ -4,8 +4,8 @@
         max-width: 100%;
     }
     #hotel{
-        margin-left: 2.11%;
-        margin-right: 2.11%;
+        margin-left: 0%;
+        margin-right: 0%;
         margin-top:1%;
         margin-bottom: 1%;
         height: 200px;
@@ -62,10 +62,10 @@
 
 <div class="container" id="container">
    <div class="row" id="outer-row">
-        <div class="col-sm-3" id = "column-left">
+        <div class="col-sm-2" id = "column-left">
             <h2>Find what you want!</h2>
         </div>
-        <div class="col-sm-8" id = "column-right">
+        <div class="col-sm-9" id = "column-right">
             <h1>Top Rated!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
@@ -98,9 +98,17 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-1" id = "more_button" >
-                    <a href="#"><i class="material-icons" id="icon_more">chevron_right</i></a>
+                <div class="col-sm-3" id = "hotel" >
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="./images/pizzahut.jpg" alt="PizzaHut" style="width:100%; height: 130px;">
+                            <div class="caption">
+                                <p>PizzaHut</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+                
             </div>
             
              <h1>Nearby!</h1>
