@@ -7,7 +7,6 @@ function check_fname(){
         }
 		else{
 			document.getElementById("fname").setAttribute("style","border-color:red;border-width:1px");
-            document.getElementById("fname").focus();  
 			return false;
         }
 }
@@ -21,7 +20,6 @@ function check_lname(){
         }
 		else{
 			document.getElementById("lname").setAttribute("style","border-color:red;border-width:1px");
-            document.getElementById("lname").focus();  
 			return false;
         }
 }
@@ -37,13 +35,11 @@ function check_contact(){
 			}
 			else{
 				document.getElementById("contact").setAttribute("style","border-color:red;border-width:1px");
-                document.getElementById("contact").focus();  
                 return false;
 			}
         }
         else{
 			 document.getElementById("contact").setAttribute("style","border-color:red;border-width:1px");
-             document.getElementById("contact").focus();  
              return false;
 			}
 }
@@ -58,13 +54,11 @@ function check_uname(){
                 return true;			}
 			else{
 				document.getElementById("uname").setAttribute("style","border-color:red;border-width:1px");
-                document.getElementById("uname").focus();  
                 return false;
 			}
 		}
 		else{
 			document.getElementById("uname").setAttribute("style","border-color:red;border-width:1px");
-            document.getElementById("uname").focus();  
             return false;
 		}
 }
@@ -92,4 +86,15 @@ function check_pwd1(){
             document.getElementById("pwd1").setAttribute("style","border-color:red;border-width:1px");
             return false;
         }
+}
+
+function validateForm(){
+	if(check_fname())
+		if(check_lname())
+			if(check_contact())
+				if(check_uname())
+					if(check_pwd())
+						if(check_pwd1())
+							return true;
+	return false;
 }
