@@ -24,18 +24,9 @@
         background-color: white;
     }
     
-    #more_button{
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top:1%;
-        margin-bottom: 1%;
-        height: 50px;
-        margin-top:75px;
-        align-content: center;
-    }
     #column-left{
         margin: 0.75%;
-        padding-top: 60px;
+        padding-top: 10px;
     }
     #column-right{
         margin: 0.75%;
@@ -68,6 +59,34 @@
         border-radius: 8px;
     }
 </style>
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: "#side-nav", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#side-nav a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 600, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
 
 <div class="container" id="container">
    <div class="row" id="outer-row">
@@ -81,10 +100,10 @@
 			<a href="#nearby" id="side-nav-link">Nearby</a>
 		</div>
 		<div id="side-nav-item">
-			<a href="#favourites" id="side-nav-link">favourites</a>
+			<a href="#favourites" id="side-nav-link">Favourites</a>
 		</div>
 		<div id="side-nav-item">
-			<a href="#" id="side-nav-link">jasbfjh jabds</a>
+			<a href="#" id="side-nav-link">Browse All</a>
 		</div>
             </div>
 		</div>

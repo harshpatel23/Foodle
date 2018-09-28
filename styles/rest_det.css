@@ -1,28 +1,23 @@
 #side-nav{
-	border-right-style: solid;
-	border-width: thin;
-	border-color: lightgray;
+    border:none;
     padding-right: 0px;
+    background-color: lightgray;
+    border-radius: 10px;
 }
 .sticky-top{
     padding-top: 60px;
 }
 #side-nav-item{
-	text-align: right;
-	font-size: 13px;
-	padding: 5px;
-	border-right-style: solid;
-	border-color: white;
+	text-align: center;
+    font-family: monospace;
+	font-size: 17px;
+	padding: 10px;
+    border:none;
 }
 
 #side-nav-item:hover{
-	border-right-style: solid;
-	border-color: orange;
-}
-
-#side-nav-item:focus{
-	border-right-style: solid;
-	border-color: orange;
+    border-radius:10px;
+    background-color: darkorange;
 }
 
 #side-nav-link{
