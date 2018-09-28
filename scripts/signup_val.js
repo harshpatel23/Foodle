@@ -6,7 +6,7 @@ function check_fname(){
             return true;
         }
 		else{
-			document.getElementById("fname").setAttribute("style","border-color:red;border-width:1px");
+			document.getElementById("fname").setAttribute("style","border-color:red;border-width:1px"); 
 			return false;
         }
 }
