@@ -31,6 +31,7 @@ function addcss(){
 
 <div class="row">
 	<div class="col-sm-2" id="side-nav">
+		<div class="sticky-top">
 		<div id="side-nav-item">
 			<a href="#" id="side-nav-link">Recommended</a>
 		</div>
@@ -56,6 +57,7 @@ function addcss(){
 		</div>
 		<div id="side-nav-item">
 			<a href="#" id="side-nav-link">jasbfjh jabds</a>
+		</div>
 		</div>
 		</div>
 	<div class="col-sm-10">rest-details</div>
