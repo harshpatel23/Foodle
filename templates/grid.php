@@ -78,9 +78,10 @@
    <div class="row" id="outer-row">
         <div class="col-sm-2" id = "column-left">
             <h2>Find what you want!</h2>
+            <a href="#nearby">jgdfdjfsjdf</a>
         </div>
         <div class="col-sm-9" id = "column-right">
-            <h1>Top Rated!</h1>
+            <h1 id="top-rated">Top Rated!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
                     <div class="thumbnail">
@@ -165,7 +166,7 @@
                 
             </div>
             
-             <h1>Nearby!</h1>
+             <h1 id="nearby">Nearby!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
                     <div class="thumbnail">
@@ -247,9 +248,9 @@
                         </a>
                     </div>
                 </div>
-               
+            </div>
             
-            <h1>Favourites!</h1>
+            <h1 id="favourites">Favourites!</h1>
             <div class="row" id="inner-row">
                 <div class="col-sm-3" id = "hotel" >
                     <div class="thumbnail">
@@ -331,7 +332,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         
 </div>
     
