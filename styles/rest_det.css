@@ -2,9 +2,11 @@
 	border-right-style: solid;
 	border-width: thin;
 	border-color: lightgray;
-	padding-right: 0px;
+    padding-right: 0px;
 }
-
+.sticky-top{
+    padding-top: 60px;
+}
 #side-nav-item{
 	text-align: right;
 	font-size: 13px;

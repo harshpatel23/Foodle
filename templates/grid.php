@@ -35,15 +35,10 @@
     }
     #column-left{
         margin: 0.75%;
-        height: 750px;
-        border-radius: 30px;
-        padding: 20px;
-        background-color: #ffe0b3;
-;
+        padding-top: 60px;
     }
     #column-right{
         margin: 0.75%;
-        height: 750px;
     }
     #outer-row{
         padding-top: 15px;
@@ -76,10 +71,24 @@
 
 <div class="container" id="container">
    <div class="row" id="outer-row">
-        <div class="col-sm-2" id = "column-left">
-            <h2>Find what you want!</h2>
-            <a href="#nearby">jgdfdjfsjdf</a>
-        </div>
+        <div class="col-sm-2 sticky-top" id="column-left">
+		<div class="sticky-top">
+            <div id="side-nav">
+		<div id="side-nav-item">
+			<a href="#top-rated" id="side-nav-link">Top Rated</a>
+		</div>
+		<div id="side-nav-item">
+			<a href="#nearby" id="side-nav-link">Nearby</a>
+		</div>
+		<div id="side-nav-item">
+			<a href="#favourites" id="side-nav-link">favourites</a>
+		</div>
+		<div id="side-nav-item">
+			<a href="#" id="side-nav-link">jasbfjh jabds</a>
+		</div>
+            </div>
+		</div>
+		</div>
         <div class="col-sm-9" id = "column-right">
             <h1 id="top-rated">Top Rated!</h1>
             <div class="row" id="inner-row">
@@ -332,7 +341,8 @@
                     </div>
                 </div>
             </div>
-        
+       </div>
+    </div>
 </div>
     
     
