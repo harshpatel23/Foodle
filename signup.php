@@ -17,7 +17,13 @@ function addcss(){
             <input id="lname" title="only letters allowed" type="text" class="form-control" name="lname" pattern="[A-Za-z]+$" onfocusout = "check_lname()">
 
             <label for="contact">Mobile no.: <span style="color : red"> * </span></label>
-            <input  id="contact" title="10 digit mobile number" type="text" class="form-control" name="contact" required pattern="[0-9]{10}$" onfocusout = "check_contact()">
+            <input  id="contact" title="10 digit mobile number" type="text" class="form-control" name="contact" required pattern="[0-9]{10}$" onfocusout = "check_contact()" readonly 
+                   <?php 
+                    echo "value='";
+				    echo $_SESSION['contact'];
+				    echo "'";
+                   ?>
+                   >
 
             <label for="email">Email-Id:</label>
             <input id="email" type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
