@@ -78,7 +78,7 @@ $(document).ready(function(){
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
-      }, 600, function(){
+      }, 700, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
@@ -93,19 +93,27 @@ $(document).ready(function(){
         <div class="col-sm-2 sticky-top" id="column-left">
 		<div class="sticky-top">
             <div id="side-nav">
+		<a href="#top-rated" id="side-nav-link">
+            <div id="side-nav-item">
+			Top Rated
+		    </div>
+        </a>
+        <a href="#nearby" id="side-nav-link">        
 		<div id="side-nav-item">
-			<a href="#top-rated" id="side-nav-link">Top Rated</a>
+			Nearby
 		</div>
+        </a>
+        <a href="#favourites" id="side-nav-link">
 		<div id="side-nav-item">
-			<a href="#nearby" id="side-nav-link">Nearby</a>
+			Favourites
 		</div>
+        </a>
+        <a href="#" id="side-nav-link">
 		<div id="side-nav-item">
-			<a href="#favourites" id="side-nav-link">Favourites</a>
+			Browse All
 		</div>
-		<div id="side-nav-item">
-			<a href="#" id="side-nav-link">Browse All</a>
-		</div>
-            </div>
+        </a>
+        </div>
 		</div>
 		</div>
         <div class="col-sm-9" id = "column-right">
