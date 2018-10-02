@@ -9,8 +9,20 @@
         $_SESSION['contact'] = $mobile;
 		header('Location: contact.php');
 	}else{
-		echo $json["msg"];
-        echo "\nOTP Not sent. Try Later.";
-		//your code when not send
+		$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=8668463938&Password=Foodle123&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshc1Vaz8kfiOrFdpNwhJ") ,true);
+	if ($json["status"]=="success") {
+        $_SESSION['otp'] = $OTP;
+        $_SESSION['contact'] = $mobile;
+		header('Location: contact.php');
+	}else{
+		$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=8412941419&Password=Foodle123&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshu0h7RFIHTbrCUpjw") ,true);
+	if ($json["status"]=="success") {
+        $_SESSION['otp'] = $OTP;
+        $_SESSION['contact'] = $mobile;
+		header('Location: contact.php');
+	}else{
+        echo "OTP not sent. Try later.";
+    }
+}
 }
 ?>
