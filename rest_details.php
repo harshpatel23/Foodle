@@ -6,8 +6,9 @@ include 'templates/db-con.php';
 
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
-//	$rest_id=$_GET['rest_id'];
+	echo '<script src="scripts/fav.js"></script>';
 }
+$rest_id=$_GET['rest_id'];
 
 $sql = "SELECT * FROM rest where rest_id = '$rest_id'";
 $result = mysqli_query($conn, $sql);
@@ -64,7 +65,7 @@ if (mysqli_num_rows($result) != 0) {
 					<span class="fa fa-star" id="rating-star"></span>
 					<span id="rating-value" style="padding-right:50px"><?php echo $rest_data['rating'] ?></span>
 					<span id="cost-for-2" style="padding-right:50px;">Cost for two: Rs. <?php echo $rest_data['cost'] ?></span>
-					<span><button class="btn btn-light" id="fav-btn" onclick="add_fav($rest_id)"><span id="fav-heart" class="fa fa-heart-o"></span>Favourite</button></span>
+					<span><button class="btn btn-light" id="fav-btn" onclick="add_fav(<?php echo $rest_id?>);"><span id="fav-heart" class="fa fa-heart-o"></span>Favourite</button></span>
 				</p>				
 			</div>
 		</div>
