@@ -24,6 +24,10 @@
         background-color: white;
     }
     
+    #star{
+        text-align: left;
+    }
+    
     #column-left{
         margin: 0.75%;
         padding-top: 10px;
@@ -42,8 +46,20 @@
         font-size: 50px;
     }
     
+    #rating-star{
+        float:left;
+    }
+    #cost{
+        float: right;
+    }
+    #rating{
+        float: left;
+    }
+    
+    #rate-cost{
+    }
+    
     p{
-        font-family:cursive;
         font-size: 18px;
     }
     
@@ -119,77 +135,46 @@ $(document).ready(function(){
         <div class="col-sm-9" id = "column-right">
             <h1 id="top-rated">Top Rated!</h1>
             <div class="row" id="inner-row">
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href= "#">
-                            <img src="./images/mcd.jpg" alt="McDonalds" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>McDonalds</p>
+                <?php
+                    include "templates/db-con.php";
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+                    
+                    $sql = "SELECT rest_id,rating,rest_name,cost from rest ORDER BY rating DESC;";
+                    $result = mysqli_query($conn, $sql);
+                    if(!$result){
+                        die("QUERY FAILED ".mysqli_error($conn));
+                    }
+                    else{
+                        $i = 0;
+                        while(($row = mysqli_fetch_assoc($result)) && $i<7){
+                            $id = $row['rest_id'];
+                            $name = $row['rest_name'];
+                            $cost = $row['cost'];
+                            $rating = $row['rating'];
+                            $i++;
+                ?>
+                            <div class="col-sm-3" id = "hotel" >
+                                <div class="thumbnail">
+                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <img src="./images/utsav.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
+                                <div class="caption">
+                                    <p><?php echo $name ?></p>
+                                    <div id='rate-cost'>
+                                        <span class="glyphicon glyphicon-star" id='star'></span>
+                                        <p id='rating'><?php echo $rating ?></p>
+                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+                                    </div>
+                                </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/dominos.jpg" alt="Dominos" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Dominos</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pizzahut.jpg" alt="PizzaHut" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>PizzaHut</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pizzahut.jpg" alt="PizzaHut" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>PizzaHut</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href= "#">
-                            <img src="./images/mcd.jpg" alt="McDonalds" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>McDonalds</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/dominos.jpg" alt="Dominos" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Dominos</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pizzahut.jpg" alt="PizzaHut" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>PizzaHut</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                        </div>
+                <?php 
+                        } 
+                        }
+                ?>
+
                 <div class="col-sm-3" id = "more" >
                     <div class="thumbnail">
                         <a href="#">
@@ -204,77 +189,62 @@ $(document).ready(function(){
             
              <h1 id="nearby">Nearby!</h1>
             <div class="row" id="inner-row">
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/utsav.jpg" alt="Utsav" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Utsav Hotel</p>
+                <?php
+                    
+                    $sql = "SELECT rest_id,rating,rest_name,cost from rest";
+                    $result = mysqli_query($conn, $sql);
+                    if(!$result){
+                        die("QUERY FAILED ".mysqli_error($conn));
+                    }
+                    else{
+                        $i = 0;
+                        while(($row = mysqli_fetch_assoc($result)) && $i<7){
+                            $id = $row['rest_id'];
+                            $name = $row['rest_name'];
+                            $cost = $row['cost'];
+                            $rating = $row['rating'];
+                            $i++;
+                ?>
+                            <div class="col-sm-3" id = "hotel" >
+                                <div class="thumbnail">
+                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <img src="./images/utsav.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
+                                <div class="caption">
+                                    <p><?php echo $name ?></p>
+                                    <div id='rate-cost'>
+                                        <span class="glyphicon glyphicon-star" id='star'></span>
+                                        <p id='rating'><?php echo $rating ?></p>
+                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+                                    </div>
+                                </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/kingbae.jpg" alt="KingBae" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hotel King Bae</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="">
-                            <img src="./images/aaram.jpg" alt="Aaram" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hotel Aaram</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/utsav.jpg" alt="Utsav" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Utsav Hotel</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                        </div>
+                <?php 
+                        } 
+                        }
+                ?>
                 
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/utsav.jpg" alt="Utsav" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Utsav Hotel</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/kingbae.jpg" alt="KingBae" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hotel King Bae</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="">
-                            <img src="./images/aaram.jpg" alt="Aaram" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hotel Aaram</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <div class="col-sm-3" id = "more" >
                     <div class="thumbnail">
                         <a href="#">
@@ -371,8 +341,3 @@ $(document).ready(function(){
        </div>
     </div>
 </div>
-    
-    
-    
-    
-  

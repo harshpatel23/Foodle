@@ -9,8 +9,6 @@ function addcss(){
 //	$rest_id=$_GET['rest_id'];
 }
 
-$rest_id = 241;
-
 $sql = "SELECT * FROM rest where rest_id = '$rest_id'";
 $result = mysqli_query($conn, $sql);
 
