@@ -104,6 +104,12 @@ $(document).ready(function(){
 });
 </script>
 
+<?php 
+    $_SESSION['latitude'] = 18.933162;
+    $_SESSION['longitude'] = 72.826766;
+?>
+
+
 <div class="container" id="container">
    <div class="row" id="outer-row">
         <div class="col-sm-2 sticky-top" id="column-left">
@@ -119,9 +125,9 @@ $(document).ready(function(){
 			Nearby
 		</div>
         </a>
-        <a href="#favourites" id="side-nav-link">
+        <a href="#recommended" id="side-nav-link">
 		<div id="side-nav-item">
-			Favourites
+			Recommended
 		</div>
         </a>
         <a href="#" id="side-nav-link">
@@ -191,7 +197,73 @@ $(document).ready(function(){
             <div class="row" id="inner-row">
                 <?php
                     
-                    $sql = "SELECT rest_id,rating,rest_name,cost from rest";
+                    $sql = "SELECT rest_id,latitude,longitude from rest";
+                    $result = mysqli_query($conn, $sql);
+                    if(!$result){
+                        die("QUERY FAILED ".mysqli_error($conn));
+                    }
+                    else{
+                        $distance = array();
+                        
+                        while($row = mysqli_fetch_assoc($result)){
+                            $distance[$row['rest_id']] = sqrt(pow($row['latitude']-$_SESSION['latitude'],2)+pow($row['longitude']-$_SESSION['longitude'],2));
+                        }
+                        asort($distance);
+                        $keys = array_keys($distance); 
+                        for($i=0;$i<14;$i++){
+                            $sql = "SELECT rest_id,rating,rest_name,cost from rest where rest_id= $keys[$i];";
+                    $result = mysqli_query($conn, $sql);
+                    if(!$result){
+                        die("QUERY FAILED ".mysqli_error($conn));
+                    }
+                    else{
+                            $row = mysqli_fetch_assoc($result);
+                            $id = $row['rest_id'];
+                            $name = $row['rest_name'];
+                            $cost = $row['cost'];
+                            $rating = $row['rating'];
+                            $i++;
+                ?>
+                            <div class="col-sm-3" id = "hotel" >
+                                <div class="thumbnail">
+                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <img src="./images/utsav.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
+                                <div class="caption">
+                                    <p><?php echo $name ?></p>
+                                    <div id='rate-cost'>
+                                        <span class="glyphicon glyphicon-star" id='star'></span>
+                                        <p id='rating'><?php echo $rating ?></p>
+                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                <?php 
+                        } 
+                        }
+                    }
+                ?>
+                <div class="col-sm-3" id = "more" >
+                    <div class="thumbnail">
+                        <a href="#">
+                            <div class="caption">
+                                <p>Explore More!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 id="recommended">Recommended!</h1>
+            <div class="row" id="inner-row">
+                <?php
+                    include "templates/db-con.php";
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+                    
+                    $sql = "SELECT rest_id,rating,rest_name,cost from rest ;";
                     $result = mysqli_query($conn, $sql);
                     if(!$result){
                         die("QUERY FAILED ".mysqli_error($conn));
@@ -224,110 +296,6 @@ $(document).ready(function(){
                         } 
                         }
                 ?>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <div class="col-sm-3" id = "more" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <div class="caption">
-                                <p>Explore More!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <h1 id="favourites">Favourites!</h1>
-            <div class="row" id="inner-row">
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pasta.jpg" alt="Pasta" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hard Rock Cafe</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/hotdog.jpg" alt="Hotdog" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hot Dog Center</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/chinese.jpg" alt="Chinese" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Chi Chi Restaurant</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pasta.jpg" alt="Pasta" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hard Rock Cafe</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-               <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/pasta.jpg" alt="Pasta" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hard Rock Cafe</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/hotdog.jpg" alt="Hotdog" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Hot Dog Center</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3" id = "hotel" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="./images/chinese.jpg" alt="Chinese" style="width:100%; height: 130px;">
-                            <div class="caption">
-                                <p>Chi Chi Restaurant</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
                 <div class="col-sm-3" id = "more" >
                     <div class="thumbnail">
                         <a href="#">
