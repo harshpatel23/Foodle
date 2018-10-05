@@ -7,8 +7,6 @@ include 'templates/db-con.php';
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_det.css">';
 }
-$rest_id = $_GET['rest_id'];
-
 
 $sql = "SELECT * FROM rest where rest_id = '$rest_id'";
 $result = mysqli_query($conn, $sql);
