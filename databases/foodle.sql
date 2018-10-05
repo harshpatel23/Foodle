@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2018 at 04:53 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Oct 05, 2018 at 04:26 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,15 +25,151 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `favourites`
+--
+
+CREATE TABLE `favourites` (
+  `user_id` varchar(30) NOT NULL,
+  `rest_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
   `rest_id` int(11) NOT NULL,
-  `category` varchar(20) NOT NULL,
-  `item_name` varchar(25) NOT NULL,
+  `category` varchar(40) NOT NULL,
+  `item_name` varchar(50) NOT NULL,
+  `description` varchar(300) NOT NULL,
   `price` smallint(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`rest_id`, `category`, `item_name`, `description`, `price`) VALUES
+(225, 'Appetizers', 'Chaat Papdi', 'Fried papdi mixed with onions, tomatoes, mint, tamarind & yogurt', 279),
+(225, 'Appetizers', 'Chana Chaat', 'Chickpeas mixed with onions, tomatoes, mint, tamarind & yogurt', 279),
+(225, 'Appetizers', 'Vegetable Pakora', 'Mixed vegetables dipped in chickpea batter and deep fried', 279),
+(225, 'Appetizers', 'Vegetable Samosa', 'Flaky pastry filled with seasoned potatoes & peas (2 pieces)', 314),
+(225, 'Appetizers', 'Paneer Pakora', 'Homemade cheese dipped in chickpea batter and fried', 349),
+(225, 'Appetizers', 'Chicken Pakora', 'Chicken dipped in chickpea batter and fried', 419),
+(225, 'Appetizers', 'Mixed Vegetable Platter', 'Samosa, paneer pakora, vegetables & papadom (2 pieces of each)', 559),
+(225, 'Appetizers', 'Mixed Platter', 'Samosa, vegetables, chicken, paneer, shrimp pakora & papadom', 699),
+(225, 'Appetizers', 'Garden Salad', 'Romaine lettuce, tomato, cucumber & carrots', 349),
+(225, 'Accompaniments', 'Assorted Condiments', 'Mixed Pickle, Green Chutney, Red Onion Chutney or Tamarind Chutney', 140),
+(225, 'Accompaniments', 'Raita', 'Yogurt with cucumbers & carrots', 209),
+(225, 'Accompaniments', 'Mango Chutney', '', 174),
+(225, 'Accompaniments', 'Papadom', '(4 pieces) Lentil wafer', 209),
+(225, 'Accompaniments', 'Plain Yogurt', '', 174),
+(225, 'Indian Style Soup', 'Lentil Soup', 'Red lentil sauce with fresh cream', 349),
+(225, 'Indian Style Soup', 'Tomato Soup', 'Fresh tomato sauce with fresh cream', 349),
+(225, 'Indian Style Soup', 'Coconut Soup', 'Coconut milk, light onion sauce with fresh cream', 349),
+(225, 'Tandoori Delicacies', 'Tandoori Chicken', 'Spring chicken marinated in yogurt and mild spices', 909),
+(225, 'Tandoori Delicacies', 'Chicken Tikka', 'Boneless chicken marinated in yogurt and mild spices', 979),
+(225, 'Tandoori Delicacies', 'Chicken Malai Kabab', 'Boneless chicken breast marinated in yogurt, fresh cream & spices', 1014),
+(225, 'Tandoori Delicacies', 'Seekh Kabab', '(Lamb) marinated minced lamb with onions and herbs', 1014),
+(225, 'Tandoori Delicacies', 'Boti Kabab', 'Cubed lamb marinated in yogurt, garlic and ginger', 1119),
+(225, 'Tandoori Delicacies', 'Fish Tikka', 'Marinated seasonal fish served with choice of soup', 1189),
+(225, 'Tandoori Delicacies', 'Tandoori Shrimp', 'Jumbo shrimp marinated in yogurt, garlic and ginger', 1189),
+(225, 'Tandoori Delicacies', 'Paneer Tikka', 'Cubed cheese marinated in yogurt, garlic and ginger', 1014),
+(225, 'Tandoori Delicacies', 'Tandoori Mix Grill', '2 kinds of chicken and lamb & 2 pieces of shrimp', 1259),
+(225, 'Dinner Specials for Two', 'Special Dinner for Two', 'Tandoori chicken, shrimp, lamb kabab, seekh kabab, choice of one curry, rice and choice of one bread', 2519),
+(225, 'Dinner Specials for Two', 'Special Vegetarian Dinner for Two', 'Choice of two vegetable curries, rice and choice of one bread', 2099),
+(225, 'Chef Specials', 'Gobi Manchurian', 'Batter-fried cauliflower tossed in Manchurian sauce, dry or with gravy', 839),
+(225, 'Chef Specials', 'Paneer Tikka Masala', 'Cubed cheese cooked in a tandoori clay oven with tomato sauce, onions & bell peppers', 1014),
+(225, 'Chef Specials', 'Paneer Butter Masala', 'Cubed cheese cooked with onion sauce, tomatoes and bell peppers', 1014),
+(225, 'Chef Specials', 'Paneer Kadhai', 'Homemade cheese cooked in onion sauce, tomatoes, bell peppers & ginger', 1014),
+(225, 'Chicken Specialties', 'Chicken Curry', 'Lightly spiced boneless chicken cooked in a mild sauce', 839),
+(225, 'Chicken Specialties', 'Chicken Vindaloo', 'Boneless chicken sautéed in a hot and sour sauce with potatoes', 944),
+(225, 'Chicken Specialties', 'Chicken Mushroom', 'Boneless chicken and mushrooms sautéed in a creamy sauce', 944),
+(225, 'Chicken Specialties', 'Chicken Dopiaza', 'Boneless chicken in a medium sauce with green onions', 944),
+(225, 'Chicken Specialties', 'Chicken Sabzi', 'Boneless chicken sautéed with mixed vegetables', 944),
+(225, 'Chicken Specialties', 'Chicken Green Masala', 'Boneless chicken with tomatoes and onions in a hot spinach sauce', 944),
+(225, 'Chicken Specialties', 'Chicken Palak', 'Boneless chicken with spinach and mild spices', 944),
+(225, 'Chicken Specialties', 'Chicken Dhansak', 'Boneless chicken in a medium lentil sauce', 944),
+(225, 'Chicken Specialties', 'Chicken Shahi Korma', 'Boneless chicken in creamy garlic and onion sauce, cashews and raisins', 1014),
+(225, 'Chicken Specialties', 'Chicken Makhani', 'Tender pieces of tandoori boneless chicken sautéed in a butter and cream sauce', 1014),
+(225, 'Chicken Specialties', 'Chicken Tikka Masala', 'Tandoori boneless chicken with tomatoes, onions, garlic and bell peppers', 1014),
+(225, 'Chicken Specialties', 'Chicken Josh', 'Chicken in yogurt and sautéed in tomato and garlic sauce', 1014),
+(225, 'Chicken Specialties', 'Chicken Garlic', 'Chicken sautéed with fresh garlic, tomato and onion', 1014),
+(225, 'Lamb Specialties', 'Goat Curry (with bone)', 'Cubes of goat sautéed with onions in a curry sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Curry', 'Lean cubes of lamb sautéed with onions in a curry sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Vindaloo', 'Lightly spiced lamb cooked in a hot & sour sauce with potatoes', 1014),
+(225, 'Lamb Specialties', 'Lamb Palak', 'Tender pieces of lamb with spinach and mild sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Sabzi', 'Boneless lamb sautéed with mixed vegetables & curry sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Dopiaza', 'Boneless lamb in a thick sauce, bell peppers, green onions & tomatoes', 1014),
+(225, 'Lamb Specialties', 'Lamb Dhansak', 'Tender pieces of lamb in a medium lentil sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Shahi Korma', 'Boneless lamb in creamy garlic and onion sauce, cashews and raisins', 1049),
+(225, 'Lamb Specialties', 'Lamb Green Masala', 'Boneless lamb with tomatoes and onions in a hot spinach sauce', 1049),
+(225, 'Lamb Specialties', 'Lamb Kadahi', 'Tender lamb cooked with bell peppers, tomatoes and potatoes & curry sauce', 1049),
+(225, 'Lamb Specialties', 'Boti-Ka-Masala', 'Marinated tender lamb cooked in Tandoori clay oven & sautéed with onions in a tomato sauce', 1049),
+(225, 'Lamb Specialties', 'Rogan Josh', 'Tender lamb cooked with yogurt and sautéed in a tomato and garlic sauce', 1049),
+(225, 'Seafood Specialties', 'Fish Curry', 'Seasonal white fish sautéed with onions in a curry sauce', 1014),
+(225, 'Seafood Specialties', 'Fish Green Masala', 'Seasonal white fish, tomatoes and onions in a hot spinach sauce', 1014),
+(225, 'Seafood Specialties', 'Fish Masala', 'Fish cooked in fried onions, tomatoes, and garlic in medium spiced sauce', 1014),
+(225, 'Seafood Specialties', 'Fish Vindaloo', 'Seasonal white fish cooked in a hot & sour sauce with potatoes', 1014),
+(225, 'Seafood Specialties', 'Fish Garlic', 'Seasonal white fish sautéed with garlic in a fresh tomato sauce', 1189),
+(225, 'Seafood Specialties', 'Fish Malai', 'Seasonal white fish sautéed in coconut milk and fresh cream', 1189),
+(225, 'Seafood Specialties', 'Shrimp Curry', 'Jumbo shrimp sautéed with onions in a curry sauce', 1189),
+(225, 'Seafood Specialties', 'Shrimp Garlic', 'Jumbo shrimp sautéed with fresh garlic in a tomato sauce', 1189),
+(225, 'Seafood Specialties', 'Shrimp Green Masala', 'Jumbo shrimp, tomatoes and onions in a hot spinach sauce', 1189),
+(225, 'Seafood Specialties', 'Shrimp Malai', 'Jumbo shrimp sautéed in coconut milk and fresh cream', 1189),
+(225, 'Seafood Specialties', 'Shrimp Vindaloo', 'Jumbo shrimp cooked in a hot & sour sauce with potatoes', 1189),
+(225, 'Biryani', 'Vegetable Biryani', 'Fresh vegetables in a lightly spiced sauce, with herbs, baked with basmati rice', 909),
+(225, 'Biryani', 'Chicken Biryani', 'Boneless chicken in a ligthly spiced sauce, with herbs, baked with basmati rice', 979),
+(225, 'Biryani', 'Lamb Biryani', 'Tender lamb in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
+(225, 'Biryani', 'Fish Biryani', 'Seasonal white fish sautéed in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
+(225, 'Biryani', 'Shrimp Biryani', 'Jumbo shrimp in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
+(225, 'Biryani', 'Goat Biryani', 'Goat in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
+(225, 'Rice Specialties', 'Basmati Rice', 'White rice', 209),
+(225, 'Rice Specialties', 'Lemon Rice', 'Lemon flavored rice with mild spices', 419),
+(225, 'Rice Specialties', 'Tomato Rice', 'Rice cooked with tomato and spices', 419),
+(225, 'Vegetable Specialties', 'Mixed Vegetable Curry', 'Seasonal vegetables cooked with curry sauce', 769),
+(225, 'Vegetable Specialties', 'Dal Tadka', 'Red lentils cooked with onion & tomatoes', 769),
+(225, 'Vegetable Specialties', 'Dal Makhani', 'Lentils and beans cooked in a creamy butter sauce', 769),
+(225, 'Vegetable Specialties', 'Alu Matar', 'Potatoes and peas in a mildly spiced sauce', 769),
+(225, 'Vegetable Specialties', 'Chana Masala', 'Chickpeas, tomatoes and onions in a rich sauce', 769),
+(225, 'Vegetable Specialties', 'Palak Alu', 'Fresh chopped spinach and potatoes in a creamy sauce', 769),
+(225, 'Vegetable Specialties', 'Sabnam Curry', 'Peas and mushrooms in a creamy curry sauce', 769),
+(225, 'Vegetable Specialties', 'Baigan Bharta', 'Freshly roasted eggplant with tomatoes, onions and green peas', 769),
+(225, 'Vegetable Specialties', 'Bhindi Masala', 'Okra sautéed with onions and tomatoes', 769),
+(225, 'Vegetable Specialties', 'Alu Gobi', 'Specially spiced potatoes, cauliflower, onions and tomatoes', 769),
+(225, 'Vegetable Specialties', 'Palak Paneer', 'Fresh chopped spinach and homemade cheese', 839),
+(225, 'Vegetable Specialties', 'Matar Paneer', 'Distinctively spiced peas and homemade cheese', 839),
+(225, 'Vegetable Specialties', 'Chana Paneer', 'Chickpeas and homemade cheese', 839),
+(225, 'Vegetable Specialties', 'Malai Kofta', 'Minced cheese balls sautéed in cream sauce with raisins and cashews', 839),
+(225, 'Vegetable Specialties', 'Mixed Vegetable Dhansak', 'Seasonal vegetables cooked in a lentil sauce', 839),
+(225, 'Vegetable Specialties', 'Nav Ratton Korma', 'Delicately spiced vegetables cooked in a creamy sauce', 839),
+(225, 'Vegetable Specialties', 'Vegetable Green Masala', 'Mixed vegetables in a hot spinach sauce', 839),
+(225, 'Vegetable Specialties', 'Paneer Makhani', 'Homemade cheese in a creamy butter and tomato sauce', 839),
+(225, 'Vegetable Specialties', 'Paneer Shahi Korma', 'Homemade cheese in a creamy garlic and onion sauce, cashews and raisins', 839),
+(225, 'Tandoori Breads', 'Naan', 'Traditional Indian white bread', 174),
+(225, 'Tandoori Breads', 'Roti', 'Whole wheat bread', 174),
+(225, 'Tandoori Breads', 'Paratha', 'Whole wheat bread with butter', 209),
+(225, 'Tandoori Breads', 'Garlic Naan', 'White bread baked with garlic and cilantro', 279),
+(225, 'Tandoori Breads', 'Cheese Naan', 'White bread stuffed with grated Indian cheese', 279),
+(225, 'Tandoori Breads', 'Alu Naan', 'White bread baked with seasoned potatoes and peas', 279),
+(225, 'Tandoori Breads', 'Onion Kulcha', 'White bread stuffed with lightly spiced onion', 279),
+(225, 'Tandoori Breads', 'Alu Paratha', 'Whole wheat bread stuffed with seasoned potatoes and peas', 279),
+(225, 'Tandoori Breads', 'Gobi Paratha', 'Whole wheat bread stuffed with cauliflower', 279),
+(225, 'Tandoori Breads', 'Keema Naan', 'Whole wheat bread stuffed with spicy minced lamb', 314),
+(225, 'Tandoori Breads', 'Kashmiri Naan', 'White bread stuffed with sweet cherry, raisins and cashews', 314),
+(225, 'Tandoori Breads', 'Bread Basket', 'Naan, Garlic Naan, Cheese Naan', 559),
+(225, 'Desserts', 'Gulab Jamun', 'Deep fried milk confection in a sweet syrup (3 pieces)', 279),
+(225, 'Desserts', 'Kheer', 'Rice cooked in flavored milk with nuts and cardamon, served cold', 279),
+(225, 'Desserts', 'Kulfi', 'Homemade sweetened milk ice cream, choice of mango or pistachio', 279),
+(225, 'Desserts', 'Mango Pudding', 'Vanilla pudding with fresh mango pulp', 279),
+(225, 'Desserts', 'Gajar Halwa', 'Grated carrots cooked in milk and butter', 279),
+(225, 'Beverages', 'Mango Lassi', 'Cold sweetened mango and yogurt drink', 279),
+(225, 'Beverages', 'Sweet Lassi', 'Cold sweetened yogurt drink', 279),
+(225, 'Beverages', 'Mango Juice', '', 209),
+(225, 'Beverages', 'Teas', 'Chai Tea, Spiced Tea, Iced Tea (1 Refill Free)', 209),
+(225, 'Beverages', 'Soda Pop', 'Coke, Diet Coke, Sprite, Lemonade, Root Beer, Fanta (1 Refill Free)', 139);
 
 -- --------------------------------------------------------
 
@@ -1902,10 +2038,11 @@ INSERT INTO `tables` (`rest_id`, `size`, `quantity`) VALUES
 --
 
 --
--- Indexes for table `menu`
+-- Indexes for table `favourites`
 --
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`rest_id`);
+ALTER TABLE `favourites`
+  ADD KEY `rest_id` (`rest_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `person`
@@ -1973,49 +2110,11 @@ ALTER TABLE `rest`
 --
 
 --
--- Constraints for table `menu`
+-- Constraints for table `favourites`
 --
-ALTER TABLE `menu`
-  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`rest_id`) REFERENCES `restaurant` (`rest_id`);
-
---
--- Constraints for table `reservations`
---
-ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`rest_id`) REFERENCES `restaurant` (`rest_id`),
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `person` (`user_id`),
-  ADD CONSTRAINT `reservations_ibfk_3` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`),
-  ADD CONSTRAINT `reservations_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `person` (`user_id`);
-
---
--- Constraints for table `rest`
---
-ALTER TABLE `rest`
-  ADD CONSTRAINT `rest_ibfk_1` FOREIGN KEY (`mgr_id`) REFERENCES `person` (`user_id`),
-  ADD CONSTRAINT `rest_ibfk_2` FOREIGN KEY (`rec_id`) REFERENCES `person` (`user_id`);
-
---
--- Constraints for table `rest_contact`
---
-ALTER TABLE `rest_contact`
-  ADD CONSTRAINT `rest_contact_ibfk_1` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`),
-  ADD CONSTRAINT `rest_contact_ibfk_2` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`);
-
---
--- Constraints for table `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `person` (`user_id`),
-  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`rest_id`) REFERENCES `restaurant` (`rest_id`),
-  ADD CONSTRAINT `review_ibfk_3` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`),
-  ADD CONSTRAINT `review_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `person` (`user_id`);
-
---
--- Constraints for table `tables`
---
-ALTER TABLE `tables`
-  ADD CONSTRAINT `tables_ibfk_1` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`),
-  ADD CONSTRAINT `tables_ibfk_2` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`);
+ALTER TABLE `favourites`
+  ADD CONSTRAINT `favourites_ibfk_1` FOREIGN KEY (`rest_id`) REFERENCES `rest` (`rest_id`),
+  ADD CONSTRAINT `favourites_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `person` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
