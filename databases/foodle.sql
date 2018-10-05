@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 05, 2018 at 06:31 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Oct 05, 2018 at 07:41 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -193,6 +193,7 @@ CREATE TABLE `person` (
 
 INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `role`) VALUES
 ('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', 8745632189, 'Customer'),
+('admin', 'admin', 'administrator', NULL, 'admin@foodle.com', 1234567890, 'admin'),
 ('ankita03', 'Ankita03', 'Ankita', 'Tiwari', 'ankitatiwari@gmail.com', 7887459632, 'Receptionist'),
 ('dharmik20', 'Dharmik20', 'Dharmik', 'Joshi', 'dharmikjoshi@gmail.com', 8552631457, 'Customer'),
 ('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', 8745236984, 'Customer'),
