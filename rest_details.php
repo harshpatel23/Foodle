@@ -2,10 +2,29 @@
 session_start();
 include 'templates/header.php';
 include 'templates/navbar.php';
-//include 'templates/db-con.php';
+include 'templates/db-con.php';
 
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_det.css">';
+}
+
+$rest_id = 241;
+
+$sql = "SELECT * FROM rest where rest_id = '$rest_id'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) != 0) {
+	$data = mysqli_fetch_assoc($result);
+}
+
+$sql = "SELECT contact FROM rest_contact where rest_id = '$rest_id'";
+$result = mysqli_query($conn, $sql);
+$contact = array();
+if (mysqli_num_rows($result) != 0) {
+	while($contact_data = mysqli_fetch_assoc($result))
+	{
+		$contact[] = $contact_data['contact'];
+	}
 }
 ?>
 
@@ -16,13 +35,23 @@ function addcss(){
 				<img src="images/dominos.jpg" alt="Dominos" class="img-thumbnail">
 			</div>
 			<div class="col-sm-9" id="rest-data">
-				<h1 class="display-4">Restaurant Name</h1>
-				<p>Address, address</p>
-				<p>Contact</p>
+				<h1 class="display-4">
+					<?php echo $data['rest_name'] ?></h1>
+				<p> <?php echo $data['rest_addr'] ?></p>
+				<p>Contact: 
+					<?php
+						for ($x = 0; $x < sizeof($contact); $x++) {
+							echo $contact[$x];
+							if($x != sizeof($contact)-1)
+								echo ", ";
+
+						}
+					?>
+				</p>
 				<p>
 					<span class="fa fa-star" id="rating-star"></span>
-					<span id="rating-value" style="padding-right:50px">4.3</span>
-					<span id="cost-for-2">Cost for two: Rs. 500</span>
+					<span id="rating-value" style="padding-right:50px"><?php echo $data['rating'] ?></span>
+					<span id="cost-for-2">Cost for two: Rs. <?php echo $data['cost'] ?></span>
 				</p>
 			</div>
 		</div>
