@@ -105,8 +105,10 @@ $(document).ready(function(){
 </script>
 
 <?php 
-    $_SESSION['latitude'] = 18.933162;
-    $_SESSION['longitude'] = 72.826766;
+if(!isset($_SESSION['latitude'])){
+   $_SESSION['latitude'] = 19.0760;
+   $_SESSION['longitude'] = 72.8777;
+}
 ?>
 
 
@@ -120,7 +122,7 @@ $(document).ready(function(){
 			Top Rated
 		    </div>
         </a>
-        <a href="#nearby" id="side-nav-link">        
+        <a href="#nearby" id="side-nav-link" onclick="getLocation()">        
 		<div id="side-nav-item">
 			Nearby
 		</div>
