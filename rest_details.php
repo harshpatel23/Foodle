@@ -1,5 +1,16 @@
 <?php
 session_start();
+/*
+<p>Contact: 
+					<?php
+						for ($x = 0; $x < sizeof($contact); $x++) {
+							echo $contact[$x];
+							if($x != sizeof($contact)-1)
+								echo ", ";
+
+						}
+					?>
+				</p>*/
 include 'templates/header.php';
 include 'templates/navbar.php';
 include 'templates/db-con.php';
@@ -36,10 +47,9 @@ if (mysqli_num_rows($result) != 0) {
 		$category[] = $category_data['category'];
 	}
 }
-
-
-
 ?>
+
+
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container-fluid">
@@ -50,17 +60,16 @@ if (mysqli_num_rows($result) != 0) {
 			<div class="col-sm-9" id="rest-data">
 				<h1 class="display-4">
 					<?php echo $rest_data['rest_name'] ?></h1>
-				<p> <?php echo $rest_data['rest_addr'] ?></p>
-				<p>Contact: 
-					<?php
-						for ($x = 0; $x < sizeof($contact); $x++) {
-							echo $contact[$x];
-							if($x != sizeof($contact)-1)
-								echo ", ";
-
-						}
-					?>
-				</p>
+				
+			<p>	<?php
+				$cuisine = explode(',', $rest_data['rest_cuisine']);
+				for ($x = 0; $x < sizeof($cuisine); $x++) {
+					echo $cuisine[$x];
+					if($x != sizeof($cuisine)-1)
+						echo ", ";
+				}
+				?>
+			</p>
 				<p>
 					<span class="fa fa-star" id="rating-star"></span>
 					<span id="rating-value" style="padding-right:50px"><?php echo $rest_data['rating'] ?></span>
@@ -92,6 +101,15 @@ if (mysqli_num_rows($result) != 0) {
 <div class="row">
 	<div class="col-sm-2" id="side-nav">
 		<div class="sticky-top">
+		
+			<nav id="side-navigation">
+			<div id="side-nav-item">
+				<a href="#rest_info" id="side-nav-link">About</a>
+			</div>
+			<div id="side-nav-item">
+				<a href="#menu-categories" data-toggle="collapse" id="side-nav-link">Menu</a>
+			</div>
+			<div class="collapse" id="menu-categories" aria-expanded="false" aria-controls="collapseExample">
 
 <?php 
 	foreach ($category as $cat){
@@ -105,12 +123,47 @@ if (mysqli_num_rows($result) != 0) {
 		
 	}
 ?>
-		</div>
+				</div>
+			<div id="side-nav-item">
+				<a href="#reviews" id="side-nav-link">Reviews</a>
+			</div>
+				</nav>
+			</div>
+		
+		
 	</div>
 	
 	
 	
-	<div class="col-sm-10">
+	<div class="col-sm-10" data-spy="scroll" data-target="#side-navigation" data-offset="0">
+		<div class="row" id="rest_info">
+			<div class="col-md">
+				<h1>Address</h1>
+				<p><?php echo $rest_data['rest_addr']; ?></p>
+			</div>
+			<div class="col-md">
+				<h1>Contact</h1>
+				<p><?php
+						for ($x = 0; $x < sizeof($contact); $x++) {
+							echo $contact[$x];
+							if($x != sizeof($contact)-1)
+								echo ", ";
+
+						}
+					?></p>
+			</div>
+			<div class="col-md">
+				<h1>Timings</h1>
+				<p>
+					<?php 	echo $rest_data['start_time'];
+							echo ' to ';
+							echo $rest_data['end_time'];
+					?>
+				</p>
+			</div>
+		</div>
+		
+		<div id="menu">
 		<div class="table-responsive">
 <?php
 	
@@ -160,7 +213,9 @@ if (mysqli_num_rows($result) != 0) {
 ?>
 		</div>
 	</div>
-</div>
+		</div>
+		</div>
+
 
 <?php
 include 'templates/footer.php';
