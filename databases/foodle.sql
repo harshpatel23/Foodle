@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 05, 2018 at 07:41 PM
+-- Generation Time: Oct 06, 2018 at 02:15 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -85,45 +85,45 @@ INSERT INTO `menu` (`rest_id`, `category`, `item_name`, `description`, `price`) 
 (225, 'Chef Specials', 'Paneer Butter Masala', 'Cubed cheese cooked with onion sauce, tomatoes and bell peppers', 1014),
 (225, 'Chef Specials', 'Paneer Kadhai', 'Homemade cheese cooked in onion sauce, tomatoes, bell peppers & ginger', 1014),
 (225, 'Chicken Specialties', 'Chicken Curry', 'Lightly spiced boneless chicken cooked in a mild sauce', 839),
-(225, 'Chicken Specialties', 'Chicken Vindaloo', 'Boneless chicken sautéed in a hot and sour sauce with potatoes', 944),
-(225, 'Chicken Specialties', 'Chicken Mushroom', 'Boneless chicken and mushrooms sautéed in a creamy sauce', 944),
+(225, 'Chicken Specialties', 'Chicken Vindaloo', 'Boneless chicken sauteed in a hot and sour sauce with potatoes', 944),
+(225, 'Chicken Specialties', 'Chicken Mushroom', 'Boneless chicken and mushrooms sauteed in a creamy sauce', 944),
 (225, 'Chicken Specialties', 'Chicken Dopiaza', 'Boneless chicken in a medium sauce with green onions', 944),
-(225, 'Chicken Specialties', 'Chicken Sabzi', 'Boneless chicken sautéed with mixed vegetables', 944),
+(225, 'Chicken Specialties', 'Chicken Sabzi', 'Boneless chicken sauteed with mixed vegetables', 944),
 (225, 'Chicken Specialties', 'Chicken Green Masala', 'Boneless chicken with tomatoes and onions in a hot spinach sauce', 944),
 (225, 'Chicken Specialties', 'Chicken Palak', 'Boneless chicken with spinach and mild spices', 944),
 (225, 'Chicken Specialties', 'Chicken Dhansak', 'Boneless chicken in a medium lentil sauce', 944),
 (225, 'Chicken Specialties', 'Chicken Shahi Korma', 'Boneless chicken in creamy garlic and onion sauce, cashews and raisins', 1014),
-(225, 'Chicken Specialties', 'Chicken Makhani', 'Tender pieces of tandoori boneless chicken sautéed in a butter and cream sauce', 1014),
+(225, 'Chicken Specialties', 'Chicken Makhani', 'Tender pieces of tandoori boneless chicken sauteed in a butter and cream sauce', 1014),
 (225, 'Chicken Specialties', 'Chicken Tikka Masala', 'Tandoori boneless chicken with tomatoes, onions, garlic and bell peppers', 1014),
-(225, 'Chicken Specialties', 'Chicken Josh', 'Chicken in yogurt and sautéed in tomato and garlic sauce', 1014),
-(225, 'Chicken Specialties', 'Chicken Garlic', 'Chicken sautéed with fresh garlic, tomato and onion', 1014),
-(225, 'Lamb Specialties', 'Goat Curry (with bone)', 'Cubes of goat sautéed with onions in a curry sauce', 1014),
-(225, 'Lamb Specialties', 'Lamb Curry', 'Lean cubes of lamb sautéed with onions in a curry sauce', 1014),
+(225, 'Chicken Specialties', 'Chicken Josh', 'Chicken in yogurt and sauteed in tomato and garlic sauce', 1014),
+(225, 'Chicken Specialties', 'Chicken Garlic', 'Chicken sauteed with fresh garlic, tomato and onion', 1014),
+(225, 'Lamb Specialties', 'Goat Curry (with bone)', 'Cubes of goat sauteed with onions in a curry sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Curry', 'Lean cubes of lamb sauteed with onions in a curry sauce', 1014),
 (225, 'Lamb Specialties', 'Lamb Vindaloo', 'Lightly spiced lamb cooked in a hot & sour sauce with potatoes', 1014),
 (225, 'Lamb Specialties', 'Lamb Palak', 'Tender pieces of lamb with spinach and mild sauce', 1014),
-(225, 'Lamb Specialties', 'Lamb Sabzi', 'Boneless lamb sautéed with mixed vegetables & curry sauce', 1014),
+(225, 'Lamb Specialties', 'Lamb Sabzi', 'Boneless lamb sauteed with mixed vegetables & curry sauce', 1014),
 (225, 'Lamb Specialties', 'Lamb Dopiaza', 'Boneless lamb in a thick sauce, bell peppers, green onions & tomatoes', 1014),
 (225, 'Lamb Specialties', 'Lamb Dhansak', 'Tender pieces of lamb in a medium lentil sauce', 1014),
 (225, 'Lamb Specialties', 'Lamb Shahi Korma', 'Boneless lamb in creamy garlic and onion sauce, cashews and raisins', 1049),
 (225, 'Lamb Specialties', 'Lamb Green Masala', 'Boneless lamb with tomatoes and onions in a hot spinach sauce', 1049),
 (225, 'Lamb Specialties', 'Lamb Kadahi', 'Tender lamb cooked with bell peppers, tomatoes and potatoes & curry sauce', 1049),
-(225, 'Lamb Specialties', 'Boti-Ka-Masala', 'Marinated tender lamb cooked in Tandoori clay oven & sautéed with onions in a tomato sauce', 1049),
-(225, 'Lamb Specialties', 'Rogan Josh', 'Tender lamb cooked with yogurt and sautéed in a tomato and garlic sauce', 1049),
-(225, 'Seafood Specialties', 'Fish Curry', 'Seasonal white fish sautéed with onions in a curry sauce', 1014),
+(225, 'Lamb Specialties', 'Boti-Ka-Masala', 'Marinated tender lamb cooked in Tandoori clay oven & sauteed with onions in a tomato sauce', 1049),
+(225, 'Lamb Specialties', 'Rogan Josh', 'Tender lamb cooked with yogurt and sauteed in a tomato and garlic sauce', 1049),
+(225, 'Seafood Specialties', 'Fish Curry', 'Seasonal white fish sauteed with onions in a curry sauce', 1014),
 (225, 'Seafood Specialties', 'Fish Green Masala', 'Seasonal white fish, tomatoes and onions in a hot spinach sauce', 1014),
 (225, 'Seafood Specialties', 'Fish Masala', 'Fish cooked in fried onions, tomatoes, and garlic in medium spiced sauce', 1014),
 (225, 'Seafood Specialties', 'Fish Vindaloo', 'Seasonal white fish cooked in a hot & sour sauce with potatoes', 1014),
-(225, 'Seafood Specialties', 'Fish Garlic', 'Seasonal white fish sautéed with garlic in a fresh tomato sauce', 1189),
-(225, 'Seafood Specialties', 'Fish Malai', 'Seasonal white fish sautéed in coconut milk and fresh cream', 1189),
-(225, 'Seafood Specialties', 'Shrimp Curry', 'Jumbo shrimp sautéed with onions in a curry sauce', 1189),
-(225, 'Seafood Specialties', 'Shrimp Garlic', 'Jumbo shrimp sautéed with fresh garlic in a tomato sauce', 1189),
+(225, 'Seafood Specialties', 'Fish Garlic', 'Seasonal white fish sauteed with garlic in a fresh tomato sauce', 1189),
+(225, 'Seafood Specialties', 'Fish Malai', 'Seasonal white fish sauteed in coconut milk and fresh cream', 1189),
+(225, 'Seafood Specialties', 'Shrimp Curry', 'Jumbo shrimp sauteed with onions in a curry sauce', 1189),
+(225, 'Seafood Specialties', 'Shrimp Garlic', 'Jumbo shrimp sauteed with fresh garlic in a tomato sauce', 1189),
 (225, 'Seafood Specialties', 'Shrimp Green Masala', 'Jumbo shrimp, tomatoes and onions in a hot spinach sauce', 1189),
-(225, 'Seafood Specialties', 'Shrimp Malai', 'Jumbo shrimp sautéed in coconut milk and fresh cream', 1189),
+(225, 'Seafood Specialties', 'Shrimp Malai', 'Jumbo shrimp sauteed in coconut milk and fresh cream', 1189),
 (225, 'Seafood Specialties', 'Shrimp Vindaloo', 'Jumbo shrimp cooked in a hot & sour sauce with potatoes', 1189),
 (225, 'Biryani', 'Vegetable Biryani', 'Fresh vegetables in a lightly spiced sauce, with herbs, baked with basmati rice', 909),
 (225, 'Biryani', 'Chicken Biryani', 'Boneless chicken in a ligthly spiced sauce, with herbs, baked with basmati rice', 979),
 (225, 'Biryani', 'Lamb Biryani', 'Tender lamb in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
-(225, 'Biryani', 'Fish Biryani', 'Seasonal white fish sautéed in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
+(225, 'Biryani', 'Fish Biryani', 'Seasonal white fish sauteed in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
 (225, 'Biryani', 'Shrimp Biryani', 'Jumbo shrimp in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
 (225, 'Biryani', 'Goat Biryani', 'Goat in a lightly spiced sauce, with herbs, baked with basmati rice', 1189),
 (225, 'Rice Specialties', 'Basmati Rice', 'White rice', 209),
@@ -137,12 +137,12 @@ INSERT INTO `menu` (`rest_id`, `category`, `item_name`, `description`, `price`) 
 (225, 'Vegetable Specialties', 'Palak Alu', 'Fresh chopped spinach and potatoes in a creamy sauce', 769),
 (225, 'Vegetable Specialties', 'Sabnam Curry', 'Peas and mushrooms in a creamy curry sauce', 769),
 (225, 'Vegetable Specialties', 'Baigan Bharta', 'Freshly roasted eggplant with tomatoes, onions and green peas', 769),
-(225, 'Vegetable Specialties', 'Bhindi Masala', 'Okra sautéed with onions and tomatoes', 769),
+(225, 'Vegetable Specialties', 'Bhindi Masala', 'Okra sauteed with onions and tomatoes', 769),
 (225, 'Vegetable Specialties', 'Alu Gobi', 'Specially spiced potatoes, cauliflower, onions and tomatoes', 769),
 (225, 'Vegetable Specialties', 'Palak Paneer', 'Fresh chopped spinach and homemade cheese', 839),
 (225, 'Vegetable Specialties', 'Matar Paneer', 'Distinctively spiced peas and homemade cheese', 839),
 (225, 'Vegetable Specialties', 'Chana Paneer', 'Chickpeas and homemade cheese', 839),
-(225, 'Vegetable Specialties', 'Malai Kofta', 'Minced cheese balls sautéed in cream sauce with raisins and cashews', 839),
+(225, 'Vegetable Specialties', 'Malai Kofta', 'Minced cheese balls sauteed in cream sauce with raisins and cashews', 839),
 (225, 'Vegetable Specialties', 'Mixed Vegetable Dhansak', 'Seasonal vegetables cooked in a lentil sauce', 839),
 (225, 'Vegetable Specialties', 'Nav Ratton Korma', 'Delicately spiced vegetables cooked in a creamy sauce', 839),
 (225, 'Vegetable Specialties', 'Vegetable Green Masala', 'Mixed vegetables in a hot spinach sauce', 839),
@@ -2104,7 +2104,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `rest`
 --
 ALTER TABLE `rest`
-  MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2828;
+  MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2822;
 
 --
 -- Constraints for dumped tables
