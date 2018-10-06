@@ -8,20 +8,27 @@ function add_fav(rest_id) {
 	}
 	
 	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			if(document.getElementById("fav-btn").className=="btn btn-danger")
-				document.getElementById("fav-btn").className="btn btn-light";
+		if (this.readyState == 4 && this.status == 200) 
+			if(this.responseText == "login")
+				alert("Please login to continue!");
 			else
-				document.getElementById("fav-btn").className="btn btn-danger";
-		}
+				if(this.responseText == "fav added"){
+					alert("Added to favourites!")
+					document.getElementById("fav-heart").className="fa fa-heart";
+				}
+				else if(this.responseText == "fav deleted")
+					document.getElementById("fav-heart").className="fa fa-heart-o";
+				else if(this.responseText == "error")
+					alert("Something went wrong, please try again later");
+				else
+					alert(this.responseText);
 	};
 	
-	if(document.getElementById("fav-btn").className=="btn btn-danger")
-		flag = 2;
-	else
+	if(document.getElementById("fav-heart").className=="fa fa-heart-o")
 		flag = 1;
-	xmlhttp.open("GET","add_fav.php?rest_id="+rest_id+"?flag="+flag, true);
-	alert("add_fav.php?rest_id="+rest_id+"&flag="+flag)
+	else
+		flag = 2;
+	xmlhttp.open("GET","add_fav.php?rest_id="+rest_id+"&flag="+flag, true);
 	xmlhttp.send();
 
 }

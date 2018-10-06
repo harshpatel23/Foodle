@@ -8,20 +8,20 @@ $flag = intval($_GET['flag']);
 $user_id = $_SESSION['uname'];
 
 if($flag == 1){
-	echo '1';
 	$sql="insert into favourites values('$user_id', '$rest_id')";
 	if(mysqli_query($conn, $sql))
-		echo "fav added!";
+		echo 'fav added';
 	else
-		echo "error!";
+		echo "error $sql";
 }
 else if($flag == 2){
-	echo '2';
-	$sql="delete from favourites where user_id='$user_id' AND rest_id='$rest_id'";
+	$sql="delete from favourites where user_id='$user_id' AND rest_id='$rest_id';";
 	if(mysqli_query($conn, $sql))
-		echo "fav deleted!";
+		echo "fav deleted";
 	else
-		echo "error!";
+		echo "error $sql";
 }
 }
+else 
+	echo 'login';
 ?>
