@@ -1,0 +1,75 @@
+#container{
+        margin:10px auto;
+        max-width: 100%;
+    }
+    #hotel{
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top:1%;
+        margin-bottom: 1%;
+        height: 250px;
+        border-radius: 8px;
+        text-align: center;
+        background-color: white;
+    }
+    #more{
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top:1%;
+        margin-bottom: 1%;
+        height: 250px;
+        border-radius: 8px;
+        text-align: center;
+        background-color: white;
+    }
+    
+    #star{
+        text-align: left;
+    }
+    
+    #column-left{
+        margin: 0.75%;
+        padding-top: 10px;
+    }
+    #column-right{
+        margin: 0.75%;
+    }
+    #outer-row{
+        padding-top: 15px;
+    }
+    
+    #icon_more{
+        color: black;
+        width: 74.94px;
+        height:50px;
+        font-size: 50px;
+    }
+    
+    #rating-star{
+        float:left;
+    }
+    #cost{
+        float: right;
+    }
+    #rating{
+        float: left;
+    }
+    
+    #rate-cost{
+    }
+    
+    p{
+        font-size: 18px;
+    }
+    
+    .thumbnail{
+        border-color: darkorange;
+        border-width: 2px;
+        border-radius: 8px;
+        background-color: #ffe0b3;
+        width: 100%;
+        height: 100%;
+    }
+    img{
+        border-radius: 8px;
+    }

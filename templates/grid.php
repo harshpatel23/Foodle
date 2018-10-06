@@ -1,80 +1,3 @@
-<style>
-    #container{
-        margin:10px auto;
-        max-width: 100%;
-    }
-    #hotel{
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top:1%;
-        margin-bottom: 1%;
-        height: 250px;
-        border-radius: 8px;
-        text-align: center;
-        background-color: white;
-    }
-    #more{
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top:1%;
-        margin-bottom: 1%;
-        height: 250px;
-        border-radius: 8px;
-        text-align: center;
-        background-color: white;
-    }
-    
-    #star{
-        text-align: left;
-    }
-    
-    #column-left{
-        margin: 0.75%;
-        padding-top: 10px;
-    }
-    #column-right{
-        margin: 0.75%;
-    }
-    #outer-row{
-        padding-top: 15px;
-    }
-    
-    #icon_more{
-        color: black;
-        width: 74.94px;
-        height:50px;
-        font-size: 50px;
-    }
-    
-    #rating-star{
-        float:left;
-    }
-    #cost{
-        float: right;
-    }
-    #rating{
-        float: left;
-    }
-    
-    #rate-cost{
-    }
-    
-    p{
-        font-size: 18px;
-    }
-    
-    .thumbnail{
-        border-color: darkorange;
-        border-width: 2px;
-        border-radius: 8px;
-        background-color: #ffe0b3;
-        width: 100%;
-        height: 100%;
-    }
-    img{
-        border-radius: 8px;
-    }
-</style>
 <script>
 $(document).ready(function(){
   // Add scrollspy to <body>
@@ -132,7 +55,7 @@ if(!isset($_SESSION['latitude'])){
 			Recommended
 		</div>
         </a>
-        <a href="#" id="side-nav-link">
+        <a href="all_rest.php  " id="side-nav-link">
 		<div id="side-nav-item">
 			Browse All
 		</div>
@@ -156,7 +79,7 @@ if(!isset($_SESSION['latitude'])){
                     }
                     else{
                         $i = 0;
-                        while(($row = mysqli_fetch_assoc($result)) && $i<7){
+                        while(($row = mysqli_fetch_assoc($result)) && $i<8){
                             $id = $row['rest_id'];
                             $name = $row['rest_name'];
                             $cost = $row['cost'];
@@ -182,17 +105,6 @@ if(!isset($_SESSION['latitude'])){
                         } 
                         }
                 ?>
-
-                <div class="col-sm-3" id = "more" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <div class="caption">
-                                <p>Explore More!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
             </div>
             
              <h1 id="nearby">Nearby!</h1>
@@ -212,7 +124,7 @@ if(!isset($_SESSION['latitude'])){
                         }
                         asort($distance);
                         $keys = array_keys($distance); 
-                        for($i=0;$i<14;$i++){
+                        for($i=0;$i<16;$i++){
                             $sql = "SELECT rest_id,rating,rest_name,cost from rest where rest_id= $keys[$i];";
                     $result = mysqli_query($conn, $sql);
                     if(!$result){
@@ -246,15 +158,7 @@ if(!isset($_SESSION['latitude'])){
                         }
                     }
                 ?>
-                <div class="col-sm-3" id = "more" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <div class="caption">
-                                <p>Explore More!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                
             </div>
             
             <h1 id="recommended">Recommended!</h1>
@@ -272,7 +176,7 @@ if(!isset($_SESSION['latitude'])){
                     }
                     else{
                         $i = 0;
-                        while(($row = mysqli_fetch_assoc($result)) && $i<7){
+                        while(($row = mysqli_fetch_assoc($result)) && $i<8){
                             $id = $row['rest_id'];
                             $name = $row['rest_name'];
                             $cost = $row['cost'];
@@ -298,15 +202,7 @@ if(!isset($_SESSION['latitude'])){
                         } 
                         }
                 ?>
-                <div class="col-sm-3" id = "more" >
-                    <div class="thumbnail">
-                        <a href="#">
-                            <div class="caption">
-                                <p>Explore More!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                
             </div>
        </div>
     </div>
