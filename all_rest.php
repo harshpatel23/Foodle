@@ -79,7 +79,7 @@ else
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
                                 <a href="rest_details.php?rest_id=<?php echo $id ?>">
-                                <img src="./images/utsav.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
+                                <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
                                     <p><?php echo $name ?></p>
                                     <div id='rate-cost'>
@@ -117,7 +117,7 @@ else
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
                                 <a href="rest_details.php?rest_id=<?php echo $id ?>">
-                                <img src="./images/utsav.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
+                                <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
                                     <p><?php echo $name ?></p>
                                     <div id='rate-cost'>
