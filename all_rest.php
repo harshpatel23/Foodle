@@ -62,7 +62,7 @@ else
                         }
                         asort($distance);
                         $keys = array_keys($distance); 
-                        for($i=0;$i<16;$i++){
+                        for($i=0;$i<(sizeof($distance));$i++){
                             $sql = "SELECT rest_id,rating,rest_name,cost from rest where rest_id= $keys[$i];";
                     $result = mysqli_query($conn, $sql);
                     if(!$result){
