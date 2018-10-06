@@ -65,7 +65,24 @@ if (mysqli_num_rows($result) != 0) {
 					<span class="fa fa-star" id="rating-star"></span>
 					<span id="rating-value" style="padding-right:50px"><?php echo $rest_data['rating'] ?></span>
 					<span id="cost-for-2" style="padding-right:50px;">Cost for two: Rs. <?php echo $rest_data['cost'] ?></span>
-					<span><button class="btn btn-light" id="fav-btn" onclick="add_fav(<?php echo $rest_id?>);"><span id="fav-heart" class="fa fa-heart-o"></span>Favourite</button></span>
+					<span><button class="btn btn-light" id="fav-btn" onclick="add_fav(<?php echo $rest_id; ?>);">
+						<span id="fav-heart" class="
+<?php
+	if(isset($_SESSION['uname'])){
+		$user_id = $_SESSION['uname'];
+		$sql = "select * from favourites where user_id = '$user_id' and rest_id = '$rest_id';";
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result) != 0) 
+			echo 'fa fa-heart';
+		else
+			echo 'fa fa-heart-o';
+	}
+	else
+		echo 'fa fa-heart-o';
+	
+?>
+
+					"></span>Favourite</button></span>
 				</p>				
 			</div>
 		</div>
