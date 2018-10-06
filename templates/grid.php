@@ -55,7 +55,7 @@ if(!isset($_SESSION['latitude'])){
 			Recommended
 		</div>
         </a>
-        <a href="all_rest.php  " id="side-nav-link">
+        <a href="all_rest.php?sort_by=none" id="side-nav-link">
 		<div id="side-nav-item">
 			Browse All
 		</div>
