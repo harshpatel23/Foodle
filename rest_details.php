@@ -45,7 +45,7 @@ if (mysqli_num_rows($result) != 0) {
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3">
-				<img src="images/dominos.jpg" alt="Dominos" class="img-thumbnail">
+				<img src="images/<?php echo abs(crc32($rest_id))%30; ?>.jpg" alt="<?php echo $rest_data['rest_name'];?>" class="img-thumbnail">
 			</div>
 			<div class="col-sm-9" id="rest-data">
 				<h1 class="display-4">
