@@ -15,7 +15,10 @@ if (mysqli_num_rows($result) != 0) {
     if ($data['pwd'] == $passwd) {
 		$_SESSION['uname'] = $uname;
 		$_SESSION['role'] = $data['role'];	
-        header('Location: index.php');
+        if($_SESSION['uname'] != 'admin')
+            header('Location: index.php');
+        else
+            header('Location: admin_view.php');
         exit;
     }
 	else{
