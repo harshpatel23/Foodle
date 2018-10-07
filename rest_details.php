@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) != 0) {
 
 				<li class="nav-item" id="side-nav-item"><a href="#menu" class="nav-link" id="side-nav-link">Menu</a>
 					
-						<ul class="nav nav-pills bg-light inner-nav">
+						<ul class="nav nav-pills nav-stacked bg-light inner-nav">
 
 <?php 
 	foreach ($category as $cat){
