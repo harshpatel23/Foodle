@@ -18,6 +18,7 @@ include 'templates/db-con.php';
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
 	echo '<script src="scripts/fav.js"></script>';
+	echo '<script>$("#scroll-data").scrollspy({ target: "#side-navigation" })</script>';
 }
 $rest_id=$_GET['rest_id'];
 
@@ -99,34 +100,39 @@ if (mysqli_num_rows($result) != 0) {
 </div>
 
 <div class="row">
-	<div class="col-sm-2" id="side-nav">
+	<div class="col-sm-2">
 		<div class="sticky-top">
 		
 			<nav id="side-navigation">
-			<div id="side-nav-item">
-				<a href="#rest_info" id="side-nav-link">About</a>
-			</div>
-			<div id="side-nav-item">
-				<a href="#menu-categories" data-toggle="collapse" id="side-nav-link">Menu</a>
-			</div>
-			<div class="collapse" id="menu-categories" aria-expanded="false" aria-controls="collapseExample">
+				<ul class="nav nav-pills flex-column">
+<!--			<div id="side-nav-item">-->
+				<li class="nav-item"><a href="#rest_info"  class="nav-link">About</a></li>
+<!--			</div>-->
+<!--			<div id="side-nav-item">-->
+				<li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+<!--			</div>-->
+					<li>
+					<nav>
+						<ul class="nav nav-pills flex-column">
 
 <?php 
 	foreach ($category as $cat){
-		echo '<div id="side-nav-item">
-			<a href="#';
+//		echo '<div id="side-nav-item">
+		echo 	'<li class="nav-item ml-3 my-1"><a class="nav-link" href="#';
+		echo str_replace(' ', '-', $cat);
+		echo '" >';
 		echo $cat;
-		echo '" id="side-nav-link">';
-		echo $cat;
-		echo '</a>
-		</div>';
+		echo '</a></li>';
+//		</div>';
 		
 	}
 ?>
-				</div>
-			<div id="side-nav-item">
-				<a href="#reviews" id="side-nav-link">Reviews</a>
-			</div>
+						</ul>
+				</nav></li>
+<!--			<div id="side-nav-item">-->
+				<li class="nav-item"><a href="#reviews" class="nav-link" >Reviews</a></li>
+<!--			</div>-->
+					</ul>
 				</nav>
 			</div>
 		
@@ -135,7 +141,8 @@ if (mysqli_num_rows($result) != 0) {
 	
 	
 	
-	<div class="col-sm-10" data-spy="scroll" data-target="#side-navigation" data-offset="0">
+	<div class="col-sm-10">
+		<div id="scroll-data" data-spy="scroll" data-target="#side-navigation" data-offset="80" style="position: relative; height: 600px; overflow-y: scroll;">
 		<div class="row" id="rest_info">
 			<div class="col-md">
 				<h1>Address</h1>
@@ -163,13 +170,13 @@ if (mysqli_num_rows($result) != 0) {
 			</div>
 		</div>
 		
-		<div id="menu">
+			<h1 id="menu">Menu</h1>
 		<div class="table-responsive">
 <?php
 	
 	foreach ($category as $cat){
 		echo '<h2 id="';
-		echo $cat;
+		echo str_replace(' ', '-', $cat);
 		echo '">';
 		echo $cat;
 		echo "</h2>";
@@ -214,7 +221,7 @@ if (mysqli_num_rows($result) != 0) {
 		</div>
 	</div>
 		</div>
-		</div>
+	</div>
 
 
 <?php

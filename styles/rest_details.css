@@ -58,6 +58,7 @@
 	width: auto;
 }
 
-.active{
-	color: red;
+#rest_info{
+	height: 100px;
 }
+
