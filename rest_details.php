@@ -15,7 +15,7 @@ include 'templates/header.php';
 ?>
 <script>
 	document.body.setAttribute("data-spy", "scroll");
-	document.body.setAttribute(" data-target", "#side-navigation");
+	document.body.setAttribute("data-target", "#side-navigation");
 	document.body.setAttribute("data-offset", "80");
 </script>
 <?php
@@ -111,21 +111,19 @@ if (mysqli_num_rows($result) != 0) {
 		<div class="sticky-top">
 		
 			<nav id="side-navigation">
-				<ul class="nav nav-pills flex-column">
+				<ul class="nav nav-pills flex-column side-nav navbar-dark">
 <!--			<div id="side-nav-item">-->
-				<li class="nav-item"><a href="#rest_info"  class="nav-link">About</a></li>
+				<li class="nav-item" id="side-nav-item"><a href="#rest_info" class="nav-link" id="side-nav-link">About</a></li>
 <!--			</div>-->
 <!--			<div id="side-nav-item">-->
-				<li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
-<!--			</div>-->
-					<li>
-					<nav>
-						<ul class="nav nav-pills flex-column">
+				<li class="nav-item" id="side-nav-item"><a href="#menu" class="nav-link" id="side-nav-link">Menu</a>
+					
+						<ul class="nav nav-pills  inner-nav">
 
 <?php 
 	foreach ($category as $cat){
 //		echo '<div id="side-nav-item">
-		echo 	'<li class="nav-item ml-3 my-1"><a class="nav-link" href="#';
+		echo 	'<li class="nav-item ml-3 my-1" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="#';
 		echo str_replace(' ', '-', $cat);
 		echo '" >';
 		echo $cat;
@@ -135,9 +133,9 @@ if (mysqli_num_rows($result) != 0) {
 	}
 ?>
 						</ul>
-				</nav></li>
+				</li>
 <!--			<div id="side-nav-item">-->
-				<li class="nav-item"><a href="#reviews" class="nav-link" >Reviews</a></li>
+				<li class="nav-item" id="side-nav-item"><a href="#reviews" class="nav-link" id="side-nav-link" >Reviews</a></li>
 <!--			</div>-->
 					</ul>
 				</nav>
@@ -152,10 +150,12 @@ if (mysqli_num_rows($result) != 0) {
 		<div class="row" id="rest_info">
 			<div class="col-md">
 				<h1>Address</h1>
+				<div class="uline"></div>
 				<p><?php echo $rest_data['rest_addr']; ?></p>
 			</div>
-			<div class="col-md">
+			<div class="col-md" >
 				<h1>Contact</h1>
+				<div class="uline"></div>
 				<p><?php
 						for ($x = 0; $x < sizeof($contact); $x++) {
 							echo $contact[$x];
@@ -167,6 +167,7 @@ if (mysqli_num_rows($result) != 0) {
 			</div>
 			<div class="col-md">
 				<h1>Timings</h1>
+				<div class="uline"></div>
 				<p>
 					<?php 	echo $rest_data['start_time'];
 							echo ' to ';
@@ -176,7 +177,7 @@ if (mysqli_num_rows($result) != 0) {
 			</div>
 		</div>
 		
-			<h1 id="menu">Menu</h1>
+<!--			<h1 id="menu" style="padding:10px 0;">Menu</h1>-->
 		<div class="table-responsive">
 <?php
 	
@@ -225,9 +226,10 @@ if (mysqli_num_rows($result) != 0) {
 	
 ?>
 		</div>
+	
 	</div>
+	
 		</div>
-
 
 <?php
 include 'templates/footer.php';
