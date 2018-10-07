@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 06, 2018 at 02:15 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Host: 127.0.0.1
+-- Generation Time: Oct 07, 2018 at 07:19 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,6 +32,13 @@ CREATE TABLE `favourites` (
   `user_id` varchar(30) NOT NULL,
   `rest_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favourites`
+--
+
+INSERT INTO `favourites` (`user_id`, `rest_id`) VALUES
+('ankita03', 1628);
 
 -- --------------------------------------------------------
 
@@ -252,32 +259,32 @@ CREATE TABLE `rest` (
 
 INSERT INTO `rest` (`rest_id`, `rest_name`, `rest_addr`, `rest_cuisine`, `rating`, `cost`, `start_time`, `end_time`, `rating_count`, `mgr_id`, `rec_id`, `latitude`, `longitude`) VALUES
 (225, 'Veda', 'S-8, Palladium, Phoenix Mill, Compound  462, Senapati Bapat Marg, Lower Parel, Mumbai, Lower Parel, South Central, 400013', 'North Indian', 4.5, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 18.99347, 72.82516),
-(241, 'Cool Chef Cafe', 'Thadani House,Worli Village, Worli, Mumbai, Worli, South Central, 400030', 'none', 4.4, 700, '08:00:00', '23:00:00', 7, NULL, NULL, 19.00458, 72.81484),
+(241, 'Cool Chef Cafe', 'Thadani House,Worli Village, Worli, Mumbai, Worli, South Central, 400030', 'Indian', 4.4, 700, '08:00:00', '23:00:00', 7, NULL, NULL, 19.00458, 72.81484),
 (260, 'Pot Pourri', 'Inorbit Mall, 51 & 52, Ground Floor, Sector 30A, Vashi, Navi Mumbai, 400703', 'Continental,Mexican,American', 3.4, 400, '08:00:00', '23:00:00', 7, NULL, NULL, 19.08381, 72.99682),
 (261, 'Soy Street', 'Inorbit Mall, 1st Floor, Sector 30 A, Vashi, Navi Mumbai, 400703', 'Chinese,Seafood', 4.2, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 19.07261, 72.99255),
-(263, 'Soul', 'SAB TV Lane, Off Link Road,  Andheri West, Mumbai, Andheri West, Western Suburbs, 400102', 'none', 4.4, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 19.14887, 72.83132),
-(281, 'Mangiamo-Bandra(W)', '11/1, Kalpak Corner Building, Turner Road,Bandra(W),Mumbai - 400050, Bandra West, Bandra, 400050', 'none', 4.5, 1200, '08:00:00', '23:00:00', 7, NULL, NULL, 19.05814, 72.82968),
+(263, 'Soul', 'SAB TV Lane, Off Link Road,  Andheri West, Mumbai, Andheri West, Western Suburbs, 400102', 'Indian', 4.4, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 19.14887, 72.83132),
+(281, 'Mangiamo-Bandra(W)', '11/1, Kalpak Corner Building, Turner Road,Bandra(W),Mumbai - 400050, Bandra West, Bandra, 400050', 'Indian', 4.5, 1200, '08:00:00', '23:00:00', 7, NULL, NULL, 19.05814, 72.82968),
 (284, 'Bottle Bar', '6/8, Ambala Joshi Marg, Hamam Street, Rajbahadur Mansion, Fort, South Mumbai, 400001', 'North Indian,Italian', 4, 1100, '08:00:00', '23:00:00', 7, NULL, NULL, 0, 0),
 (291, 'Moksh Restobar', '1st Floor, B Wing, 247 Park, Hincon House, LBS Marg, Vikhroli West, Central Mumbai, 400083', 'North Indian,Continental,Asian,Mughlai', 4.1, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 19.1201599, 72.92579),
-(300, 'Shockk', '5th Floor, Crystal Shoppers Paradise, Off Linking Road, 33rd Road, Bandra West, Mumbai, Bandra West, Bandra, 400052', 'none', 3.2, 1200, '08:00:00', '23:00:00', 7, NULL, NULL, 19.06661, 72.8338799),
-(306, 'Gusto Kitchen & Bar', 'Greenfields Apartments, Opposite HDFC Bank, Lokhandwala Market, Andheri West, Mumbai, Andheri Lokhandwala, North Western, 400047', 'none', 3.1, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 19.12924, 72.83139),
+(300, 'Shockk', '5th Floor, Crystal Shoppers Paradise, Off Linking Road, 33rd Road, Bandra West, Mumbai, Bandra West, Bandra, 400052', 'Indian', 3.2, 1200, '08:00:00', '23:00:00', 7, NULL, NULL, 19.06661, 72.8338799),
+(306, 'Gusto Kitchen & Bar', 'Greenfields Apartments, Opposite HDFC Bank, Lokhandwala Market, Andheri West, Mumbai, Andheri Lokhandwala, North Western, 400047', 'Indian', 3.1, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 19.12924, 72.83139),
 (307, 'Formaggio - Kemps Corner', '6 A, B Block, Khalakdina Terrace, August Kranti Marg, Kemps Corner, Mumbai, Kemps Corner, South Mumbai, 400007', 'North Indian,Italian,Lebanese', 4.8, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 18.96411, 72.80678),
 (309, 'Ellipsis de-list', 'B-1, Amarchand Mansion, 16 Madame Cama Road, Colaba, South Mumbai, 400001', 'European,American', 3.6, 1000, '08:00:00', '23:00:00', 7, NULL, NULL, 18.92558, 72.83109),
 (315, 'Cu Lounge Bar - Beatle', 'The Beatle, JMJ House, Orchard Avenue, Hiranandani Gardens, Powai, Mumbai, Powai, Eastern Suburbs, 400076', 'North Indian,Italian', 4.9, 700, '08:00:00', '23:00:00', 7, NULL, NULL, 19.12109, 72.90993),
-(320, 'Drunken Munkey', '9/10, Bharat Ark, Veera Desai Road, Next to ICICI Bank, Andheri West, Mumbai, Andheri West, Western Suburbs, 400047', 'none', 4.6, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 19.13417, 72.83804),
-(322, 'Formaggio - Kandivali', '24, Vasant Marvel, Western Express Highway, Kandivali East, Mumbai, Kandivali East, North Western, 400066', 'none', 5, 1000, '08:00:00', '23:00:00', 7, NULL, NULL, 19.20662, 72.86603),
+(320, 'Drunken Munkey', '9/10, Bharat Ark, Veera Desai Road, Next to ICICI Bank, Andheri West, Mumbai, Andheri West, Western Suburbs, 400047', 'Indian', 4.6, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 19.13417, 72.83804),
+(322, 'Formaggio - Kandivali', '24, Vasant Marvel, Western Express Highway, Kandivali East, Mumbai, Kandivali East, North Western, 400066', 'Indian', 5, 1000, '08:00:00', '23:00:00', 7, NULL, NULL, 19.20662, 72.86603),
 (344, 'Cafe Royal', 'Indian Mercantile Mansion, 166, Colaba, South Mumbai, 400001', 'North Indian,Italian,Continental,Mexican', 3.8, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 18.91517, 72.8262),
 (349, 'Headquarters', 'Indian Mercantile Mansion, 166, Colaba, South Mumbai, 400001', 'North Indian,Italian,Continental', 3.5, 600, '08:00:00', '23:00:00', 7, NULL, NULL, 18.91517, 72.8262),
-(360, 'Vinoteca By Sula', 'Ground Floor, Sunville Building, Dr Annie Besant Road, Worli, Mumbai, Worli, South Central, 400018', 'none', 4.3, 1100, '08:00:00', '23:00:00', 7, NULL, NULL, 18.98518, 72.81459),
-(365, 'Del Fresco Cantina', 'ONGC lane, Near Candies, Bandra Reclamation, Bandra West, Mumbai, Bandra West, Bandra, 400050', 'none', 3.7, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 19.05108, 72.83282),
+(360, 'Vinoteca By Sula', 'Ground Floor, Sunville Building, Dr Annie Besant Road, Worli, Mumbai, Worli, South Central, 400018', 'Indian', 4.3, 1100, '08:00:00', '23:00:00', 7, NULL, NULL, 18.98518, 72.81459),
+(365, 'Del Fresco Cantina', 'ONGC lane, Near Candies, Bandra Reclamation, Bandra West, Mumbai, Bandra West, Bandra, 400050', 'Indian', 3.7, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 19.05108, 72.83282),
 (375, 'The Yellow Chilli', 'Viviana Mall, 2nd Floor, Thane West, Central Mumbai, 400606', 'North Indian,Seafood', 4.5, 1400, '08:00:00', '23:00:00', 7, NULL, NULL, 19.27621, 72.9589699),
 (377, 'Horn Ok Please!', '47, Gulmohar Road, Juhu Scheme, Mumbai, Juhu, Western Suburbs, 400058', 'North Indian,Chinese', 4.9, 800, '08:00:00', '23:00:00', 7, NULL, NULL, 19.11497, 72.83564),
 (381, 'Tornado', '1st Floor, Platinum Technopark, Behind Raghuleela Mall, Near Vashi Railway Station, Vashi, Navi Mum, Vashi, Navi Mumbai, 400703', 'Continental', 4.1, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 0, 0),
-(383, 'Saffron Bay', '39B, Chowpatty Seaface, Charni Road, Mumbai, Charni Road, South Mumbai, 400021', 'none', 3.1, 800, '08:00:00', '23:00:00', 7, NULL, NULL, 18.9572, 72.82478),
-(384, 'Saffron Bay Rooftop', '39B, Chowpatty Seaface, Charni Road, Mumbai, Girgaum, South Mumbai, 400021', 'none', 4.5, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 18.92504, 72.82396),
-(388, 'Busaba - Lower Parel', 'Mathuradas Mill Compound, NM Joshi Marg, Lower Parel, Mumbai, Lower Parel, South Central, 400013', 'none', 4, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 19.0026, 72.83108),
+(383, 'Saffron Bay', '39B, Chowpatty Seaface, Charni Road, Mumbai, Charni Road, South Mumbai, 400021', 'Indian', 3.1, 800, '08:00:00', '23:00:00', 7, NULL, NULL, 18.9572, 72.82478),
+(384, 'Saffron Bay Rooftop', '39B, Chowpatty Seaface, Charni Road, Mumbai, Girgaum, South Mumbai, 400021', 'Indian', 4.5, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 18.92504, 72.82396),
+(388, 'Busaba - Lower Parel', 'Mathuradas Mill Compound, NM Joshi Marg, Lower Parel, Mumbai, Lower Parel, South Central, 400013', 'Indian', 4, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 19.0026, 72.83108),
 (390, 'Busaba', '4, Mandlik Road, Next to Indigo, Colaba, South Mumbai, 400001', 'Chinese,Thai,Vietnamese,Burmese', 4.9, 1400, '08:00:00', '23:00:00', 7, NULL, NULL, 18.92193, 72.83229),
-(395, 'Zitar', 'G1 To G3 Ventura, Hiranandani Gardens, Powai, Mumbai, Powai, Eastern Suburbs, 400076', 'none', 3.2, 600, '08:00:00', '23:00:00', 7, NULL, NULL, 19.11901, 72.9101699),
+(395, 'Zitar', 'G1 To G3 Ventura, Hiranandani Gardens, Powai, Mumbai, Powai, Eastern Suburbs, 400076', 'Indian', 3.2, 600, '08:00:00', '23:00:00', 7, NULL, NULL, 19.11901, 72.9101699),
 (398, 'Asia 7', '3rd Floor, Palladium Mall, Senapati Bapat Marg, Lower Parel, Mumbai , Lower Parel, South Central, 400013', 'Asian', 4.5, 800, '08:00:00', '23:00:00', 7, NULL, NULL, 18.9985, 72.82758),
 (405, 'Irish Pub', 'Ramee Guestline Hotel, 757, SV Road, Khar, Mumbai, Khar West, Bandra, 400052', 'North Indian', 4.5, 1300, '08:00:00', '23:00:00', 7, NULL, NULL, 0, 0),
 (409, 'Kurry Club', '5, Ground Floor, Indian Mercantile Mansion Building, Madam Cama Road, Opposite Regal Cinema, Colaba,, Colaba, South Mumbai, 400001', 'Seafood,Mangalorean', 4.1, 1200, '08:00:00', '23:00:00', 7, NULL, NULL, 18.92558, 72.83109),
@@ -292,7 +299,7 @@ INSERT INTO `rest` (`rest_id`, `rest_name`, `rest_addr`, `rest_cuisine`, `rating
 (500, 'Delhi Darbar Fusion', 'Sun Magnetica Building, 2nd Floor, Louis Wadi, Thane West, Central Mumbai, 400604', 'North Indian,Chinese,Continental', 4.5, 1100, '08:00:00', '23:00:00', 7, NULL, NULL, 19.1936, 72.95379),
 (543, 'Under the Banyan Tree', '34/A, Sophia College Lane, Peddar Road, South Mumbai, 400026', 'Italian,Finger Food', 5, 900, '08:00:00', '23:00:00', 7, NULL, NULL, 18.97135, 72.80672),
 (584, 'Amity Multi Cuisine Restaurant', 'Netaji Plaza, 2, 3 & 4th Floor, New Mumbai Road, Vinayaka Nagar, Gachibowli, West Hyderabad, 500032', 'North Indian,Chinese,Mughlai', 4.7, 1000, '08:00:00', '23:00:00', 7, NULL, NULL, 0, 0),
-(593, 'Clove Lounge_old', '1st floor, Sentinel Building, Hiranandani gardens,  Powai, Mumbai - 400 076  (Opposite Powai Plaza), Powai, Eastern Suburbs, 400076', 'none', 3.2, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 19.11901, 72.9101699),
+(593, 'Clove Lounge_old', '1st floor, Sentinel Building, Hiranandani gardens,  Powai, Mumbai - 400 076  (Opposite Powai Plaza), Powai, Eastern Suburbs, 400076', 'Indian', 3.2, 500, '08:00:00', '23:00:00', 7, NULL, NULL, 19.11901, 72.9101699),
 (612, 'Chops Away', 'Shop 1-2, 162/B, Pathan Chawl, Ganpatrao Kadam Marg,?Lower Parel, Mumbai - 400013, Lower Parel, South Central, 400013', 'Chinese,Thai', 4.5, 700, '08:00:00', '23:00:00', 7, NULL, NULL, 18.99808, 72.82448),
 (613, 'Yanki Sizzlers', 'Near Shreenath Hyundai, Near Infiniti Mall, Off New Link Road,?Andheri Lokhandwala, Andheri West, Mumbai. , Andheri Lokhandwala, North Western, 400102', 'Italian,Chinese,Continental', 3.5, 1500, '08:00:00', '23:00:00', 7, NULL, NULL, 0, 0),
 (615, 'SBX - Sports Box Cafe', 'Neptune Magnet Mall, 3rd Floor, LBS Marg, Bhandup West, Central Mumbai, 400078', 'Chinese,Continental', 3.8, 1000, '08:00:00', '23:00:00', 7, NULL, NULL, 19.13802, 72.93031),
