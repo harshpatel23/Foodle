@@ -12,13 +12,20 @@ session_start();
 					?>
 				</p>*/
 include 'templates/header.php';
+?>
+<script>
+	document.body.setAttribute("data-spy", "scroll");
+	document.body.setAttribute(" data-target", "#side-navigation");
+	document.body.setAttribute("data-offset", "80");
+</script>
+<?php
 include 'templates/navbar.php';
 include 'templates/db-con.php';
 
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
 	echo '<script src="scripts/fav.js"></script>';
-	echo '<script>$("#scroll-data").scrollspy({ target: "#side-navigation" })</script>';
+	echo '<script>$("body").scrollspy({ target: "#side-navigation" })</script>';
 }
 $rest_id=$_GET['rest_id'];
 
@@ -142,7 +149,6 @@ if (mysqli_num_rows($result) != 0) {
 	
 	
 	<div class="col-sm-10">
-		<div id="scroll-data" data-spy="scroll" data-target="#side-navigation" data-offset="80" style="position: relative; height: 600px; overflow-y: scroll;">
 		<div class="row" id="rest_info">
 			<div class="col-md">
 				<h1>Address</h1>
@@ -221,7 +227,6 @@ if (mysqli_num_rows($result) != 0) {
 		</div>
 	</div>
 		</div>
-	</div>
 
 
 <?php
