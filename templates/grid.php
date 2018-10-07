@@ -22,30 +22,6 @@ if(!isset($_SESSION['latitude'])){
 					<li class="nav-item" id="side-nav-item"><a href="all_rest.php?sort_by=none" class="nav-link" id="side-nav-link">Browse all</a></li>
 				</ul>
 			</nav>
-<!--
-            <div id="side-nav">
-		<a href="#top-rated" id="side-nav-link">
-            <div id="side-nav-item">
-			Top Rated
-		    </div>
-        </a>
-        <a href="#nearby" id="side-nav-link">        
-		<div id="side-nav-item">
-			Nearby
-		</div>
-        </a>
-        <a href="#recommended" id="side-nav-link">
-		<div id="side-nav-item">
-			Recommended
-		</div>
-        </a>
-        <a href="all_rest.php?sort_by=none" id="side-nav-link">
-		<div id="side-nav-item">
-			Browse All
-		</div>
-        </a>
-        </div>
--->
 		</div>
 		</div>
         <div class="col-sm-9" id = "column-right">

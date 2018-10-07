@@ -3,8 +3,7 @@ session_start();
 include 'templates/header.php';
 
 function addcss(){
-	echo '<link rel="stylesheet" type="text/css" href="styles/index.css">';
-    echo '<link rel="stylesheet" type="text/css" href="styles/rest_det.css">';
+    echo '<link rel="stylesheet" type="text/css" href="styles/all_rest_nav.css">';
     echo '<link rel="stylesheet" type="text/css" href="styles/grid.css">';
 }
 
@@ -18,6 +17,18 @@ else
    <div class="row" id="outer-row">
         <div class="col-sm-2 sticky-top" id="column-left">
 		<div class="sticky-top">
+
+			<ul class="nav nav-pills flex-column bg-light"> 
+				<li class="nav-brand bg-dark" id="nav-head">Sortby</li>
+				<li class="nav-item" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=rating">Rating</a></li>
+				<li class="nav-item" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=distance">Distance</a></li>
+				<li class="nav-item" id="sidenav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=cost">Aproxx Cost</a></li>
+			</ul>
+			  
+			  
+			  
+			
+			<!--
             <div id="side-nav">
         <div id="side-nav-item" style="background-color:#808080;border-radius:10px;">
             <p>Sort By</p>
@@ -38,6 +49,7 @@ else
 		</div>
         </a>
         </div>
+-->
 		</div>
 		</div>
         <div class="col-sm-9" id = "column-right">
@@ -78,14 +90,16 @@ else
                 ?>
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
-                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
+                                    <div id="rest-name">
                                     <p><?php echo $name ?></p>
+										</div>
                                     <div id='rate-cost'>
-                                        <span class="glyphicon glyphicon-star" id='star'></span>
-                                        <p id='rating'><?php echo $rating ?></p>
-                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
+										<span id="rating"><?php echo $rating ?></span>
+                                        <span class="fa fa-star" id="star"></span>
                                     </div>
                                 </div>
                                 </a>
@@ -116,14 +130,16 @@ else
                 ?>
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
-                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
+                                    <div id="rest-name">
                                     <p><?php echo $name ?></p>
+										</div>
                                     <div id='rate-cost'>
-                                        <span class="glyphicon glyphicon-star" id='star'></span>
-                                        <p id='rating'><?php echo $rating ?></p>
-                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
+										<span id="rating"><?php echo $rating ?></span>
+                                        <span class="fa fa-star" id="star"></span>
                                     </div>
                                 </div>
                                 </a>

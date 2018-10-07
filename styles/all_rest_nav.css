@@ -1,0 +1,21 @@
+#side-nav-link{
+	font-size: 15px;	
+	color: black;
+	padding: 5px;
+}
+
+#side-nav-link:active, #side-nav-link:hover{
+	background-color: #e27e26;
+	color: #F8F9FA;
+}
+
+#nav-head{
+	padding: 10px;
+	font-size: 15px;	
+	color: darkorange;
+	border-radius: 5px; 
+}
+
+#side-nav-item{
+	border-radius: 5px;
+}
