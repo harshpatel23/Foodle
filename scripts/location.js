@@ -1,3 +1,12 @@
+window.onload = function(){
+	if(!sessionStorage.loaded)
+	{
+		sessionStorage.loaded = "loaded";
+		getLocation();
+	}
+	
+};
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);

@@ -35,7 +35,7 @@ if(!isset($_SESSION['latitude'])){
 ?>
 
 
-<div class="container" id="container">
+<div class="container" id="container" onload="getLocation()">
    <div class="row" id="outer-row">
         <div class="col-sm-2 sticky-top" id="column-left">
 		<div class="sticky-top">
@@ -45,7 +45,7 @@ if(!isset($_SESSION['latitude'])){
 			Top Rated
 		    </div>
         </a>
-        <a href="#nearby" id="side-nav-link" onclick="getLocation()">        
+        <a href="#nearby" id="side-nav-link">        
 		<div id="side-nav-item">
 			Nearby
 		</div>
