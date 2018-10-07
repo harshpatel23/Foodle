@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:500px">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="100%">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -9,7 +9,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active"  align="center">
-      <img src="images/offer.png" alt="Chania">
+      <img src="images/carousel1.jpg" alt="Chania">
       <div class="carousel-caption">
         <h3></h3>
         <p></p>

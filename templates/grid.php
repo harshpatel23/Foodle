@@ -1,30 +1,5 @@
 <script>
-$(document).ready(function(){
-  // Add scrollspy to <body>
-  $('body').scrollspy({target: "#side-nav", offset: 50});   
-
-  // Add smooth scrolling on all links inside the navbar
-  $("#side-nav a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 700, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    }  // End if
-  });
-});
+	$("body").scrollspy({ target: "#side-navigation" });
 </script>
 
 <?php 
@@ -39,6 +14,15 @@ if(!isset($_SESSION['latitude'])){
    <div class="row" id="outer-row">
         <div class="col-sm-2 sticky-top" id="column-left">
 		<div class="sticky-top">
+			<nav id="side-navigation">
+				<ul class="nav nav-pills flex-column side-nav bg-light">
+					<li class="nav-item" id="side-nav-item"><a href="#top-rated" class="nav-link" id="side-nav-link">Top Rated</a></li>
+					<li class="nav-item" id="side-nav-item"><a href="#nearby" class="nav-link" id="side-nav-link">Nearby</a></li>
+					<li class="nav-item" id="side-nav-item"><a href="#recommended" class="nav-link" id="side-nav-link">Recommended</a></li>
+					<li class="nav-item" id="side-nav-item"><a href="all_rest.php?sort_by=none" class="nav-link" id="side-nav-link">Browse all</a></li>
+				</ul>
+			</nav>
+<!--
             <div id="side-nav">
 		<a href="#top-rated" id="side-nav-link">
             <div id="side-nav-item">
@@ -61,6 +45,7 @@ if(!isset($_SESSION['latitude'])){
 		</div>
         </a>
         </div>
+-->
 		</div>
 		</div>
         <div class="col-sm-9" id = "column-right">
@@ -88,14 +73,16 @@ if(!isset($_SESSION['latitude'])){
                 ?>
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
-                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
+									<div id="rest-name">
                                     <p><?php echo $name ?></p>
+										</div>
                                     <div id='rate-cost'>
-                                        <span class="glyphicon glyphicon-star" id='star'></span>
-                                        <p id='rating'><?php echo $rating ?></p>
-                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
+										<span id="rating"><?php echo $rating ?></span>
+                                        <span class="fa fa-star" id="star"></span>
                                     </div>
                                 </div>
                                 </a>
@@ -140,14 +127,16 @@ if(!isset($_SESSION['latitude'])){
                 ?>
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
-                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
+                                    <div id="rest-name">
                                     <p><?php echo $name ?></p>
+										</div>
                                     <div id='rate-cost'>
-                                        <span class="glyphicon glyphicon-star" id='star'></span>
-                                        <p id='rating'><?php echo $rating ?></p>
-                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
+										<span id="rating"><?php echo $rating ?></span>
+                                        <span class="fa fa-star" id="star"></span>
                                     </div>
                                 </div>
                                 </a>
@@ -185,14 +174,16 @@ if(!isset($_SESSION['latitude'])){
                 ?>
                             <div class="col-sm-3" id = "hotel" >
                                 <div class="thumbnail">
-                                <a href="rest_details.php?rest_id=<?php echo $id ?>">
+                                <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
                                 <div class="caption">
+                                    <div id="rest-name">
                                     <p><?php echo $name ?></p>
+										</div>
                                     <div id='rate-cost'>
-                                        <span class="glyphicon glyphicon-star" id='star'></span>
-                                        <p id='rating'><?php echo $rating ?></p>
-                                        <p id='cost'><?php echo "Aproxx: ₹".$cost ?></p>
+										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
+										<span id="rating"><?php echo $rating ?></span>
+                                        <span class="fa fa-star" id="star"></span>
                                     </div>
                                 </div>
                                 </a>

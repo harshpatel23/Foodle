@@ -1,16 +1,5 @@
 <?php
 session_start();
-/*
-<p>Contact: 
-					<?php
-						for ($x = 0; $x < sizeof($contact); $x++) {
-							echo $contact[$x];
-							if($x != sizeof($contact)-1)
-								echo ", ";
-
-						}
-					?>
-				</p>*/
 include 'templates/header.php';
 ?>
 <script>
@@ -81,7 +70,7 @@ if (mysqli_num_rows($result) != 0) {
 				<p>
 					<span class="fa fa-star" id="rating-star"></span>
 					<span id="rating-value" style="padding-right:50px"><?php echo $rest_data['rating'] ?></span>
-					<span id="cost-for-2" style="padding-right:50px;">Cost for two: Rs. <?php echo $rest_data['cost'] ?></span>
+					<span id="cost-for-2" style="padding-right:50px;">Cost for two: ₹ <?php echo $rest_data['cost'] ?></span>
 					<span><button class="btn btn-light" id="fav-btn" onclick="add_fav(<?php echo $rest_id; ?>);">
 						<span id="fav-heart" class="
 <?php
@@ -111,32 +100,26 @@ if (mysqli_num_rows($result) != 0) {
 		<div class="sticky-top">
 		
 			<nav id="side-navigation">
-				<ul class="nav nav-pills flex-column side-nav navbar-dark">
-<!--			<div id="side-nav-item">-->
+				<ul class="nav nav-pills flex-column side-nav bg-light">
 				<li class="nav-item" id="side-nav-item"><a href="#rest_info" class="nav-link" id="side-nav-link">About</a></li>
-<!--			</div>-->
-<!--			<div id="side-nav-item">-->
+
 				<li class="nav-item" id="side-nav-item"><a href="#menu" class="nav-link" id="side-nav-link">Menu</a>
 					
-						<ul class="nav nav-pills  inner-nav">
+						<ul class="nav nav-pills bg-light inner-nav">
 
 <?php 
 	foreach ($category as $cat){
-//		echo '<div id="side-nav-item">
 		echo 	'<li class="nav-item ml-3 my-1" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="#';
 		echo str_replace(' ', '-', $cat);
 		echo '" >';
 		echo $cat;
 		echo '</a></li>';
-//		</div>';
 		
 	}
 ?>
 						</ul>
 				</li>
-<!--			<div id="side-nav-item">-->
 				<li class="nav-item" id="side-nav-item"><a href="#reviews" class="nav-link" id="side-nav-link" >Reviews</a></li>
-<!--			</div>-->
 					</ul>
 				</nav>
 			</div>
@@ -177,7 +160,6 @@ if (mysqli_num_rows($result) != 0) {
 			</div>
 		</div>
 		
-<!--			<h1 id="menu" style="padding:10px 0;">Menu</h1>-->
 		<div class="table-responsive">
 <?php
 	

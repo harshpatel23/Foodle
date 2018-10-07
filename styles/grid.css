@@ -23,10 +23,7 @@
         background-color: white;
     }
     
-    #star{
-        text-align: left;
-    }
-    
+   
     #column-left{
         margin: 0.75%;
         padding-top: 10px;
@@ -44,32 +41,54 @@
         height:50px;
         font-size: 50px;
     }
-    
-    #rating-star{
-        float:left;
+#rest-name > p{
+	text-transform: uppercase;
+	font-size: 15px;
+	font-family: serif;
+}
+    #star{
+		padding: 5px;
+        font-size: 15px;
+		text-align: left;
+		width: auto;
     }
     #cost{
         float: right;
+		font-size: 15px;
     }
-    #rating{
-        float: left;
-    }
+
+#rating{
+	font-size: 15px;
+}
     
     #rate-cost{
+		position: relative;
+		bottom: 0px;
     }
     
     p{
         font-size: 18px;
     }
     
+.caption{
+	height: 110px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
     .thumbnail{
         border-color: darkorange;
-        border-width: 2px;
-        border-radius: 8px;
+		border-width: thin;
+        border-radius: 1px;
         background-color: #ffe0b3;
         width: 100%;
         height: 100%;
     }
+
+#rest-link{
+	text-decoration: none;
+
+}
     img{
-        border-radius: 8px;
+        border-radius: 1px;
     }
