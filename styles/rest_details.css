@@ -25,10 +25,13 @@
 #side-nav-link:hover{
 	text-decoration: none;
 }
- /*#side-nav-link:active{
+ #side-nav-link:active{
 	color: orange;
-	border-color: orange;
-}*/
+}
+
+#side-nav-item:active{
+	color: orange;
+}
  #side-nav-link:visited{
 	text-decoration: none;
 }
@@ -54,3 +57,8 @@
 	padding-left: 0px;
 	width: auto;
 }
+
+#rest_info{
+	height: 100px;
+}
+
