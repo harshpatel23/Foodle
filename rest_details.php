@@ -134,7 +134,10 @@ if (mysqli_num_rows($result) != 0) {
 			<div class="col-md">
 				<h1>Address</h1>
 				<div class="uline"></div>
-				<p><?php echo $rest_data['rest_addr']; ?></p>
+				
+				<p><a target="_blank" href="https://maps.google.com/maps/search/<?php echo $rest_data['rest_name'];
+				echo ',';
+				echo $rest_data['rest_addr'];?>"><?php echo $rest_data['rest_addr']; ?></a></p>
 			</div>
 			<div class="col-md" >
 				<h1>Contact</h1>
