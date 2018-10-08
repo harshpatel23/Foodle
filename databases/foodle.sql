@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 07, 2018 at 07:19 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Host: localhost
+-- Generation Time: Oct 08, 2018 at 08:25 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,7 +38,14 @@ CREATE TABLE `favourites` (
 --
 
 INSERT INTO `favourites` (`user_id`, `rest_id`) VALUES
-('ankita03', 1628);
+('ankita03', 1628),
+('aditya25', 543),
+('aditya25', 751),
+('harshpatel23', 543),
+('harshpatel23', 1789),
+('harshpatel23', 377),
+('harshpatel23', 1847),
+('harshpatel23', 738);
 
 -- --------------------------------------------------------
 

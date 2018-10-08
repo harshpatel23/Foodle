@@ -107,7 +107,7 @@
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="profile_view.php">Profile</a>
 				<a class="dropdown-item" href="#">Reservations</a>
-				<a class="dropdown-item" href="#">Favourites</a>
+				<a class="dropdown-item" href="favourites.php">Favourites</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">Help</a>
 				<a class="dropdown-item" href="logout.php">Logout</a>
