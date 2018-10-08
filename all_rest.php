@@ -98,8 +98,8 @@ else
 										</div>
                                     <div id='rate-cost'>
 										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
-										<span id="rating"><?php echo $rating ?></span>
                                         <span class="fa fa-star" id="star"></span>
+                                        <span id="rating"><?php echo $rating ?></span>
                                     </div>
                                 </div>
                                 </a>
@@ -138,8 +138,8 @@ else
 										</div>
                                     <div id='rate-cost'>
 										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
-										<span id="rating"><?php echo $rating ?></span>
                                         <span class="fa fa-star" id="star"></span>
+                                        <span id="rating"><?php echo $rating ?></span>                                        
                                     </div>
                                 </div>
                                 </a>

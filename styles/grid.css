@@ -8,6 +8,7 @@
         margin-top:1%;
         margin-bottom: 1%;
         height: 250px;
+        width: 252px;
         border-radius: 8px;
         text-align: center;
         background-color: white;
@@ -47,18 +48,23 @@
 	font-family: serif;
 }
     #star{
+        float: right;
 		padding: 5px;
+        padding-top: 3px; 
         font-size: 15px;
 		text-align: left;
 		width: auto;
+        margin-left: 0px;
     }
     #cost{
-        float: right;
+        float: left;
 		font-size: 15px;
     }
 
 #rating{
+    float: right;
 	font-size: 15px;
+    margin-left: 0px;
 }
     
     #rate-cost{
@@ -78,8 +84,8 @@
 }
     .thumbnail{
         border-color: darkorange;
-		border-width: thin;
-        border-radius: 1px;
+		border-width: 2px;
+        border-radius: 4px;
         background-color: #ffe0b3;
         width: 100%;
         height: 100%;

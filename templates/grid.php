@@ -1,5 +1,28 @@
 <script>
 	$("body").scrollspy({ target: "#side-navigation" });
+    $(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: "#side-navigation", offset: 50});   
+   // Add smooth scrolling on all links inside the navbar
+  $("#side-navigation a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+       // Store hash
+      var hash = this.hash;
+       // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 600, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
 </script>
 
 <?php 
@@ -47,7 +70,7 @@ if(!isset($_SESSION['latitude'])){
                             $rating = $row['rating'];
                             $i++;
                 ?>
-                            <div class="col-sm-3" id = "hotel" >
+                            <div class="col-sm-6 col-lg-3 col-xs-12 col-md-4" id = "hotel" >
                                 <div class="thumbnail">
                                 <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
@@ -57,8 +80,8 @@ if(!isset($_SESSION['latitude'])){
 										</div>
                                     <div id='rate-cost'>
 										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
-										<span id="rating"><?php echo $rating ?></span>
-                                        <span class="fa fa-star" id="star"></span>
+                                        <span class="fa fa-star" id="star"></span>						
+                                        <span id="rating"><?php echo $rating ?></span>
                                     </div>
                                 </div>
                                 </a>
@@ -101,7 +124,7 @@ if(!isset($_SESSION['latitude'])){
                             $rating = $row['rating'];
                             $i++;
                 ?>
-                            <div class="col-sm-3" id = "hotel" >
+                            <div class="col-sm-6 col-lg-3 col-xs-12 col-md-4" id = "hotel" >
                                 <div class="thumbnail">
                                 <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
@@ -111,8 +134,8 @@ if(!isset($_SESSION['latitude'])){
 										</div>
                                     <div id='rate-cost'>
 										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
-										<span id="rating"><?php echo $rating ?></span>
                                         <span class="fa fa-star" id="star"></span>
+                                        <span id="rating"><?php echo $rating ?></span>                                       
                                     </div>
                                 </div>
                                 </a>
@@ -148,7 +171,7 @@ if(!isset($_SESSION['latitude'])){
                             $rating = $row['rating'];
                             $i++;
                 ?>
-                            <div class="col-sm-3" id = "hotel" >
+                            <div class="col-sm-6 col-lg-3 col-xs-12 col-md-4" id = "hotel" >
                                 <div class="thumbnail">
                                 <a id="rest-link" href="rest_details.php?rest_id=<?php echo $id ?>">
                                 <img src="images/<?php echo abs(crc32($id))%30; ?>.jpg" alt="<?php echo "$name"?>" style="width:100%; height: 130px;">
@@ -158,8 +181,8 @@ if(!isset($_SESSION['latitude'])){
 										</div>
                                     <div id='rate-cost'>
 										<span id="cost"><?php echo "Aproxx: ₹".$cost ?></span>
-										<span id="rating"><?php echo $rating ?></span>
                                         <span class="fa fa-star" id="star"></span>
+                                        <span id="rating"><?php echo $rating ?></span>                                        
                                     </div>
                                 </div>
                                 </a>
