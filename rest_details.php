@@ -119,7 +119,7 @@ if (mysqli_num_rows($result) != 0) {
 		</div>
 	</div>
 </div>
-
+<div class="container-fluid">
 <div class="row">
 	<div class="col-sm-2">
 		<div class="sticky-top">
@@ -238,7 +238,7 @@ if (mysqli_num_rows($result) != 0) {
 		</div>
 	
 	</div>
-	
+	</div>
 		</div>
 
 <?php
