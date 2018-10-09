@@ -9,8 +9,8 @@ $uname = $_GET['username'];
     }
     else{
         if(mysqli_num_rows($result) == 0)
-            echo 'valid';
+            echo 'available';
         else
-            echo 'not valid';
+            echo 'taken';
     }
 ?>

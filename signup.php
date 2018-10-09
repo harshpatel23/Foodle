@@ -32,7 +32,7 @@ function addcss(){
             <span id="correct" class="glyphicon glyphicon-ok" style="color:green;display:none;"></span>
             <span id="wrong" class="glyphicon glyphicon-remove" style="color:red;display:none;"></span>
             
-            <input id="uname" type="text" class="form-control" name="uname" placeholder = "6-12 Characters" required minlength="6" maxlength="12" onfocusout = "uname_availability(this.value)">
+            <input id="uname" type="text" class="form-control" name="uname" placeholder = "6-12 Characters" required minlength="6" maxlength="12" onkeyup = "uname_availability(this.value)">
 
             <label for="pwd">Password<span style="color : red"> * </span></label>
             <input type="password" class="form-control" name="pwd" placeholder="Min 8 characters" required minlength="8" id="pwd" onfocusout = "check_pwd()">

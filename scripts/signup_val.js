@@ -100,13 +100,13 @@ function validateForm(){
 }
 
 function uname_availability(uname){
-    if(uname.length >= 6 && uname.length <= 10){
-        var xhttp = XMLHttpRequest();
+    var correct = document.getElementById("correct");
+    var wrong = document.getElementById("wrong");
+    if(uname.length >= 6 && uname.length <= 12){
+        xhttp=new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
                 var response = this.responseText;
-                var correct = document.getElementById("correct");
-                var wrong = document.getElementById("wrong");
                 if(response == "available"){
                     correct.style.display = "inline";
                     wrong.style.display = "none";
@@ -121,5 +121,10 @@ function uname_availability(uname){
         };
         xhttp.open("GET", "uname_availability.php?username="+uname, true);
         xhttp.send();
+    }
+    else{
+        correct.style.display = "none";
+        wrong.style.display = "none";            
+        document.getElementById("uname").setAttribute("style","border-color:red;border-width:1px");
     }
 }
