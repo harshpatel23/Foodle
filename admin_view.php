@@ -4,7 +4,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role']!='admin')
 {
 	echo '<h1>Unauthorized access!!</h1><p>Redirecting...</p>';
 	header('refresh: 3; index.php');
-	die();
+	exit;
 }
 
 include 'templates/header.php';
@@ -26,6 +26,15 @@ else
 	$page = intval($_GET['page'])-1;
 
 include 'templates/db-con.php';
+
+$sql = "SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.key_column_usage WHERE table_schema = '$database_name' AND CONSTRAINT_NAME = 'PRIMARY';";
+$result = mysqli_query($conn, $sql);
+$primary_keys = array();
+if (mysqli_num_rows($result) != 0)
+{
+	while($data = mysqli_fetch_assoc($result))
+		$primary_key[$data['TABLE_NAME']] = $data['COLUMN_NAME'];
+}
 
 $sql = "SELECT count(*) from $table;";
 $result = mysqli_query($conn, $sql);
@@ -82,9 +91,11 @@ $limit = ($result_length < $results_per_page)  ? $result_length : $results_per_p
 
 if ($result_length != 0) {
 	for ($x = 0; $x < $limit; $x++) {
-		echo '<tr><td><button class="btn btn-primary">Edit</button></td>
-			  <td><button class="btn btn-danger">Delete</button></td>';
 		$row_data = mysqli_fetch_assoc($result);
+		$curr_key = $row_data[$primary_key[$table]];
+		echo "<tr><td><a><button class=\"btn btn-primary\">Edit</button></a></td>
+			  <td><a href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\"><button class=\"btn btn-danger\" onclick=\"\">Delete</button></a></td>";
+		
 		foreach($column as $attr)
 		{
 			$row = $row_data["$attr"];
