@@ -30,8 +30,7 @@ function addcss(){
 
             <label for="uname">Username:<span style="color : red"> * </span></label>&nbsp;
             <span id="correct" class="glyphicon glyphicon-ok" style="color:green;display:none;"></span>
-            <span id="wrong" class="glyphicon glyphicon-remove" style="color:red;display:none;"></span>
-            
+            <div id = "wrong" style="display:none;"><span class="glyphicon glyphicon-remove" style="color:red;"></span>&nbsp;Already Taken!</div>            
             <input id="uname" type="text" class="form-control" name="uname" placeholder = "6-12 Characters" required minlength="6" maxlength="12" onkeyup = "uname_availability(this.value)">
 
             <label for="pwd">Password<span style="color : red"> * </span></label>
