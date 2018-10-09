@@ -5,6 +5,7 @@ include 'templates/header.php';
 function addcss(){
     echo '<link rel="stylesheet" type="text/css" href="styles/all_rest_nav.css">';
     echo '<link rel="stylesheet" type="text/css" href="styles/grid.css">';
+	echo '<script src="scripts/location.js"></script>';
 }
 
 include 'templates/navbar.php';
@@ -21,7 +22,7 @@ else
 			<ul class="nav nav-pills flex-column bg-light"> 
 				<li class="nav-brand bg-dark" id="nav-head">Sortby</li>
 				<li class="nav-item" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=rating">Rating</a></li>
-				<li class="nav-item" id="side-nav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=distance">Distance</a></li>
+				<li class="nav-item" id="side-nav-item"><a class="nav-link" onclick="getLocation()" id="side-nav-link" href="all_rest.php?sort_by=distance">Distance</a></li>
 				<li class="nav-item" id="sidenav-item"><a class="nav-link" id="side-nav-link" href="all_rest.php?sort_by=cost">Aproxx Cost</a></li>
 			</ul>
 			  

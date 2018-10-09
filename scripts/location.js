@@ -1,10 +1,5 @@
 window.onload = function(){
-	if(!sessionStorage.loaded)
-	{
-		sessionStorage.loaded = "loaded";
-		getLocation();
-	}
-	
+	getLocation();
 };
 
 function getLocation() {
@@ -28,7 +23,7 @@ function showPosition(position) {
 	}
 	
 	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) 
+		if (this.responseText != "set" &&this.readyState == 4 && this.status == 200) 
 			location.reload(forceget=true);
 	};
 	

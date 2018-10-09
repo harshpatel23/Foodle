@@ -40,7 +40,7 @@ if(!isset($_SESSION['latitude'])){
 			<nav id="side-navigation">
 				<ul class="nav nav-pills flex-column side-nav bg-light">
 					<li class="nav-item" id="side-nav-item"><a href="#top-rated" class="nav-link" id="side-nav-link">Top Rated</a></li>
-					<li class="nav-item" id="side-nav-item"><a href="#nearby" class="nav-link" id="side-nav-link">Nearby</a></li>
+					<li class="nav-item" id="side-nav-item"><a href="#nearby" onclick="getLocation()" class="nav-link" id="side-nav-link">Nearby</a></li>
 					<li class="nav-item" id="side-nav-item"><a href="#recommended" class="nav-link" id="side-nav-link">Recommended</a></li>
 					<li class="nav-item" id="side-nav-item"><a href="all_rest.php?sort_by=none" class="nav-link" id="side-nav-link">Browse all</a></li>
 				</ul>
