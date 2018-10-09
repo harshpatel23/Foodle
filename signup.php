@@ -28,8 +28,11 @@ function addcss(){
             <label for="email">Email-Id:</label>
             <input id="email" type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
 
-            <label for="uname">Username:<span style="color : red"> * </span></label>
-            <input id="uname" type="text" class="form-control" name="uname" placeholder = "6-10 Characters" required minlength="6" maxlength="10" onfocusout = "check_uname()">
+            <label for="uname">Username:<span style="color : red"> * </span></label>&nbsp;
+            <span id="correct" class="glyphicon glyphicon-ok" style="color:green;display:none;"></span>
+            <span id="wrong" class="glyphicon glyphicon-remove" style="color:red;display:none;"></span>
+            
+            <input id="uname" type="text" class="form-control" name="uname" placeholder = "6-12 Characters" required minlength="6" maxlength="12" onfocusout = "uname_availability(this.value)">
 
             <label for="pwd">Password<span style="color : red"> * </span></label>
             <input type="password" class="form-control" name="pwd" placeholder="Min 8 characters" required minlength="8" id="pwd" onfocusout = "check_pwd()">

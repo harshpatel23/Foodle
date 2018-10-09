@@ -42,12 +42,12 @@
                 echo '<p style="color: red">Invaid OTP</p>';
  				if(isset($_SESSION['otp'])){
 					echo '<div class="form-group">
-			  <input type="text" class="form-control" name="otp" placeholder="Enter OTP" style="font-size:13px" required>
+			  <input type="text" class="form-control" name="otp" placeholder="Enter OTP" style="font-size:13px">
 			</div>
             
 			<div>
             <button type="button" class="btn btn-primary" onclick="new_mobile()"style="font-size:inherit; margin-bottom:5px; margin-top:5px; width:130px">Change contact</button>
-                <button type="button" class="btn btn-primary" style="font-size:inherit; margin-bottom:5px; margin-top:5px; width:130px" formaction="send-otp.php"> Re-send OTP</button>
+                <button type="submit" class="btn btn-primary" style="font-size:inherit; margin-bottom:5px; margin-top:5px; width:130px" formaction="send-otp.php"> Re-send OTP</button>
 		  		<button type="submit" class="btn btn-primary" style="font-size:inherit; margin-bottom:5px; margin-top:5px; width:130px" formaction="verify_otp.php"><span class="glyphicon glyphicon-ok"></span>&nbsp;</span>Verify</button>
 			</div>';
 				}
