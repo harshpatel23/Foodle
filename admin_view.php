@@ -1,4 +1,4 @@
-	<?php
+<?php
 session_start();
 if(!isset($_SESSION['role']) || $_SESSION['role']!='admin')
 {
@@ -73,6 +73,10 @@ if (mysqli_num_rows($result) != 0)
 		</nav>
 	</div>
 	<div class="col-sm-10" id="result-table">
+		<?php if($table == 'rest'){
+		?>
+		<a href="rest_form.php?method=insert"><button class="btn btn-primary" style="margin:5px 0px;">Add New</button></a>
+		<?php }?>
 		<table class="table table-hover table-bordered">
 		  <thead>
 			<tr>
@@ -111,6 +115,8 @@ if ($result_length != 0) {
 			echo '<tr><td><button class="btn btn-primary"><a href="';
 			if($table == 'person')
 				echo "profile_view.php?user_id=".$row_data['user_id'];
+			else if($table == 'rest')
+				echo "rest_form.php?method=update&rest_id=".$row_data['rest_id'];
 			echo "\"id=\"butt-link\">Edit</a></button></td>
 			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\">Delete</a></button></td>";
 		}
