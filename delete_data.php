@@ -17,16 +17,25 @@ if((!isset($_GET['table'])) && (!isset($_GET['id'])) && (!isset($_GET['value']))
 include 'templates/db-con.php';
 
 $table = $_GET['table'];
-$id = $_GET['id'];
-$value = $_GET['value'];
+if($table != 'favourites')
+{
+	$id = $_GET['id'];
+	$value = $_GET['value'];
 
-$sql = "delete from $table where $id = '$value'";
+	$sql = "delete from $table where $id = '$value'";
+}
+else
+	$sql = "delete from favourites where user_id='".$_GET['user_id']."' and rest_id = '".$_GET['rest_id']."';";
 if(!$result = mysqli_query($conn, $sql))
 {
-	echo '<h3>Cannot delete now! Some error occured</h3> <p>Redirecting...</p>';
+	echo $sql;
+	echo '<h3>Cannot delete! Check for foreign key constraints!</h3> <p>Redirecting...</p>';
 	header('refresh: 3; admin_view.php');
 }
-/*else
-	successful*/
-
+else
+{
+	header("Location: admin_view.php?edit_category=$table");
+	exit;
+}
+	
 ?>

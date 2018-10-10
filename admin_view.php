@@ -1,4 +1,4 @@
-<?php
+	<?php
 session_start();
 if(!isset($_SESSION['role']) || $_SESSION['role']!='admin')
 {
@@ -13,6 +13,8 @@ include 'templates/navbar.php';
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
 	echo '<link rel="stylesheet" type="text/css" href="styles/admin_page.css">';
+	echo '<script src="scripts/confirm_changes.js"></script>';
+
 }
 
 if(!isset($_GET['edit_category']))
@@ -24,6 +26,10 @@ if(!isset($_GET['page']))
 	$page = 0;
 else
 	$page = intval($_GET['page'])-1;
+
+
+
+
 
 include 'templates/db-con.php';
 
@@ -62,6 +68,7 @@ if (mysqli_num_rows($result) != 0)
 				<li class="nav-item <?php if($table == 'person') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=person&page=1" class="nav-link" id="side-nav-link">Users</a></li>
 				<li class="nav-item <?php if($table == 'rest') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=rest&page=1" class="nav-link" id="side-nav-link">Restaurants</a></li>
 				<li class="nav-item <?php if($table == 'review') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=review&page=1" class="nav-link" id="side-nav-link">Reviews</a></li>
+<!--				<li class="nav-item <?php /*if($table == 'favourites') echo 'active'*/;?>" id="side-nav-item"><a href="admin_view.php?edit_category=favourites&page=1" class="nav-link" id="side-nav-link">Favourites</a></li>-->
 			</ul>
 		</nav>
 	</div>
@@ -92,14 +99,26 @@ $limit = ($result_length < $results_per_page)  ? $result_length : $results_per_p
 if ($result_length != 0) {
 	for ($x = 0; $x < $limit; $x++) {
 		$row_data = mysqli_fetch_assoc($result);
-		$curr_key = $row_data[$primary_key[$table]];
-		echo "<tr><td><a><button class=\"btn btn-primary\">Edit</button></a></td>
-			  <td><a href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\"><button class=\"btn btn-danger\" onclick=\"\">Delete</button></a></td>";
 		
+		
+		if($table == 'favourites')
+			echo "<tr><td><button class=\"btn btn-primary\"><a id=\"butt-link\">Edit</a></button></td>
+			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=favourites&user_id=".$row_data['user_id']."&rest_id=".$row_data['rest_id']."\">Delete</a></button></td>";
+
+		else
+		{
+			$curr_key = $row_data[$primary_key[$table]];
+			echo '<tr><td><button class="btn btn-primary"><a href="';
+			if($table == 'person')
+				echo "profile_view.php?user_id=".$row_data['user_id'];
+			echo "\"id=\"butt-link\">Edit</a></button></td>
+			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\">Delete</a></button></td>";
+		}
+
 		foreach($column as $attr)
 		{
-			$row = $row_data["$attr"];
-			echo "<td scope=\"col\">$row</td>";
+				$row = $row_data["$attr"];
+				echo "<td scope=\"col\">$row</td>";
 		}
 		echo '</tr>';
 	}
@@ -110,15 +129,43 @@ if ($result_length != 0) {
 		</table>
 		<nav aria-label="Results">
 		  <ul class="pagination">
-			<li class="page-item"><a class="page-link" href="<?php echo "admin_view.php?edit_category=$table&page=$next;"?>">Previous</a></li>
-			  <?php
 			  
-			  for ($x = 1; $x <= ceil($total_rows/$results_per_page); $x++) {
+			<li class="page-item"><a class="page-link" href="
+				<?php 
+				
+				if($page == 0)
+					$prev = 1;
+				else
+					$prev = $page;
+				
+				$last_page = ceil($total_rows/$results_per_page);
+				$start_index = $page-3>1 ? $page-3 : 1;
+				$end_index = $page+5<$last_page ? $page+5 : $last_page;
+				
+				echo "admin_view.php?edit_category=$table&page=$prev";?>
+				">Previous</a></li>
+			  <?php			  
+			  if($page != ceil($total_rows/$results_per_page)-1)
+			  	$next = $page+2;
+			  else
+			  	$next = $page+1;
+			  if($start_index != 1)
+				  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"admin_view.php?edit_category=$table&page=1\">1</a></li><li class=\"page-item\"><a class=\"page-link\">...</a></li>";
+			  for ($x = $start_index; $x <= $end_index; $x++) {
 				  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"admin_view.php?edit_category=$table&page=$x\">$x</a></li>";
 			  }?>
 			
-			
-			<li class="page-item"><a class="page-link" href="<?php echo "admin_view.php?edit_category=$table&page=$next;"?> ">Next</a></li>
+			<?php
+			  if($end_index != $last_page)
+			  {
+				  echo "<li class=\"page-item\"><a class=\"page-link\">...</a></li>
+				  		<li class=\"page-item\"><a class=\"page-link\" href=\"admin_view.php?edit_category=$table&page=$last_page\">$last_page</a></li>";
+			  }
+			  
+			  ?>
+			  
+			<li class="page-item"><a class="page-link" href="<?php echo "admin_view.php?edit_category=$table&page=$next";?> ">Next</a></li>
+			  
 		  </ul>
 		</nav>
 	</div>
