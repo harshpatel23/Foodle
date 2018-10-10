@@ -271,15 +271,15 @@ if (mysqli_num_rows($result) != 0) {
         
             <div class="row" id="post-review-box" style="display:none;">
                 <div class="col-md-12">
-                    <form accept-charset="UTF-8" action="" method="post">
+                    <form accept-charset="UTF-8">
                         <input id="ratings-hidden" name="rating" type="hidden"> 
                         <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="10" style="font-size:16px"></textarea>
         
                         <div class="text-right"style="padding-top:10px;">
-                            <div class="stars starrr" data-rating="0" style="font-size:22px;float:left"></div>
+                            <!--<div class="stars starrr" data-rating="0" style="font-size:22px;float:left"></div>-->
                             <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
                                 <h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel&nbsp;</h4></a>
-                            <button class="btn btn-success btn-sm" type="submit"><h4><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Save&nbsp;&nbsp;</h4></button>
+                            <button class="btn btn-success btn-sm" onclick="add_review("This is review","harshpatel23",32)" type="button"><h4><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Save&nbsp;&nbsp;</h4></button>
                         </div>
                     </form>
                 </div>
@@ -294,13 +294,44 @@ if (mysqli_num_rows($result) != 0) {
         </div>
         <hr>
         <div id="read-reviews">
-        <div class="media">
-            <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
-            <div class="media-body">
+            <?php
+                $sql = "select user_name, comment from review where rest_id = '$rest_id';";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) != 0) {
+                    while($row = mysqli_fetch_assoc($result)){
+                        $comment = $row['comment'];
+                        $user_name = $row['$user_name'];
+                        $sql1 = "select fname, lname from review where user_name = $user_name;";
+                        $result1 = mysqli_query($conn, $sql1);
+                        if (mysqli_num_rows($result) != 0) {
+                            $row1 = mysqli_fetch_assoc($result1);
+                            $fname = $row['fname'];
+                            $lname = $row['lname'];?>
+                            <div class="media">
+                                <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
+                                    <div class="media-body">
+                <h5 class="mt-0">Media heading</h5>
                 <h3 class="mt-0">Media heading</h3>
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
             </div>
         </div>
+                        
+            
+            <?php
+                        }
+                    }
+                }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ?>
         </div>
 	
 	</div>
