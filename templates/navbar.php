@@ -28,7 +28,7 @@
         width: 350px;
         border-color: orange;
         font-size: 15px;
-        border-radius: 10px;
+        border-radius: 5px;
         color: black;
 		background-color: floralwhite;
     }
@@ -38,7 +38,7 @@
     #search-button{
         height: 34px;
         border-color: orange;
-        border-radius: 10px;
+        border-radius: 6px;
         font-size: 15px;
         width:70px;
         background-color: floralwhite;
