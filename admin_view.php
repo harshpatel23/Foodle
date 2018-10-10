@@ -108,10 +108,9 @@ if ($result_length != 0) {
 			
 		</tbody>
 		</table>
-		
 		<nav aria-label="Results">
 		  <ul class="pagination">
-<!--			<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+			<li class="page-item"><a class="page-link" href="<?php echo "admin_view.php?edit_category=$table&page=$next;"?>">Previous</a></li>
 			  <?php
 			  
 			  for ($x = 1; $x <= ceil($total_rows/$results_per_page); $x++) {
@@ -119,7 +118,7 @@ if ($result_length != 0) {
 			  }?>
 			
 			
-<!--			<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+			<li class="page-item"><a class="page-link" href="<?php echo "admin_view.php?edit_category=$table&page=$next;"?> ">Next</a></li>
 		  </ul>
 		</nav>
 	</div>
