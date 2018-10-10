@@ -1,0 +1,16 @@
+#result-table{
+	width: 1067px;
+	overflow-x: auto;
+}
+
+.pagination{
+	font-size: 15px
+}
+
+#butt-link{
+	color: white;
+}
+
+#butt-link:hover, #butt-link:visited, #butt-link:focus{
+	text-decoration: none;
+}
