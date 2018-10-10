@@ -30,5 +30,4 @@ function add_fav(rest_id) {
 		flag = 2;
 	xmlhttp.open("GET","add_fav.php?rest_id="+rest_id+"&flag="+flag, true);
 	xmlhttp.send();
-
 }
