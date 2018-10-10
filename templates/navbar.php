@@ -86,8 +86,8 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <form class="form-inline my-2 my-xl-0" id="search_bar">
-      <input list="search-results" class="form-control mr-sm-2" autocomplete="off" onfocusout="search(this.value)" id="search-bar" type="search" placeholder="Search">
+    <form class="form-inline my-2 my-xl-0" id="search_bar" method="post">
+      <input list="search-results" class="form-control mr-sm-2" autocomplete="off" onkeyup="search(this.value)" id="search-bar" name="search-bar" type="search" placeholder="Search">
         <datalist id="search-results">
             <option id = "1"></option>
             <option id = "2"></option>
@@ -95,7 +95,7 @@
             <option id = "4"></option>
             <option id = "5"></option>
         </datalist>
-      <button class="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" formaction='search_grid.php'id="search-button" type="submit">Search</button>
     </form>
 	  <ul class="navbar-nav ml-auto mt-2 mt-xl-0">
       <li class="nav-item" id="nav-item">

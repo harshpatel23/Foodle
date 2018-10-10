@@ -8,24 +8,27 @@ function addcss(){
 }
 
 include 'templates/navbar.php';
+include "templates/db-con.php";
 
-            include "templates/db-con.php";
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
             else{
-                $user = $_SESSION['uname'];
-                $sql = "SELECT rest_id from favourites where user_id = '$user'";
+                $rest_name = $_POST['search-bar'];            
+                echo "<h2 align='center'>Showing Search Results for '<strong>$rest_name</strong>'</h2>";                
+                $sql = "SELECT rest_id from rest where rest_name like '$rest_name%'";
                 $result = mysqli_query($conn, $sql);
                 if(!$result){
                         die("QUERY FAILED ".mysqli_error($conn));
                 }
                 elseif(mysqli_num_rows($result) == 0)
-                    echo "<br><h2 align = 'center'>You have not marked any favourite restaurants.</h2>";
-                else{   ?>
-                     <div class="container" id="container">
-                        <div class="row" id="outer-row">
-<?php               while($row = mysqli_fetch_assoc($result)){
+                    echo "<br><br><p align='center'>No Results Found.</p>";
+                else{?>
+                <div class="container" id="container">
+                    <div class="row" id="outer-row">
+
+<?php
+                    while($row = mysqli_fetch_assoc($result)){
                         $id = $row['rest_id'];
                         $sql1 = "select rest_name, cost,rating from rest where rest_id = $id";
                         $result1 = mysqli_query($conn, $sql1);
