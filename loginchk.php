@@ -18,7 +18,7 @@ if (mysqli_num_rows($result) != 0) {
         if($_SESSION['uname'] != 'admin')
             header('Location: index.php');
         else
-            header('Location: admin_view.php');
+            header('Location: admin_view.php?edit_category=person');
         exit;
     }
 	else{

@@ -111,7 +111,11 @@
 				<h3 class="dropdown-header">Signed in as <span style="color:blue">';
 		echo $_SESSION['uname'];
 		echo '</span></h3>
-				<div class="dropdown-divider"></div>
+				<div class="dropdown-divider"></div>';
+			  if($_SESSION['role']=='admin')
+			echo '<a class="dropdown-item" href="admin_view.php?edit_category=person">Admin page</a>
+				  <div class="dropdown-divider"></div>';
+			  echo '
 				<a class="dropdown-item" href="profile_view.php">Profile</a>
 				<a class="dropdown-item" href="#">Reservations</a>
 				<a class="dropdown-item" href="favourites.php">Favourites</a>
@@ -135,9 +139,3 @@
     </ul>
   </div>
 </nav>
-
-
-
-
- 
-

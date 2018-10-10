@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function check_fname(){
     var name = document.getElementById("fname").value;
     var letters = /^[A-Za-z]+$/;
