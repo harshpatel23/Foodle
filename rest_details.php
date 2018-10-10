@@ -2,6 +2,16 @@
 session_start();
 include 'templates/header.php';
 ?>
+
+<style>
+    .media-body{
+        font-size: 14px;
+    }
+    .textarea{
+        font-size: 12px;
+    }
+</style>
+
 <script>
 	document.body.setAttribute("data-spy", "scroll");
 	document.body.setAttribute("data-target", "#side-navigation");
@@ -41,7 +51,16 @@ function addcss(){
 	echo '<script>$("body").scrollspy({ target: "#side-navigation" })</script>';
 }
 $rest_id=$_GET['rest_id'];
-
+if(isset($_SESSION['uname'])){
+    $temp = $_SESSION['uname'];
+    $sql = "SELECT fname,lname FROM person where user_id = '$temp';";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) != 0) {
+        $row = mysqli_fetch_assoc($result);
+        $fname = $row['fname'];
+        $lname = $row['lname'];
+    }
+}
 $sql = "SELECT * FROM rest where rest_id = '$rest_id'";
 $result = mysqli_query($conn, $sql);
 
@@ -235,13 +254,50 @@ if (mysqli_num_rows($result) != 0) {
 	
 ?>
 		</div>
+        <hr>        <h1>Reviews</h1><br>
+
+        <div id="write-review">
+            <div class="media">
+            <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
+            <div class="media-body">
+                <h5 class="mt-0"><?php echo $fname.' '.$lname;?></h5>
+                <div class="container">
+	<div class="row" style="margin-top:10px;">
+		<div class="col-md-6">
+    	<div class="well well-sm">
+            <div class="text-right">
+                <a class="btn btn-info" href="#reviews-anchor" id="open-review-box"><h5 style><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Write Review</h5></a>
+            </div>
+        
+            <div class="row" id="post-review-box" style="display:none;">
+                <div class="col-md-12">
+                    <form accept-charset="UTF-8" action="" method="post">
+                        <input id="ratings-hidden" name="rating" type="hidden"> 
+                        <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="10" style="font-size:16px"></textarea>
+        
+                        <div class="text-right"style="padding-top:10px;">
+                            <div class="stars starrr" data-rating="0" style="font-size:22px;float:left"></div>
+                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                                <h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel&nbsp;</h4></a>
+                            <button class="btn btn-success btn-sm" type="submit"><h4><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Save&nbsp;&nbsp;</h4></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+         
+		</div>
+	</div>
+</div>
+            </div>
+        </div>
+        </div>
         <hr>
-        <div id="reviews">
-        <h1>Reviews</h1><br>
+        <div id="read-reviews">
         <div class="media">
             <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
             <div class="media-body">
-                <h5 class="mt-0">Media heading</h5>
+                <h3 class="mt-0">Media heading</h3>
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
             </div>
         </div>
@@ -250,7 +306,7 @@ if (mysqli_num_rows($result) != 0) {
 	</div>
 	
 		</div>
-
+<hr>
 <?php
 include 'templates/footer.php';
 ?>
