@@ -12,6 +12,6 @@ $rest_id = $_GET['rid'];
     }
     else{
         echo "Review Added";
-        header('Location: rest_details.php?rest_id=$rest_id#reviews');
+        header("Location: rest_details.php?rest_id=$rest_id#reviews");
     }
 ?>
