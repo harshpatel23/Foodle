@@ -8,3 +8,4 @@ if(!isset($_SESSION['lat-lon']))
 }
 else 
 	echo 'set';
+?>
