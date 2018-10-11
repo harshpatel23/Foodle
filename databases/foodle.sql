@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2018 at 10:01 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Oct 11, 2018 at 08:53 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -202,11 +202,10 @@ CREATE TABLE `person` (
 --
 
 INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `role`) VALUES
-('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', '8745632189', 'Customer'),
-('admin', 'admin', 'administrator', NULL, 'admin@foodle.com', '1234567890', 'admin'),
+('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', '8745632182', 'Customer'),
+('admin', 'Foodleadmin123', 'administrator', NULL, 'admin@foodle.com', '1234567890', 'admin'),
 ('ankita03', 'Ankita03', 'Ankita', 'Tiwari', 'ankitatiwari@gmail.com', '7887459632', 'Receptionist'),
-('dharmik20', 'Dharmik20', 'Dharmik', 'Joshi', 'dharmikjoshi@gmail.com', '8552631457', 'Customer'),
-('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', '8745236984', 'Customer'),
+('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', '8745236981', 'Customer'),
 ('harsh26', 'harsh@2606', 'Harsh', 'Palan', 'harsh@gmail.com', '9867145554', 'Customer'),
 ('harshpatel23', 'Harsh123', 'Harsh', 'Patel', 'harsh.patel4@somaiya.edu', '4521478569', 'Customer'),
 ('jash24', 'Jash24', 'Jash', 'Mehta', 'jashmehta@gmail.com', '8569996587', 'Customer'),
@@ -260,7 +259,7 @@ CREATE TABLE `rest` (
 --
 
 INSERT INTO `rest` (`rest_id`, `rest_name`, `rest_addr`, `rest_cuisine`, `rating`, `cost`, `start_time`, `end_time`, `rating_count`, `latitude`, `longitude`) VALUES
-(225, 'Veda', 'S-8, Palladium, Phoenix Mill, Compound  462, Senapati Bapat Marg, Lower Parel, Mumbai, Lower Parel, South Central, 400013', 'North Indian', 4.5, 900, '08:00:00', '23:00:00', 7, 18.99347, 72.82516),
+(225, 'Veda', 'S-8, Palladium, Phoenix Mill, Compound  462, Senapati Bapat Marg, Lower Parel, Mumbai, Lower Parel, South Central, 400013', 'North Indian', 2, 900, '08:00:00', '23:00:00', 7, 18.99347, 72.82516),
 (241, 'Cool Chef Cafe', 'Thadani House,Worli Village, Worli, Mumbai, Worli, South Central, 400030', 'Indian', 4.4, 700, '08:00:00', '23:00:00', 7, 19.00458, 72.81484),
 (260, 'Pot Pourri', 'Inorbit Mall, 51 & 52, Ground Floor, Sector 30A, Vashi, Navi Mumbai, 400703', 'Continental, Mexican, American', 3.4, 400, '08:00:00', '23:00:00', 7, 19.08381, 72.99682),
 (261, 'Soy Street', 'Inorbit Mall, 1st Floor, Sector 30 A, Vashi, Navi Mumbai, 400703', 'Chinese, Seafood', 4.2, 1300, '08:00:00', '23:00:00', 7, 19.07261, 72.99255),
@@ -1089,13 +1088,21 @@ INSERT INTO `rest_contact` (`rest_id`, `contact`) VALUES
 --
 
 CREATE TABLE `review` (
-  `resv_id` int(11) NOT NULL,
   `rest_id` int(11) NOT NULL,
   `user_id` varchar(15) NOT NULL,
   `date_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `comment` text NOT NULL,
-  `rating` decimal(10,0) NOT NULL
+  `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`rest_id`, `user_id`, `date_time`, `comment`) VALUES
+(322, 'aditya25', '2018-10-11 10:53:33', 'Very nice restaurant'),
+(322, 'ankita03', '2018-10-11 10:54:18', 'Average restaurant. Not so good'),
+(322, 'harshpatel23', '2018-10-11 12:16:54', 'Bad Restaurant'),
+(322, 'harshpatel23', '2018-10-11 12:18:14', 'Sorry , Good Restaurant');
 
 -- --------------------------------------------------------
 
@@ -2087,7 +2094,6 @@ ALTER TABLE `rest_contact`
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
-  ADD PRIMARY KEY (`resv_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `rest_id` (`rest_id`);
 
@@ -2106,13 +2112,11 @@ ALTER TABLE `tables`
 --
 ALTER TABLE `reservations`
   MODIFY `resv_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `rest`
 --
 ALTER TABLE `rest`
   MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2822;
-
 --
 -- Constraints for dumped tables
 --

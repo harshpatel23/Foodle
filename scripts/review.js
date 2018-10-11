@@ -40,25 +40,3 @@ $(function(){
   });
 });
 
-
-
-function add_review(comment){
-    alert(comment);
-    if(comment.length > 0){
-        xhttp=new XMLHttpRequest();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                var response = this.responseText;
-                if(response == "success"){
-                    alert("Review posted successfully");
-                }
-                else{
-                    alert("Query Failed");
-                }
-            }
-        };
-        xhttp.open("GET", "new_review.php?review="+comment+"&user="+uid+"&rest="+rid, true);
-        xhttp.send();
-    }
-}
-

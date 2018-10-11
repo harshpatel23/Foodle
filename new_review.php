@@ -1,16 +1,17 @@
 <?php
 session_start();
 include "templates/db-con.php";
-$user_id = $_GET['user'];
-$rest_id = $_GET['rest'];
-$comment = $_GET['review'];
+$review = $_POST['comment'];
+$user_id = $_GET['uid'];
+$rest_id = $_GET['rid'];
 
-    $sql = "insert into review('rest_id','user_id','date_time','comment') values ('$rest_id','$user_id','CURRENT_TIMESTAMP','$comment');";
+    $sql = "insert into review(rest_id,user_id,comment) values ('$rest_id','$user_id','$review');";
     $result = mysqli_query($conn, $sql);
     if(!$result){
         die("QUERY FAILED ".mysqli_error($conn));
     }
     else{
-        echo "success";
+        echo "Review Added";
+        header('Location: rest_details.php?rest_id=$rest_id#reviews');
     }
 ?>

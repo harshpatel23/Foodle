@@ -206,7 +206,7 @@ if (mysqli_num_rows($result) != 0) {
 			</div>
 		</div>
         </div>
-		<div class="table-responsive">
+		<div class="table-responsive" id="menu">
 <?php
 	
 	foreach ($category as $cat){
@@ -254,8 +254,9 @@ if (mysqli_num_rows($result) != 0) {
 	
 ?>
 		</div>
-        <hr>        <h1>Reviews</h1><br>
-
+        <hr>        <h1 id="reviews">Reviews</h1><br>
+        <?php
+        if(isset($_SESSION['uname'])){ ?>
         <div id="write-review">
             <div class="media">
             <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
@@ -271,7 +272,7 @@ if (mysqli_num_rows($result) != 0) {
         
             <div class="row" id="post-review-box" style="display:none;">
                 <div class="col-md-12">
-                    <form accept-charset="UTF-8">
+                    <form accept-charset="UTF-8" method="post">
                         <input id="ratings-hidden" name="rating" type="hidden"> 
                         <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="10" style="font-size:16px"></textarea>
         
@@ -279,7 +280,7 @@ if (mysqli_num_rows($result) != 0) {
                             <!--<div class="stars starrr" data-rating="0" style="font-size:22px;float:left"></div>-->
                             <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
                                 <h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel&nbsp;</h4></a>
-                            <button class="btn btn-success btn-sm" onclick="add_review("This is review","harshpatel23",32)" type="button"><h4><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Save&nbsp;&nbsp;</h4></button>
+                            <button class="btn btn-success btn-sm" type="submit" formaction="new_review.php?uid=<?php echo $_SESSION['uname'].'&rid='.$rest_id;?>"><h4><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Save&nbsp;&nbsp;</h4></button>
                         </div>
                     </form>
                 </div>
@@ -291,7 +292,7 @@ if (mysqli_num_rows($result) != 0) {
 </div>
             </div>
         </div>
-        </div>
+        </div><?php } ?>
         <hr>
         <div id="read-reviews">
             <?php
