@@ -110,7 +110,7 @@ if ($result_length != 0) {
 			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=favourites&user_id=".$row_data['user_id']."&rest_id=".$row_data['rest_id']."\">Delete</a></button></td>";
         
         else if($table == 'review')
-            echo "<tr><td><button class=\"btn btn-primary\"><a href=\"edit_review.php?user_id=\" id=\"butt-link\">Edit</a></button></td>
+            echo "<tr><td><button class=\"btn btn-primary\"><a href=\"edit_review.php?user_id=".$row['user_id']."&rest_id=".$row['rest_id']." id=\"butt-link\">Edit</a></button></td>
 			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=favourites&user_id=".$row_data['user_id']."&rest_id=".$row_data['rest_id']."\">Delete</a></button></td>";
 
 		else
