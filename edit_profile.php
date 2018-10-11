@@ -17,8 +17,6 @@ $Role = $_POST['role'];
 
 $sql = "UPDATE person SET fname = '$Fname', lname = '$Lname', contact = '$Contact', email = '$Email', pwd = '$Pwd', role = '$Role' where user_id = '$Uname'";
 
-echo $sql;
-
 if (mysqli_query($conn, $sql)) {
     echo "Profile Updated Successfully";
 } else {
@@ -27,7 +25,7 @@ if (mysqli_query($conn, $sql)) {
 
 mysqli_close($conn);
 if($_SESSION['role']=='admin')
-	header("refresh:1; url=admin_view.php");
+	header("Location: admin_view.php");
 else
-	header("refresh:1; url=profile_view.php");
+	header("Location: profile_view.php");
 ?>

@@ -137,7 +137,7 @@ if (mysqli_num_rows($result) != 0) {
 		</div>
 	</div>
 </div>
-
+<div class="container-fluid">
 <div class="row">
 	<div class="col-sm-2">
 		<div class="sticky-top">
@@ -172,7 +172,7 @@ if (mysqli_num_rows($result) != 0) {
 	
 	
 	
-	<div class="col-sm-10">
+	<div class="col-sm-10"><div class="container">
 		<div class="row" id="rest_info">
 			<div class="col-md">
 				<h1>Address</h1>
@@ -205,7 +205,7 @@ if (mysqli_num_rows($result) != 0) {
 				</p>
 			</div>
 		</div>
-		
+        </div>
 		<div class="table-responsive">
 <?php
 	
@@ -260,7 +260,7 @@ if (mysqli_num_rows($result) != 0) {
             <div class="media">
             <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
             <div class="media-body">
-                <h5 class="mt-0"><?php echo $fname.' '.$lname;?></h5>
+                <h4 class="mt-0"><?php echo $fname.' '.$lname;?></h4>
                 <div class="container">
 	<div class="row" style="margin-top:10px;">
 		<div class="col-md-6">
@@ -295,24 +295,24 @@ if (mysqli_num_rows($result) != 0) {
         <hr>
         <div id="read-reviews">
             <?php
-                $sql = "select user_name, comment from review where rest_id = '$rest_id';";
+                $sql = "select user_id, comment,date_time from review where rest_id = '$rest_id' ORDER BY date_time DESC;";
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) != 0) {
                     while($row = mysqli_fetch_assoc($result)){
                         $comment = $row['comment'];
-                        $user_name = $row['$user_name'];
-                        $sql1 = "select fname, lname from review where user_name = $user_name;";
+                        $time = $row['date_time'];
+                        $user_name = $row['user_id'];
+                        $sql1 = "select fname, lname from person where user_id = '$user_name';";
                         $result1 = mysqli_query($conn, $sql1);
                         if (mysqli_num_rows($result) != 0) {
                             $row1 = mysqli_fetch_assoc($result1);
-                            $fname = $row['fname'];
-                            $lname = $row['lname'];?>
+                            $fname = $row1['fname'];
+                            $lname = $row1['lname'];?>
                             <div class="media">
                                 <img class="mr-3" src="images/profile.jpeg" alt="Generic placeholder image" height="64px" width="64px">
                                     <div class="media-body">
-                <h5 class="mt-0">Media heading</h5>
-                <h3 class="mt-0">Media heading</h3>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                <h4 class="mt-0"><?php echo $fname.' '.$lname;?></h4>
+                                        <p><?php echo $time;?></p><hr><strong><?php echo $comment;?></strong><hr>
             </div>
         </div>
                         
@@ -322,20 +322,11 @@ if (mysqli_num_rows($result) != 0) {
                     }
                 }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
             ?>
         </div>
 	
 	</div>
-	
+	</div>
 		</div>
 <hr>
 <?php
