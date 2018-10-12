@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 11, 2018 at 08:53 AM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Host: localhost
+-- Generation Time: Oct 12, 2018 at 05:25 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foodle`
+-- Database: `id7352249_foodle`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,9 @@ INSERT INTO `favourites` (`user_id`, `rest_id`) VALUES
 ('ankita03', 1628),
 ('ankita03', 377),
 ('harsh26', 322),
-('harsh26', 260);
+('harsh26', 260),
+('harshpatel23', 322),
+('admin', 322);
 
 -- --------------------------------------------------------
 
@@ -205,6 +207,7 @@ INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `r
 ('aditya25', 'Aditya25', 'Aditya', 'Pandey', 'adityapandey@gmail.com', '8745632182', 'Customer'),
 ('admin', 'Foodleadmin123', 'administrator', NULL, 'admin@foodle.com', '1234567890', 'admin'),
 ('ankita03', 'Ankita03', 'Ankita', 'Tiwari', 'ankitatiwari@gmail.com', '7887459632', 'Receptionist'),
+('Foodie', '12345678', 'Honam', 'Tiwari', 'honamtiwari.23@gmail.com', '8329661585', 'Customer'),
 ('harsh07', 'Harsh07', 'Harsh', 'Gandhi', 'harshgandhi@gmail.com', '8745236981', 'Customer'),
 ('harsh26', 'harsh@2606', 'Harsh', 'Palan', 'harsh@gmail.com', '9867145554', 'Customer'),
 ('harshpatel23', 'Harsh123', 'Harsh', 'Patel', 'harsh.patel4@somaiya.edu', '4521478569', 'Customer'),
@@ -218,6 +221,7 @@ INSERT INTO `person` (`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `r
 ('rishik21', 'Rishik21', 'Rishik', 'Kabra', 'rishikkabra@gmail.com', '9632565255', 'Manager'),
 ('shakti18', 'Shakti18', 'Shakti', 'Singh', 'shaktisingh@gmail.com', '7856932145', 'Customer'),
 ('shifa10', 'Shifa10', 'Shifa', 'Khan', 'shifakhan@gmail.com', '5225698745', 'Customer'),
+('shifakhan10', 'Shifa@12345', 'Shifa', 'Khan', 'khanshifu3@gmail.com', '8655137982', 'Customer'),
 ('tanayraul01', 'Tanay123', 'Tanay', 'Raul', 'tanay.raul@somaiya.edu', '1236547896', 'Manager');
 
 -- --------------------------------------------------------
@@ -1101,8 +1105,7 @@ CREATE TABLE `review` (
 INSERT INTO `review` (`rest_id`, `user_id`, `date_time`, `comment`) VALUES
 (322, 'aditya25', '2018-10-11 10:53:33', 'Very nice restaurant'),
 (322, 'ankita03', '2018-10-11 10:54:18', 'Average restaurant. Not so good'),
-(322, 'harshpatel23', '2018-10-11 12:16:54', 'Bad Restaurant'),
-(322, 'harshpatel23', '2018-10-11 12:18:14', 'Sorry , Good Restaurant');
+(322, 'Foodie', '2018-10-11 15:51:04', 'Loved it!');
 
 -- --------------------------------------------------------
 
@@ -2112,11 +2115,13 @@ ALTER TABLE `tables`
 --
 ALTER TABLE `reservations`
   MODIFY `resv_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `rest`
 --
 ALTER TABLE `rest`
   MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2822;
+
 --
 -- Constraints for dumped tables
 --
