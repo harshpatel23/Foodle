@@ -15,8 +15,16 @@ $size = $_POST['table-size'];
 $sql = "INSERT into reservations(rest_id,user_id,date_time,size) values('$rest_id','$user_id','$datetime','$size');";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Reservation Successfull. You will soon get confirmation SMS containing your Reservation ID on your Mobile";
-    header("refresh:2  ; url=rest_details.php?rest_id=$rest_id");
+    $sql = "SELECT resv_id from reservations where rest_id = $rest_id and user_id = '$user_id' and date_time = '$datetime' and size = $size ORDER BY resv_id DESC;";
+    $result = mysqli_query($conn, $sql);
+    if(!$result){
+        die("QUERY FAILED ".mysqli_error($conn));
+    }
+    if(mysqli_num_rows($result) != 0){
+        $row = mysqli_fetch_assoc($result);
+        $resv_id = $row['resv_id'];
+    }
+		header('Location: resv_SMS.php?resv_id=$resv_id');
 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

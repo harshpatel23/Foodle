@@ -99,7 +99,7 @@
     </form>
 	  <ul class="navbar-nav ml-auto mt-2 mt-xl-0">
       <li class="nav-item" id="nav-item">
-        <a class="nav-link" id="nav-link" href="#">Reserve<i class="fa fa-clock-o" id="icon"></i>
+        <a class="nav-link" id="nav-link" href="my_reservations.php">My Reservations<i class="fa fa-clock-o" id="icon"></i>
 <span class="sr-only">(current)</span></a>
       </li>
       <?php 

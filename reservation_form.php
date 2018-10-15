@@ -43,7 +43,7 @@ if (!$conn) {
             </select> 
         
         <label for="datetime">Date and Time for reservation:<span style="color : red"> * </span></label>
-        <input id = "datetime" class="form-control" name="datetime" required style="width:61.6%;" onfocusout = "table_check(<?php echo $rest_id ?>)">
+        <input id = "datetime" class="form-control" name="datetime" autocomplete="off" required style="width:61.6%;" onfocusout = "table_check(<?php echo $rest_id ?>)">
         <div id="message" style="display:none">
             <p style="color:red">All the tables for selected time and table size are booked.<br>Try selecting different time or table size.</p>
         </div>
