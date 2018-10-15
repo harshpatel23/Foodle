@@ -1,8 +1,10 @@
 <?php
 session_start();
-$search = mysqli_real_escape_string($conn, $_GET['name']);
 
 include "templates/db-con.php";
+
+$search = mysqli_real_escape_string($conn, $_GET['name']);
+
 $sql = "SELECT distinct rest_name FROM rest where rest_name like '$search%' && rest_name !='$search' ORDER BY rest_name limit 5";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 0) {
