@@ -39,7 +39,7 @@
 		<script src="scripts/review.js"></script>        
         <script src="scripts/search.js"></script>
 		<script src="scripts/signup_val.js"></script>
-
+        <script src="scripts/reservation.js"></script>
 		<?php addcss(); ?>
 
 	</head>

@@ -4,13 +4,22 @@
     margin: 0 auto;
 }
 
+#reservation-form{
+    font-size: 15px;
+    width: 500px;
+    margin: 0 auto;
+}
+
 .form-group{
     margin: 10px 0px 10px;
     font-size: inherit;
 }
 
-.form-control{
-    
+.form-control{  
     margin: 10px 0px 10px;
     font-size: inherit;
+}
+
+#table-size{
+    height: 34px;
 }
