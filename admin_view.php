@@ -28,7 +28,6 @@ else
 
 include 'templates/header.php';
 include 'templates/navbar.php';
-
 include 'templates/db-con.php';
 
 $sql = "SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.key_column_usage WHERE table_schema = '$database_name' AND CONSTRAINT_NAME = 'PRIMARY';";
@@ -94,9 +93,10 @@ foreach ($column as $heading)
 $results_per_page = 10;
 $start = $page * $results_per_page;
 if (isset($_POST['search-bar'])) {
+
 	$search = mysqli_real_escape_string($conn, $_POST['search-bar']);
 	if($table=='rest')
-		$sql = "SELECT * FROM rest where rest_name like '$search%' LIMIT $start, $results_per_page;";
+		$sql = "SELECT * FROM rest where rest_name like '$search%'";
 	elseif($table=='person')
 	{
 		$names = array();
@@ -105,26 +105,30 @@ if (isset($_POST['search-bar'])) {
 		if(sizeof($names) == 1)
 		{
 			$x = $names[0];
-			$sql = "SELECT * FROM person where fname like '$x%' or lname like '$x%';";
+			$sql = "SELECT * FROM person where fname like '$x%' or lname like '$x%'";
 		}
 		else
 		{
 			$fname = $names[0];
-			$lname = $names[0];
-			$sql = "SELECT * FROM person where fname like '$fname%' or lname like '$lname%';";
+			$lname = $names[1];
+			$sql = "SELECT * FROM person where fname like '$fname%' or lname like '$lname%'";
 		}
 		
 	}
-	else $sql = "select * from $table "; 
+	else 
+		$sql = "select * from $table LIMIT $start, $results_per_page;"; 
 
 }
 else
-	$sql = "select * from $table ";
+	$sql = "select * from $table LIMIT $start, $results_per_page;";
 
-$result = mysqli_query($conn, $sql);
-			
+$result = mysqli_query($conn, $sql);		
 $result_length = mysqli_num_rows($result);
-$limit = ($result_length < $results_per_page)  ? $result_length : $results_per_page;
+
+if(isset($_POST['search-bar']))
+	$limit = mysqli_num_rows($result);
+else
+	$limit = ($result_length < $results_per_page)  ? $result_length : $results_per_page;
 
 if ($result_length != 0) {
 	for ($x = 0; $x < $limit; $x++) {
@@ -161,7 +165,7 @@ if ($result_length != 0) {
 			
 		</tbody>
 		</table>
-	<?php if(!isset($_POST['search-bar'])){?>
+		<?php if (!isset($_POST['search-bar'])) { ?>
 		<nav aria-label="Results">
 		  <ul class="pagination">
 			  
@@ -203,7 +207,7 @@ if ($result_length != 0) {
 			  
 		  </ul>
 		</nav>
-	<?php  } ?>
+	<?php } ?>
 	</div>
 	
 </div>
