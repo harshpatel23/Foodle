@@ -37,6 +37,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/h.css">
 		<script src="scripts/set.js"></script>
 		<script src="scripts/review.js"></script>        
+		<script src="scripts/res_avail.js"></script>        
         <script src="scripts/search.js"></script>
 		<script src="scripts/signup_val.js"></script>
         <script src="scripts/reservation.js"></script>

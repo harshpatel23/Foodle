@@ -549,7 +549,7 @@ var datetimepickerFactory = function ($) {
 		value: '',
 		rtl: false,
 
-		format:	'Y/m/d H:i',
+		format:	'Y-m-d H',
 		formatTime:	'H:i',
 		formatDate:	'Y/m/d',
 
@@ -574,7 +574,7 @@ var datetimepickerFactory = function ($) {
 		maxDate: false,
 		minTime: false,
 		maxTime: false,
-		minDateTime: false,
+		minDateTime: new Date(),
 		maxDateTime: false,
 
 		allowTimes: [],

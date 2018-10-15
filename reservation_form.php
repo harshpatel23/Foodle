@@ -24,12 +24,13 @@ if (!$conn) {
 ?>
 
 <div class = "container">
-    <form id="signup-form" action="reserve.php" name="reservation" method="post">
+    
+    <form id="reservation-form" action="reserve.php?rest_id=<?php echo $rest_id ?>" name="reservation" method="post">
         <label for="restaurant-name">Restaurant Name:<span style="color : red"> * </span></label>
         <input id = "restaurant-name" class="form-control" name="restaurant" value="<?php echo $rest_name?>" readonly required>
         
         <label for="table-size">Table Size</label>
-            <select class="form-control" id="table-size" style="height:34px">
+            <select class="form-control" id="table-size" name="table-size" style="width:20%;height:34px">
                 <?php
                     $sql = "SELECT size from tables WHERE rest_id = $rest_id;";
                     $result = mysqli_query($conn, $sql);
@@ -42,7 +43,11 @@ if (!$conn) {
             </select> 
         
         <label for="datetime">Date and Time for reservation:<span style="color : red"> * </span></label>
-        <input id = "datetime" class="form-control" name="datetime" autofocus=true required style="width:61.6%;">
+        <input id = "datetime" class="form-control" name="datetime" required style="width:61.6%;" onfocusout = "table_check(<?php echo $rest_id ?>)">
+        <div id="message" style="display:none">
+            <p style="color:red">All the tables for selected time and table size are booked.<br>Try selecting different time or table size.</p>
+        </div>
+        <button type="submit" class="btn btn-primary" style="font-size: 13px" id='reserve' disabled>Reserve</button>
     </form> 
 </div>
 <script>
