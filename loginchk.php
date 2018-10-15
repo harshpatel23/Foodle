@@ -3,8 +3,8 @@ session_start();
 
 include "templates/db-con.php";
 
-$uname = $_POST["usrname"];
-$passwd = $_POST["pwd"];
+$uname = mysqli_real_escape_string($conn, $_POST["usrname"]);
+$passwd = mysqli_real_escape_string($conn, $_POST["pwd"]);
 
 $sql = "SELECT pwd, role FROM person where user_id = '$uname'";
 
