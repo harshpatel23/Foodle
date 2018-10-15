@@ -1,4 +1,4 @@
-function search(str){
+function search(str, table){
     if(str.length > 0){
         if(window.XMLHttpRequest){
             xhttp=new XMLHttpRequest();
@@ -17,7 +17,7 @@ function search(str){
                 }
              }
             };
-        xhttp.open("GET","search_results.php?name="+str,true);
+        xhttp.open("GET","search_results.php?table="+table+"&name="+str,true);
         xhttp.send();
     }
 }

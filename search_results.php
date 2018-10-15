@@ -3,15 +3,23 @@ session_start();
 
 include "templates/db-con.php";
 
-$search = mysqli_real_escape_string($conn, $_GET['name']);
+$search = $_GET['name'];
+$table = $_GET['table'];
 
-$sql = "SELECT distinct rest_name FROM rest where rest_name like '$search%' && rest_name !='$search' ORDER BY rest_name limit 5";
+if($table == 'rest')
+	$sql = "SELECT distinct rest_name FROM rest where rest_name like '$search%' && rest_name !='$search' ORDER BY rest_name limit 5";
+elseif ($table == 'person')
+	$sql = "SELECT distinct fname, lname FROM person where fname like '$search%' or lname like '$search%' ORDER BY fname limit 5";
+
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 0) {
     $name = array();
 	while($row = mysqli_fetch_assoc($result))
 	{
-		$name[] = $row['rest_name'];
+		if($table=='rest')
+			$name[] = $row['rest_name'];
+		elseif($table=='person')
+			$name[] = $row['fname'].' '.$row['lname'];
 	}
     $Json_data = json_encode($name);
     echo $Json_data;

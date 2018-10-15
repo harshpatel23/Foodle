@@ -14,7 +14,7 @@ include "templates/db-con.php";
                 die("Connection failed: " . mysqli_connect_error());
             }
             else{
-                $rest_name = $_POST['search-bar'];            
+                $rest_name = mysqli_real_escape_string($conn, $_POST['search-bar']);            
                 echo "<h2 align='center'>Showing Search Results for '<strong>$rest_name</strong>'</h2>";                
                 $sql = "SELECT rest_id from rest where rest_name like '$rest_name%'";
                 $result = mysqli_query($conn, $sql);

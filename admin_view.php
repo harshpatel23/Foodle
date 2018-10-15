@@ -7,8 +7,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role']!='admin')
 	exit;
 }
 
-include 'templates/header.php';
-include 'templates/navbar.php';
+
 
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
@@ -27,9 +26,8 @@ if(!isset($_GET['page']))
 else
 	$page = intval($_GET['page'])-1;
 
-
-
-
+include 'templates/header.php';
+include 'templates/navbar.php';
 
 include 'templates/db-con.php';
 
@@ -94,8 +92,35 @@ foreach ($column as $heading)
 		<tbody>
 <?php
 $results_per_page = 10;
-$start = $page * $results_per_page;		
-$sql = "select * from $table LIMIT $start, $results_per_page;";
+$start = $page * $results_per_page;
+if (isset($_POST['search-bar'])) {
+	$search = mysqli_real_escape_string($conn, $_POST['search-bar']);
+	if($table=='rest')
+		$sql = "SELECT * FROM rest where rest_name like '$search%' LIMIT $start, $results_per_page;";
+	elseif($table=='person')
+	{
+		$names = array();
+		$names = explode(" ",$search);
+
+		if(sizeof($names) == 1)
+		{
+			$x = $names[0];
+			$sql = "SELECT * FROM person where fname like '$x%' or lname like '$x%';";
+		}
+		else
+		{
+			$fname = $names[0];
+			$lname = $names[0];
+			$sql = "SELECT * FROM person where fname like '$fname%' or lname like '$lname%';";
+		}
+		
+	}
+	else $sql = "select * from $table "; 
+
+}
+else
+	$sql = "select * from $table ";
+
 $result = mysqli_query($conn, $sql);
 			
 $result_length = mysqli_num_rows($result);
@@ -136,6 +161,7 @@ if ($result_length != 0) {
 			
 		</tbody>
 		</table>
+	<?php if(!isset($_POST['search-bar'])){?>
 		<nav aria-label="Results">
 		  <ul class="pagination">
 			  
@@ -177,6 +203,7 @@ if ($result_length != 0) {
 			  
 		  </ul>
 		</nav>
+	<?php  } ?>
 	</div>
 	
 </div>
