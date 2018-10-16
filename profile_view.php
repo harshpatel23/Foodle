@@ -21,6 +21,10 @@ if($_SESSION['role'] == 'admin')
 else
 	$user = $_SESSION['uname'];
 
+if(isset($_GET['method']) && $_GET['method']=='insert')
+    $flag = 'true';
+else
+    $flag = '';
 $sql = "SELECT * from person where user_id = '$user'";
 
 
@@ -36,7 +40,7 @@ mysqli_close($conn);
 <form id="profile" action="edit_profile.php"name="profile" method="post" style = "font-size: 15px; width: 500px; margin: 0 auto">
         <div class="form-group" style = "margin:10px 0px 10px; font-size: inherit;">
             <label for="fname">First Name:<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="fname" id="fname" value="<?php echo $row ['fname']; ?>" <?php if($_SESSION['role'] != 'admin') echo "readonly" ?> required pattern="[a-zA-z]+$">
+            <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="fname" id="fname" value="<?php if() echo $row ['fname']; ?>" <?php if($_SESSION['role'] != 'admin') echo "readonly" ?> required pattern="[a-zA-z]+$">
             
             <label for="lname">Last Name:</label>
             <input type="text" class="form-control" "margin:10px 0px 10px; font-size: inherit;" name="lname" id="lname" value="<?php echo $row ['lname']; ?>" <?php if($_SESSION['role'] != 'admin') echo "readonly" ?> pattern="[A-Za-z]+$">

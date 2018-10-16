@@ -70,10 +70,12 @@ if (mysqli_num_rows($result) != 0)
 		</nav>
 	</div>
 	<div class="col-sm-10" id="result-table">
-		<?php if($table == 'rest'){
+		<?php if($table=='rest'){
 		?>
 		<a href="rest_form.php?method=insert"><button class="btn btn-primary" style="margin:5px 0px;">Add New</button></a>
-		<?php }?>
+		<?php }
+		elseif($table=='person'){
+		?><a href="profile_view.php?method=insert"><button class="btn btn-primary" style="margin:5px 0px;">Add New</button></a><?php } ?>
 		<table class="table table-hover table-bordered">
 		  <thead>
 			<tr>
