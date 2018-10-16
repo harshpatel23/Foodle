@@ -17,11 +17,27 @@ if (!$conn) {
     $sql = "SELECT * from reservations WHERE user_id = '$user_id';";
     $result = mysqli_query($conn, $sql); 
     if (mysqli_num_rows($result) != 0) {
-        while($row = mysqli_fetch_assoc($result)){?>
+        while($row = mysqli_fetch_assoc($result)){
+            $size = $row['size'];
+            $datetime = $row['date_time'];
+            $rest_id = $row['rest_id'];
+            $resv_id = $row['resv_id'];
+            
+            $sql1 = "Select rest_name from rest where rest_id = $rest_id;";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result) != 0){
+                $row1 = mysqli_fetch_assoc($result1);
+                $rest_name = $row1['rest_name'];
+            }
+
+?>
             <div class="panel panel-primary" id="my-reservation-panel">
-      <div class="panel-heading">Panel with panel-primary class</div>
-      <div class="panel-body">Panel Content</div>
-    </div><?php
+      <div class="panel-heading"><?php echo $rest_name ?></div>
+    <div class="panel-body">
+        
+    </div>
+    </div>
+<?php
         }
     }
     else{
