@@ -6,7 +6,7 @@ include 'templates/db-con.php';
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
+$method = $_GET['method'];
 $Fname = $_POST['fname'];
 $Lname = $_POST['lname'];
 $Contact = $_POST['contact'];
@@ -15,7 +15,11 @@ $Uname = $_POST['uname'];
 $Pwd = $_POST['pwd'];
 $Role = $_POST['role'];
 
-$sql = "UPDATE person SET fname = '$Fname', lname = '$Lname', contact = '$Contact', email = '$Email', pwd = '$Pwd', role = '$Role' where user_id = '$Uname'";
+
+if($method == 'insert')
+	$sql = "INSERT INTO `person`(`user_id`, `pwd`, `fname`, `lname`, `email`, `contact`, `role`) VALUES('$Uname', '$Pwd', '$Fname', '$Lname', '$Email', '$Contact', '$Role');";
+elseif($method == 'update')
+	$sql = "UPDATE person SET fname = '$Fname', lname = '$Lname', contact = '$Contact', email = '$Email', pwd = '$Pwd', role = '$Role' where user_id = '$Uname'";
 
 if (mysqli_query($conn, $sql)) {
     echo "Profile Updated Successfully";
@@ -28,4 +32,5 @@ if($_SESSION['role']=='admin')
 	header("Location: admin_view.php");
 else
 	header("Location: profile_view.php");
+exit;
 ?>
