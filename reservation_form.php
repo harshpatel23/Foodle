@@ -30,7 +30,7 @@ if (!$conn) {
         <input id = "restaurant-name" class="form-control" name="restaurant" value="<?php echo $rest_name?>" readonly required>
         
         <label for="table-size">Table Size</label>
-            <select class="form-control" id="table-size" name="table-size" style="width:20%;height:34px">
+            <select class="form-control" id="table-size" name="table-size" style="width:20%;height:34px" onfocusout = "table_check(<?php echo $rest_id ?>)">
                 <?php
                     $sql = "SELECT size from tables WHERE rest_id = $rest_id;";
                     $result = mysqli_query($conn, $sql);

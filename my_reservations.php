@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
     $user_id = $_SESSION['uname'];
-    $sql = "SELECT * from reservations WHERE user_id = '$user_id';";
+    $sql = "SELECT * from reservations WHERE user_id = '$user_id' ORDER BY date_time DESC;";
     $result = mysqli_query($conn, $sql); 
     if (mysqli_num_rows($result) != 0) {
         while($row = mysqli_fetch_assoc($result)){
@@ -29,18 +29,23 @@ if (!$conn) {
                 $row1 = mysqli_fetch_assoc($result1);
                 $rest_name = $row1['rest_name'];
             }
-
-?>
-            <div class="panel panel-primary" id="my-reservation-panel">
-      <div class="panel-heading"><?php echo $rest_name ?></div>
-    <div class="panel-body">
-        
-    </div>
-    </div>
+            if($datetime > date("Y-m-d H:i:s")){ ?>
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><?php echo $rest_name ?></div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+            
 <?php
+            }
+            else{ ?>
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><?php echo $rest_name ?></div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+<?php       } 
         }
     }
     else{
         echo "<br><h2 align = 'center'>You do not have any reservations.</h2>";
     }
-include 'templates/footer.php';
+?>
