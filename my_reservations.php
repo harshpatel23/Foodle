@@ -18,7 +18,7 @@ if (!$conn) {
     $result = mysqli_query($conn, $sql); 
     if (mysqli_num_rows($result) != 0) {
         while($row = mysqli_fetch_assoc($result)){?>
-            <div class="panel panel-primary" id="my-reservation-card">
+            <div class="panel panel-primary" id="my-reservation-panel">
       <div class="panel-heading">Panel with panel-primary class</div>
       <div class="panel-body">Panel Content</div>
     </div><?php

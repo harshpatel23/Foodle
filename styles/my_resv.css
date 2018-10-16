@@ -1,4 +1,14 @@
 #my-reservation-panel{
     width:70%;
     margin: 30px auto;
+    
+}
+
+.panel-heading{
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.panel-body{
+    font-family: sans-serif;
+    font-size: 15px;
 }
