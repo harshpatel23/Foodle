@@ -19,7 +19,7 @@ if (mysqli_num_rows($result) != 0) {
 		if($table=='rest')
 			$name[] = $row['rest_name'];
 		elseif($table=='person')
-			if($row['lname'])
+			if(!$row['lname'])
 				$name[] = $row['fname'];
 			else
 				$name[] = $row['fname'].' '.$row['lname'];

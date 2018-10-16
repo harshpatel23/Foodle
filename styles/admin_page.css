@@ -12,5 +12,6 @@
 }
 
 #butt-link:hover, #butt-link:visited, #butt-link:focus{
+	color: white;
 	text-decoration: none;
 }
