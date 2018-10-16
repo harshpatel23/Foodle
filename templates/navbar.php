@@ -105,10 +105,6 @@
       id="search-button" type="submit">Search</button>
     </form>
 	  <ul class="navbar-nav ml-auto mt-2 mt-xl-0">
-      <li class="nav-item" id="nav-item">
-        <a class="nav-link" id="nav-link" href="my_reservations.php">My Reservations<i class="fa fa-clock-o" id="icon"></i>
-<span class="sr-only">(current)</span></a>
-      </li>
       <?php 
 		  if(isset($_SESSION['uname'])){
 		  echo '<li class="nav-item" id="nav-item">
@@ -125,7 +121,7 @@
 			  else
 			  	echo '<a class="dropdown-item" href="profile_view.php">Profile</a>';
 			  echo'
-				<a class="dropdown-item" href="#">Reservations</a>
+				<a class="dropdown-item" href="my_reservations.php">Reservations</a>
 				<a class="dropdown-item" href="favourites.php">Favourites</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">Help</a>
