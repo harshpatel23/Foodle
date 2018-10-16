@@ -24,7 +24,7 @@ if (mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_assoc($result);
         $resv_id = $row['resv_id'];
     }
-		header('Location: resv_SMS.php?resv_id=$resv_id');
+		header("refresh:0; url=resv_SMS.php?resv_id=$resv_id");
 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
