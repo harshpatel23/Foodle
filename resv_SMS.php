@@ -4,7 +4,7 @@
     $user_id = $_SESSION['uname'];
     $sql = "SELECT contact from person where user_id = '$user_id';";
     $result = mysqli_query($conn, $sql);
-    if(!result){
+    if(!$result){
         die("QUERY FAILED ".mysqli_error($conn));
     }
      if(mysqli_num_rows($result) != 0){
@@ -12,7 +12,6 @@
         $mobile = $row['contact'];
     }
     $resv_id = $_GET['resv_id'];
-    echo $mobile;
     $message="Voila! You have made a reservation through Foodle. Your Reservation ID is ".$resv_id.". Show this SMS at reception to avoid confusions.";
 	$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9930157621&Password=Foodle123&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=foodlsxK2qeznrW8DNELIvZo1B5F") ,true);
 	if ($json["status"]=="success") {
