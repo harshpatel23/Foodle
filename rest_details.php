@@ -132,6 +132,17 @@ if (mysqli_num_rows($result) != 0) {
 ?>
 
 					"></span>Favourite</button></span>
+
+
+<?php
+	if(isset($_SESSION['uname'])){     ?>
+    <a href = "reservation_form.php?rest_id=<?php echo $rest_id ?>">
+		<span><button class="btn btn-light" id="res-btn">
+            <span id="res-clock" class="fa fa-clock-o"></span>Reserve</button></span></a>
+
+<?php    
+    }   ?>
+
 				</p>				
 			</div>
 		</div>
