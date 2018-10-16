@@ -115,15 +115,18 @@
 		echo $_SESSION['uname'];
 		echo '</span></h3>
 				<div class="dropdown-divider"></div>';
-			  if($_SESSION['role']=='admin')
+			  if($_SESSION['role'] == 'admin')
 			echo '<a class="dropdown-item" href="admin_view.php?edit_category=person">Admin page</a>
 				  <div class="dropdown-divider"></div>';
 			  else
 			  	echo '<a class="dropdown-item" href="profile_view.php">Profile</a>';
-			  echo'
-				<a class="dropdown-item" href="my_reservations.php">Reservations</a>
-				<a class="dropdown-item" href="favourites.php">Favourites</a>
-				<div class="dropdown-divider"></div>
+                if($_SESSION['role'] == 'Manager')
+                    echo '<a class="dropdown-item" href="manager_view.php">Reservations</a>
+                <a class="dropdown-item" href="rest_form.php?method=update&rest_id='.$_SESSION['rest_id'].'">Restaurant Details</a>';
+                else
+                    echo '<a class="dropdown-item" href="my_reservations.php">Reservations</a>
+                <a class="dropdown-item" href="favourites.php">Favourites</a>';
+				echo '<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">Help</a>
 				<a class="dropdown-item" href="logout.php">Logout</a>
 				

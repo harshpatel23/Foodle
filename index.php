@@ -12,6 +12,5 @@ function addcss(){
 include 'templates/navbar.php';
 //include 'templates/banner.php';
 include 'templates/grid.php';
-
 include 'templates/footer.php';
 ?>

@@ -122,7 +122,7 @@ if (isset($_POST['search-bar'])) {
 else
 	$sql = "select * from $table LIMIT $start, $results_per_page;";
 
-$result = mysqli_query($conn, $sql);		
+$result = mysqli_query($conn, $sql);
 $result_length = mysqli_num_rows($result);
 
 if(isset($_POST['search-bar']))
