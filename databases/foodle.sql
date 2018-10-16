@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 16, 2018 at 07:03 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Host: 127.0.0.1
+-- Generation Time: Oct 16, 2018 at 08:12 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,8 @@ INSERT INTO `favourites` (`user_id`, `rest_id`) VALUES
 ('ankita03', 1628),
 ('ankita03', 377),
 ('harsh26', 322),
-('harsh26', 260);
+('harsh26', 260),
+('harshpatel23', 322);
 
 -- --------------------------------------------------------
 
@@ -239,25 +240,13 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`resv_id`, `rest_id`, `user_id`, `date_time`, `size`) VALUES
-(28, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(29, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(30, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(31, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(32, 322, 'harshpatel23', '2018-10-17 02:00:00', 2),
-(33, 322, 'harshpatel23', '2018-10-19 01:00:00', 2),
-(36, 322, 'harshpatel23', '2018-10-17 05:00:00', 2),
-(40, 322, 'harshpatel23', '2018-10-17 01:00:00', 2),
-(41, 322, 'harshpatel23', '0000-00-00 00:00:00', 0),
-(42, 322, 'harshpatel23', '2018-10-18 01:00:00', 2),
-(43, 322, 'harshpatel23', '2018-10-17 01:00:00', 2),
-(44, 322, 'harshpatel23', '2018-10-19 01:00:00', 2),
-(45, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(46, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(47, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(48, 322, 'harshpatel23', '2018-10-16 02:00:00', 2),
-(49, 322, 'harshpatel23', '2018-10-16 03:00:00', 2),
-(50, 322, 'harshpatel23', '2018-10-24 03:00:00', 2),
-(51, 322, 'harshpatel23', '2018-10-16 04:00:00', 2);
+(54, 543, 'harshpatel23', '2018-10-17 12:00:00', 2),
+(55, 322, 'harshpatel23', '2018-10-17 13:00:00', 4),
+(56, 751, 'harshpatel23', '2018-10-15 09:00:00', 8),
+(57, 322, 'harshpatel23', '2018-10-23 20:00:00', 8),
+(58, 322, 'harshpatel23', '2018-10-23 21:00:00', 8),
+(59, 322, 'harshpatel23', '2018-10-17 23:00:00', 8),
+(60, 322, 'harshpatel23', '2018-10-26 05:00:00', 8);
 
 -- --------------------------------------------------------
 
@@ -2139,7 +2128,7 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `resv_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `resv_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `rest`
