@@ -32,6 +32,7 @@ if(!$result = mysqli_query($conn, $sql))
 {
 	echo '<h3>Cannot delete! Check for foreign key constraints!</h3> <p>Redirecting...</p>';
 	header('refresh: 3; admin_view.php');
+	exit;
 }
 elseif($_SESSION['role'] == 'admin')
 	header("Location: admin_view.php?edit_category=$table");

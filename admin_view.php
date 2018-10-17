@@ -66,6 +66,7 @@ if (mysqli_num_rows($result) != 0)
 				<li class="nav-item <?php if($table == 'rest') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=rest&page=1" class="nav-link" id="side-nav-link">Restaurants</a></li>
 				<li class="nav-item <?php if($table == 'review') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=review&page=1" class="nav-link" id="side-nav-link">Reviews</a></li>
 				<li class="nav-item <?php if($table == 'favourites') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=favourites&page=1" class="nav-link" id="side-nav-link">Favourites</a></li>
+				<li class="nav-item <?php if($table == 'reservations') echo 'active';?>" id="side-nav-item"><a href="admin_view.php?edit_category=reservations&page=1" class="nav-link" id="side-nav-link">Reservations</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -79,7 +80,9 @@ if (mysqli_num_rows($result) != 0)
 		<table class="table table-hover table-bordered">
 		  <thead>
 			<tr>
-				<?php if($table != 'favourites' && $table != 'review') echo '<th>Edit</th>' ?>
+				<?php 
+				if($table!='favourites' && $table!='review' && $table!='reservations')
+				echo '<th>Edit</th>' ?>
 				
 				<th>Delete</th>
 	
@@ -146,13 +149,17 @@ if ($result_length != 0) {
 		else
 		{
 			$curr_key = $row_data[$primary_key[$table]];
-			echo '<tr><td><button class="btn btn-primary"><a href="';
-			if($table == 'person')
-				echo "profile_view.php?user_id=".$row_data['user_id'];
-			else if($table == 'rest')
-				echo "rest_form.php?method=update&rest_id=".$row_data['rest_id'];
-			echo "\" id=\"butt-link\">Edit</a></button></td>
-			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\">Delete</a></button></td>";
+			echo '<tr>';
+			if($table != 'reservations')
+			{
+				echo '<td><button class="btn btn-primary"><a href="';
+				if($table == 'person')
+					echo "profile_view.php?user_id=".$row_data['user_id'];
+				else if($table == 'rest')
+					echo "rest_form.php?method=update&rest_id=".$row_data['rest_id'];
+				echo "\" id=\"butt-link\">Edit</a></button></td>";
+			}
+			echo "<td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\">Delete</a></button></td>";
 		}
 
 		foreach($column as $attr)
