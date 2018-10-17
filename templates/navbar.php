@@ -97,12 +97,15 @@
             <option id = "4"></option>
             <option id = "5"></option>
         </datalist>
-      <button class="btn btn-outline-success my-2 my-sm-0" formaction=
-      <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin' && isset($table))
-                echo "\"admin_view.php?edit_category=$table\"";
+      <button class="btn btn-outline-success my-2 my-sm-0" formaction="<?php if(isset($_SESSION['role']) && isset($table))
+       {
+                if($_SESSION['role'] == 'admin')
+                    echo "admin_view.php?edit_category=$table";
+                elseif($_SESSION['role'] == 'Manager')
+                    echo 'manager_view.php';
+                }
             else
-                echo '"search_grid.php"';?>
-      id="search-button" type="submit">Search</button>
+                echo 'search_grid.php';?>" id="search-button" type="submit">Search</button>
     </form>
 	  <ul class="navbar-nav ml-auto mt-2 mt-xl-0">
       <?php 

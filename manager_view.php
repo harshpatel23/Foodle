@@ -13,6 +13,8 @@ function addcss(){
 	echo '<script src="scripts/confirm_changes.js"></script>';
 }
 
+$table = 'reservations';
+
 include 'templates/header.php';
 include 'templates/navbar.php';
 include 'templates/db-con.php';
@@ -24,6 +26,7 @@ else
 ?>
 <h2 style="margin-left: 20px;">Reservations</h2>
 <?php
+
 
 $sql = "SELECT count(*) from reservations where rest_id = '".$_SESSION['rest_id']."';";
 $result = mysqli_query($conn, $sql);
@@ -40,6 +43,7 @@ if (mysqli_num_rows($result) != 0)
 	  	<thead>
 			<tr>
 				<th>Cancel</th>
+				<th>Resv. Id</th>
 				<th>Customer Name</th>
 				<th>Time</th>
 				<th>Table size</th>
@@ -52,7 +56,32 @@ if (mysqli_num_rows($result) != 0)
 
 $results_per_page = 15;
 $start = $page * $results_per_page;
-$sql = "SELECT `resv_id`, `fname`, `user_id`, `lname`, `date_time`, `size` FROM `reservations` natural join person WHERE rest_id = '".$_SESSION['rest_id']."' ORDER BY date_time DESC LIMIT $start, $results_per_page";
+
+if(isset($_POST['search-bar']))
+{
+	$flag = "";
+	if(is_numeric($_POST['search-bar']))
+		$sql = "SELECT `resv_id`, `fname`, `user_id`, `lname`, `date_time`, `size` FROM `reservations` natural join person WHERE resv_id = '".$_POST['search-bar']."' ORDER BY date_time DESC";
+	else
+	{
+		$names = array();
+		$names = explode(" ", $_POST['search-bar']);
+		$fname = $names[0];
+		if(sizeof($names) == 2)
+		{
+			$lname = $names[1];
+			$sql = "SELECT `resv_id`, `fname`, `user_id`, `lname`, `date_time`, `size` FROM `reservations` natural join person WHERE fname like '".$fname."%' and lname like '".$lname."%' ORDER BY date_time DESC";
+		}
+		else
+			$sql = "SELECT `resv_id`, `fname`, `user_id`, `lname`, `date_time`, `size` FROM `reservations` natural join person WHERE fname like '".$fname."%' or lname like '".$fname."%' ORDER BY date_time DESC";
+		
+	}
+}
+else
+{
+	$flag = "true";
+	$sql = "SELECT `resv_id`, `fname`, `user_id`, `lname`, `date_time`, `size` FROM `reservations` natural join person WHERE rest_id = '".$_SESSION['rest_id']."' ORDER BY date_time DESC LIMIT $start, $results_per_page";
+}
 $result = mysqli_query($conn, $sql);
 $result_length = mysqli_num_rows($result);
 
@@ -65,6 +94,7 @@ if ($result_length != 0) {
 			echo '<tr class="table-success"><td><button class="btn btn-danger" onclick="return confirm_changes()"><a href="delete_data.php?table=reservations&id=resv_id&value='.$row_data['resv_id'].'" id="butt-link">Cancel</a></button></td>';
 		else
 			echo '<tr><td></td>';
+		echo '<td>'.$row_data['resv_id'].'</td>';
 		echo '<td>'.$row_data['fname'].' '.$row_data['lname'].'</td>';
 		echo '<td>'.$row_data['date_time'].'</td>';
 		echo '<td>'.$row_data['size'].'</td>';
@@ -76,6 +106,7 @@ if ($result_length != 0) {
 
 </tbody>
 </table>
+<?php if($flag) { ?>
 <nav aria-label="Results">
 		  <ul class="pagination">
 			  
@@ -117,6 +148,8 @@ if ($result_length != 0) {
 			  
 		  </ul>
 		</nav>
+
+<?php } ?>
 </div>
 
 
