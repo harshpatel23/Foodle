@@ -34,7 +34,7 @@
 			</div>
 		<?php 
 		if(!isset($_SESSION['otp'])){
-			echo '<button type="submit" class="btn btn-primary" style="font-size:inherit; margin:auto;" formaction="send-otp.php"><span class="glyphicon glyphicon-off"></span> Send OTP</button>';
+			echo '<button type="submit" class="btn btn-primary" style="font-size:inherit; margin:auto;" formaction="send-otp.php"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Send OTP</button>';
 		}
 		?>
 		<?php     

@@ -57,7 +57,7 @@
 			</div>
 		  	<button type="submit" class="btn btn-primary btn-block" style="font-size:inherit; margin:auto;" formaction="loginchk.php"><span class="glyphicon glyphicon-off"></span> Login</button>
 		  	<div id="foot" style="padding: 15px">
-		  	<a href="" style="float: left">Forgot password</a>
+		  	<a href="forgot_pass.php" style="float: left">Forgot password</a>
 		  	<span style="float: right">New user? <a href="signup.php">Sign up</a></span>
 		  	</div>
 		  </form>

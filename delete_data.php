@@ -27,7 +27,10 @@ else{
 	$value = $_GET['value'];
 	$sql = "delete from $table where $id = '$value'";
 }
-	
+if($table == 'reservations'){
+        $rest_id = $_SESSION['rest_id'];
+		header("refresh:3 ; url=cancel_SMS.php?resv_id=$value&rest_id=$rest_id");
+}
 if(!$result = mysqli_query($conn, $sql))
 {
 	echo '<h3>Cannot delete! Check for foreign key constraints!</h3> <p>Redirecting...</p>';
