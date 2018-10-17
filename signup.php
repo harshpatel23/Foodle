@@ -25,8 +25,8 @@ function addcss(){
                    ?>
                    >
 
-            <label for="email">Email-Id:</label>
-            <input id="email" type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
+            <label for="email">Email-Id:&nbsp;<span style="color : red"> * </span></label>
+            <input id="email" type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
 
             <label for="uname">Username:<span style="color : red"> * </span></label>&nbsp;
             <span id="correct" class="glyphicon glyphicon-ok" style="color:green;display:none;"></span>
