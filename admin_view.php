@@ -151,7 +151,7 @@ if ($result_length != 0) {
 				echo "profile_view.php?user_id=".$row_data['user_id'];
 			else if($table == 'rest')
 				echo "rest_form.php?method=update&rest_id=".$row_data['rest_id'];
-			echo "\"id=\"butt-link\">Edit</a></button></td>
+			echo "\" id=\"butt-link\">Edit</a></button></td>
 			  <td><button class=\"btn btn-danger\" onclick=\"return confirm_changes()\"><a id=\"butt-link\" href=\"delete_data.php?table=$table&id=$primary_key[$table]&value=$curr_key\">Delete</a></button></td>";
 		}
 

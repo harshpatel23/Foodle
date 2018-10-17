@@ -58,7 +58,10 @@ mysqli_close($conn);
             <input type="email" class="form-control" style="margin:10px 0px 10px; font-size: inherit;" name="email" id="email" aria-describedby="emailHelp" value="<?php  if($flag) echo $row ['email']; ?>" <?php if($_SESSION['role'] != 'admin') echo "readonly" ?>>
             
             <label for="fname">Username:<span style="color : red"> * </span></label>
-            <input type="text" class="form-control" style="margin:10px 0px 10px; font-size: inherit;" name="uname" value="<?php if($flag) echo $row ['user_id']; ?>" <?php if($flag) echo 'readonly' ?>>
+            &nbsp;<span id="correct" class="glyphicon glyphicon-ok" style="color:green;display:none;"></span>
+            <div id = "wrong" style="display:none;"><span class="glyphicon glyphicon-remove" style="color:red;"></span>&nbsp;Already Taken!</div>
+
+            <input type="text" class="form-control" style="margin:10px 0px 10px; font-size: inherit;" name="uname" onkeyup="uname_availability(this.value)" value="<?php if($flag) echo $row ['user_id']; ?>" <?php if($flag) echo 'readonly' ?>>
             
             <label for="pwd">Password<span style="color : red"> * </span></label>
             <input type="text" class="form-control" style="margin:10px 0px 10px; font-size: inherit;" name="pwd" id="pwd" value="<?php  if($flag) echo $row ['pwd']; ?>" <?php if($_SESSION['role'] != 'admin') echo "readonly" ?> required minlength="8">
