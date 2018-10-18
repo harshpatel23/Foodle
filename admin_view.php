@@ -7,13 +7,10 @@ if(!isset($_SESSION['role']) || $_SESSION['role']!='admin')
 	exit;
 }
 
-
-
 function addcss(){
 	echo '<link rel="stylesheet" type="text/css" href="styles/rest_details.css">';
 	echo '<link rel="stylesheet" type="text/css" href="styles/admin_page.css">';
 	echo '<script src="scripts/confirm_changes.js"></script>';
-
 }
 
 if(!isset($_GET['edit_category']))
@@ -117,8 +114,14 @@ if (isset($_POST['search-bar'])) {
 			$fname = $names[0];
 			$lname = $names[1];
 			$sql = "SELECT * FROM person where fname like '$fname%' or lname like '$lname%'";
-		}
-		
+		}	
+	}
+	elseif($table=='review' || $table=='favourites' || $table=='reservations')
+	{
+		if(is_numeric($search))
+			$sql = "SELECT * FROM $table where rest_id = $search;";
+		else
+			$sql = "SELECT * from $table where user_id like '$search%';";
 	}
 	else 
 		$sql = "select * from $table LIMIT $start, $results_per_page;"; 
